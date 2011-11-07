@@ -23,6 +23,14 @@ public class GCollectionUtils {
         return lastElem(u[u.length - 1]);
     }
     
+    public static double lastElem(double[] u) {
+        return u[u.length - 1];
+    }
+    
+    public static double lastElem(double[][] u) {
+        return lastElem(u[u.length - 1]);
+    }
+    
     public static <T> T lastElem(T[] u) {
         return u[u.length - 1];
     }

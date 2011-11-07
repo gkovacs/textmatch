@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.*;
 import javax.imageio.*;
 
+import static java.lang.Math.*;
 import static textmatch.GStringUtils.*;
 import static textmatch.GIOUtils.*;
 import static textmatch.GCollectionUtils.*;
@@ -54,7 +55,7 @@ public class Main {
     
     public static MatchResults bestMatch(String msgstr, List<List<ImgMatch>> matchesAcrossImages, List<HashMap<String, Integer>> ngramsForImages, HashMap<String, Integer> occurrenceCount) {
         double bestratio = -1.0;
-        int bestlength = -1;
+        double bestlength = -1.0;
         List<ImgMatch> bestmatch = null;
         String templateMatchText = "";
         char[] msg = msgstr.toCharArray();
@@ -102,12 +103,12 @@ public class Main {
                     continue;
                 if (x.length == 0)
                     continue;
-                Pair<int[][], CharTree[][]> p = LCSMatrixTemplated(msg, x);
+                Pair<double[][], CharTree[][]> p = LCSMatrixTemplated(msg, x);
                 double curratio = LCSTemplatedScore(msg, x, p.Item1, p.Item2);
                 curratio -= ((double)numOccurrences) / x.length;
                 if (curratio >= bestratio) {
                     String templateText = charTreeToString(lastElem(p.Item2));
-                    int textlen = lastElem(p.Item1);
+                    double textlen = lastElem(p.Item1);
                     if (curratio == bestratio) {
                         if (templateText.length() > templateMatchText.length()) {
                             continue;

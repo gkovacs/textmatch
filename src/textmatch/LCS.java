@@ -27,12 +27,12 @@ public class LCS {
         return ((double)lastElem(LCSMatrix(X, Y))) / max(X.length, Y.length);
     }
     
-    public static Pair<int[][], CharTree[][]> LCSMatrixTemplated(final char[] X, final char[] Y) {
+    public static Pair<double[][], CharTree[][]> LCSMatrixTemplated(final char[] X, final char[] Y) {
         // X is the templated string
         // % is the substitution character
         final int m = X.length + 1;
         final int n = Y.length + 1;
-        final int[][] M = new int[m][n];
+        final double[][] M = new double[m][n];
         final CharTree[][] T = new CharTree[m][n];
         for (int i = 1; i < m; ++i) {
             for (int j = 1; j < n; ++j) {
@@ -43,9 +43,10 @@ public class LCS {
                 } else {
                     if (M[i-1][j] > M[i][j-1]) {
                         // Template is missing a character
-                        M[i][j] = M[i-1][j];
+                        M[i][j] = M[i-1][j] - 0.2;
                         T[i][j] = T[i-1][j];
                         if (X[i-1] == '%') {
+                            M[i][j] = M[i-1][j];
                             T[i][j] = new CharTree(T[i][j], '^');
                         }
                     } else {
@@ -55,7 +56,7 @@ public class LCS {
                             T[i][j] = new CharTree(T[i][j-1], Y[j-1]);
                         } else {
                             // Target is missing a character
-                            M[i][j] = M[i][j-1];
+                            M[i][j] = M[i][j-1] - 0.2;
                             T[i][j] = T[i][j-1];
                         }
                     }
@@ -109,12 +110,12 @@ public class LCS {
     }
     
     public static double LCSTemplatedScore(final char[] X, final char[] Y) {
-        final Pair<int[][], CharTree[][]> p = LCSMatrixTemplated(X, Y);
+        final Pair<double[][], CharTree[][]> p = LCSMatrixTemplated(X, Y);
         return LCSTemplatedScore(X, Y, p.Item1, p.Item2);
     }
     
-    public static double LCSTemplatedScore(final char[] X, final char[] Y, final int[][] M, CharTree[][] T) {
-        final int matchedTemplateChars = lastElem(M);
+    public static double LCSTemplatedScore(final char[] X, final char[] Y, final double[][] M, CharTree[][] T) {
+        final double matchedTemplateChars = lastElem(M);
         final int numTemplateChars = X.length - count(X, '%');
         final String templateWords = charTreeToString(lastElem(T));
         final int templateWordsLength = templateWords.length() - count(templateWords, '^');
