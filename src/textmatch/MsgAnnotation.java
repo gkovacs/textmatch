@@ -58,7 +58,7 @@ public class MsgAnnotation {
         b.append("~~~");
         String templateSubstitutionsText = "";
         if (templateSubstitutions.length > 0)
-            templateSubstitutionsText = "^" + join(templateSubstitutions, "^");
+            templateSubstitutionsText = SPLITCHAR + join(templateSubstitutions, SPLITCHAR);
         b.append(templateSubstitutionsText);
         return b.toString();
     }

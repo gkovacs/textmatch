@@ -60,13 +60,13 @@ public class Main {
         String templateMatchText = "";
         char[] msg = msgstr.toCharArray();
         final int maxMsgLength;
-        boolean isTemplated = (count(msg, '%') != 0);
+        boolean isTemplated = (count(msg, SUBCHAR) != 0);
         if (isTemplated)
             maxMsgLength = msg.length*3;
         else
             maxMsgLength = msg.length*3/2;
         /*
-        HashMap<String, Integer> ngramsForCurImg = ngrams(msgstr.replace('%', ' '), 3);
+        HashMap<String, Integer> ngramsForCurImg = ngrams(msgstr.replace(SUBCHAR, ' '), 3);
         int bestImgIdx = 0;
         if (!isTemplated) {
             double bestNgramMatch = 0.0;

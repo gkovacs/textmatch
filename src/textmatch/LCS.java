@@ -7,6 +7,10 @@ import static textmatch.CharTree.*;
 
 public class LCS {
 
+    public static final char SUBCHAR = '換';
+    public static final char SPLITCHAR = '分';
+    // also update LCSTest, MsgAnnotationTest after changing these
+    
     public static int[][] LCSMatrix(final char[] X, final char[] Y) {
         final int m = X.length + 1;
         final int n = Y.length + 1;
@@ -29,7 +33,7 @@ public class LCS {
     
     public static Pair<double[][], CharTree[][]> LCSMatrixTemplated(final char[] X, final char[] Y) {
         // X is the templated string
-        // % is the substitution character
+        // SUBCHAR is the substitution character
         final int m = X.length + 1;
         final int n = Y.length + 1;
         final double[][] M = new double[m][n];
@@ -45,12 +49,12 @@ public class LCS {
                         // Template is missing a character
                         M[i][j] = M[i-1][j] - 0.2;
                         T[i][j] = T[i-1][j];
-                        if (X[i-1] == '%') {
+                        if (X[i-1] == SUBCHAR) {
                             M[i][j] = M[i-1][j];
-                            T[i][j] = new CharTree(T[i][j], '^');
+                            T[i][j] = new CharTree(T[i][j], SPLITCHAR);
                         }
                     } else {
-                        if (X[i-1] == '%') {
+                        if (X[i-1] == SUBCHAR) {
                             // Template substitution
                             M[i][j] = M[i][j-1];
                             T[i][j] = new CharTree(T[i][j-1], Y[j-1]);
@@ -68,9 +72,11 @@ public class LCS {
     
     public static String substituteIntoTemplate(String templatedString, String[] substitutions) {
         StringBuilder b = new StringBuilder();
+        if (count(templatedString, SUBCHAR) != substitutions.length)
+            throw new RuntimeException(templatedString);
         int substitutionIndex = 0;
         for (char c : templatedString.toCharArray()) {
-            if (c == '%') {
+            if (c == SUBCHAR) {
                 b.append(substitutions[substitutionIndex]);
                 ++substitutionIndex;
             } else {
@@ -82,9 +88,11 @@ public class LCS {
     
     public static String substituteIntoTemplateMarked(String templatedString, String[] substitutions) {
         StringBuilder b = new StringBuilder();
+        if (count(templatedString, SUBCHAR) != substitutions.length)
+            throw new RuntimeException(templatedString);
         int substitutionIndex = 0;
         for (char c : templatedString.toCharArray()) {
-            if (c == '%') {
+            if (c == SUBCHAR) {
                 b.append("#{");
                 b.append(substitutions[substitutionIndex]);
                 b.append("}");
@@ -99,14 +107,14 @@ public class LCS {
     public static String[] getSubstitutedStrings(String str) {
         if (str.length() == 0)
             return new String[0];
-        return split(str.substring(1), '^');
+        return split(str.substring(1), SPLITCHAR);
     }
     
     public static String[] getSubstitutedStrings(CharTree[][] charTree) {
         String str = charTreeToString(lastElem(charTree));
         if (str.length() == 0)
             return new String[0];
-        return split(str.substring(1), '^');
+        return split(str.substring(1), SPLITCHAR);
     }
     
     public static double LCSTemplatedScore(final char[] X, final char[] Y) {
@@ -116,9 +124,9 @@ public class LCS {
     
     public static double LCSTemplatedScore(final char[] X, final char[] Y, final double[][] M, CharTree[][] T) {
         final double matchedTemplateChars = lastElem(M);
-        final int numTemplateChars = X.length - count(X, '%');
+        final int numTemplateChars = X.length - count(X, SUBCHAR);
         final String templateWords = charTreeToString(lastElem(T));
-        final int templateWordsLength = templateWords.length() - count(templateWords, '^');
+        final int templateWordsLength = templateWords.length() - count(templateWords, SPLITCHAR);
         final int rawTargetTextLength = Y.length - templateWordsLength;
         return ((double)matchedTemplateChars) / max(numTemplateChars, rawTargetTextLength);
     }

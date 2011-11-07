@@ -1,5 +1,6 @@
 package textmatch;
 
+import static textmatch.LCS.*;
 import java.util.*;
 
 import org.junit.*;
@@ -55,7 +56,7 @@ public class POMsgSourceTest {
         po.add("\"using this key.\\n\"");
         po.add("\"Please try with a key such as Control, Alt or Shift at the same time.\"");
         POMsgSource msgsrc = new POMsgSource(po);
-        List<String> expected = singleElemList("The shortcut \"%\" cannot be used because it will become impossible to type using this key. Please try with a key such as Control, Alt or Shift at the same time.");
+        List<String> expected = singleElemList("The shortcut \"" + SUBCHAR +"\" cannot be used because it will become impossible to type using this key. Please try with a key such as Control, Alt or Shift at the same time.");
         assertEquals(expected, msgsrc.getMsgStrings());
     }
     
@@ -72,7 +73,7 @@ public class POMsgSourceTest {
     @Test
     public void testAnnotationFromMsgIdBlock() throws Exception {
         List<String> po = new ArrayList<String>();
-        po.add("#& foo.png(1,2,3,4)~~~^sa^foo");
+        po.add("#& foo.png(1,2,3,4)~~~分sa分foo");
         po.add("msgid \"\"");
         po.add("\"Indicates whether to close the shell when an upgrade or uninstall action is \"");
         po.add("\"performed.\"");

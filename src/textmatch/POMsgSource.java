@@ -1,7 +1,7 @@
 package textmatch;
 
 
-
+import static textmatch.LCS.*;
 import java.util.*;
 
 import java.io.*;
@@ -56,7 +56,7 @@ public class POMsgSource {
                 line = stripPrefix(line, "\"");
                 line = stripSuffix(line, "\"");
                 line = line.replace("\\\"", "\"");
-                line = line.replace("%s", "%");
+                line = line.replace("%s", Character.toString(SUBCHAR));
                 line = line.replace("\\n", " ");
                 curmsg.add(line);
             }

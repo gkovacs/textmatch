@@ -30,6 +30,28 @@ public class GStringUtils {
         return builder.substring(0, builder.length() - delim.length());
     }
     
+    public static <T> String join(Iterable<T> list, char delim) {
+        StringBuilder builder = new StringBuilder();
+        for (T elem : list) {
+            builder.append(elem);
+            builder.append(delim);
+        }
+        if (builder.length() <= 1)
+            return "";
+        return builder.substring(0, builder.length() - 1);
+    }
+    
+    public static <T> String join(T[] list, char delim) {
+        StringBuilder builder = new StringBuilder();
+        for (T elem : list) {
+            builder.append(elem);
+            builder.append(delim);
+        }
+        if (builder.length() <= 1)
+            return "";
+        return builder.substring(0, builder.length() - 1);
+    }
+    
     public static String stripPrefix(String s, String prefix) {
         if (s.startsWith(prefix)) {
             return s.substring(prefix.length());
