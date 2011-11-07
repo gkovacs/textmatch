@@ -105,6 +105,13 @@ public class GCollectionUtils {
         return output;
     }
     
+    public static <T> void incrementMap(HashMap<T, Integer> map, T elem) {
+        if (!map.containsKey(elem))
+            map.put(elem, 1);
+        else
+            map.put(elem, map.get(elem) + 1);
+    }
+    
     public static <T> Iterable<List<T>> substrings(final List<T> words) {
         return new Iterable<List<T>>() {
 

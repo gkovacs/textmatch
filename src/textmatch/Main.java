@@ -52,7 +52,7 @@ public class Main {
         return new Region(minx, miny, w, h);
     }
     
-    public static MatchResults bestMatch(String msgstr, List<List<ImgMatch>> matchesAcrossImages, List<HashMap<String, Integer>> ngramsForImages, HashSet<String> blacklist) {
+    public static MatchResults bestMatch(String msgstr, List<List<ImgMatch>> matchesAcrossImages, List<HashMap<String, Integer>> ngramsForImages, HashMap<String, Integer> occurrenceCount) {
         double bestratio = -1.0;
         int bestlength = -1;
         List<ImgMatch> bestmatch = null;
@@ -88,8 +88,13 @@ public class Main {
             List<ImgMatch> matches = matchesAcrossImages.get(i);
             for (List<ImgMatch> match : substrings(matches)) {
                 String xstr = join(match, " ");
-                if (blacklist.contains(xstr))
+                int numOccurrences = 0;
+                if (occurrenceCount.containsKey(xstr))
+                    numOccurrences = occurrenceCount.get(xstr);
+                if (numOccurrences >= xstr.length()*3/2)
                     continue;
+                //if (blacklist.contains(xstr))
+                //    continue;
                 char[] x = xstr.toCharArray();
                 if (x.length*3 < msg.length*2)
                     continue;
@@ -99,17 +104,22 @@ public class Main {
                     continue;
                 Pair<int[][], CharTree[][]> p = LCSMatrixTemplated(msg, x);
                 double curratio = LCSTemplatedScore(msg, x, p.Item1, p.Item2);
+                curratio -= ((double)numOccurrences) / x.length;
                 if (curratio >= bestratio) {
+                    String templateText = charTreeToString(lastElem(p.Item2));
                     int textlen = lastElem(p.Item1);
                     if (curratio == bestratio) {
-                        if (textlen < bestlength) {
+                        if (templateText.length() > templateMatchText.length()) {
                             continue;
+                        } else if (templateText.length() == templateMatchText.length()) {
+                            if (textlen < bestlength)
+                                continue;
                         }
                     }
                     bestmatch = match;
                     bestratio = curratio;
                     bestlength = textlen;
-                    templateMatchText = charTreeToString(lastElem(p.Item2));
+                    templateMatchText = templateText;
                 }
             }
         }
@@ -129,9 +139,9 @@ public class Main {
         }
         */
         List<Pair<Double, String>> msgStrToScore = new ArrayList<Pair<Double, String>>();
-        HashSet<String> blacklist = new HashSet<String>();
+        HashMap<String, Integer> occurrenceCount = new HashMap<String, Integer>();
         for (String msgstr : msgstrings) {
-            MatchResults m = bestMatch(msgstr, matchesAcrossImages, ngramsForImages, blacklist);
+            MatchResults m = bestMatch(msgstr, matchesAcrossImages, ngramsForImages, occurrenceCount);
             if (m == null)
                 continue;
             double bestratio = m.ratio;
@@ -161,19 +171,25 @@ public class Main {
         Collections.reverse(msgStrToScore);
         for (Pair<Double, String> p : msgStrToScore) {
             String msgstr = p.Item2;
-            MatchResults m = bestMatch(msgstr, matchesAcrossImages, ngramsForImages, blacklist);
+            MatchResults m = bestMatch(msgstr, matchesAcrossImages, ngramsForImages, occurrenceCount);
             if (m == null)
                 continue;
             double bestratio = m.ratio;
             List<ImgMatch> bestmatch = m.match;
             String templateMatchText = m.templateMatchText;
+            String imgText = join(bestmatch, " ");
             if (bestratio >= 1/1.5) {
                 Region spanningRegion = spannedRegion(bestmatch);
                 String filename = bestmatch.get(0).getImgName();
                 MsgAnnotation annotation = new MsgAnnotation(filename, spanningRegion, getSubstitutedStrings(templateMatchText));
                 System.err.println(annotation.toString());
+                System.err.println(join(bestmatch, " "));
                 output.put(msgstr, annotation.toString());
-                blacklist.add(join(bestmatch, " "));
+                for (List<ImgMatch> x : substrings(bestmatch)) {
+                    // increment occurrence count for every substring of the matched text
+                    incrementMap(occurrenceCount, join(x, " "));
+                }
+                //blacklist.add(join(bestmatch, " "));
                 //msgStrToScore.add(makePair(bestratio, msgstr));
             }
         }

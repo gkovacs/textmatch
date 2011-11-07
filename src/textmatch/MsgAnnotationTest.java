@@ -19,5 +19,21 @@ public class MsgAnnotationTest {
         assertEquals(4, annotation.h);
         String[] expectedTemplateSubstitutions = new String[] {"sa", "foo"};
         assertArrayEquals(expectedTemplateSubstitutions, annotation.templateSubstitutions);
+        annotation = new MsgAnnotation("foo.png(1,2,3,4)~~~^^foo");
+        expectedTemplateSubstitutions = new String[] {"", "foo"};
+        assertArrayEquals(expectedTemplateSubstitutions, annotation.templateSubstitutions);
+        annotation = new MsgAnnotation("foo.png(1,2,3,4)~~~^Launch media player^Activate the window menu");
+        expectedTemplateSubstitutions = new String[] {"Launch media player", "Activate the window menu"};
+        assertArrayEquals(expectedTemplateSubstitutions, annotation.templateSubstitutions);
+    }
+    
+    @Test
+    public void testMsgAnnotationToString() {
+        String expected = "foo.png(1,2,3,4)~~~^sa^foo";
+        assertEquals(expected, new MsgAnnotation(expected).toString());
+        expected = "foo.png(1,2,3,4)~~~^Launch media player^Activate the window menu";
+        assertEquals(expected, new MsgAnnotation(expected).toString());
+        expected = "foo.png(1,2,3,4)~~~^^Activate the window menu";
+        assertEquals(expected, new MsgAnnotation(expected).toString());
     }
 }

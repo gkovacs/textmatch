@@ -74,10 +74,7 @@ public class GStringUtils {
         HashMap<String, Integer> output = new HashMap<String, Integer>();
         for (int i = 0; i < s.length() - n; ++i) {
             String curngram = s.substring(i, i + n);
-            if (!output.containsKey(curngram))
-                output.put(curngram, 1);
-            else
-                output.put(curngram, output.get(curngram) + 1);
+            incrementMap(output, curngram);
         }
         return output;
     }
