@@ -40,4 +40,39 @@ public class GCollectionUtilsTest {
         exp.add(toList(new String[] {"en"} ));
         assertEquals(exp, toList(substrings(toList(words))));
     }
+    
+    @Test
+    public void testSubstrings3() {
+        String[] words = new String[] { "foo", "bar", "en"};
+        List<List<String>> exp = new ArrayList<List<String>>();
+        exp.add(toList(new String[] {"foo"} ));
+        exp.add(toList(new String[] {"foo", "bar"} ));
+        exp.add(toList(new String[] {"bar"} ));
+        exp.add(toList(new String[] {"foo", "bar", "en"} ));
+        exp.add(toList(new String[] {"bar", "en"} ));
+        exp.add(toList(new String[] {"en"} ));
+        assertEquals(exp, toList(substrings(toList(words), 1, 3)));
+    }
+    
+    @Test
+    public void testSubstrings4() {
+        String[] words = new String[] { "foo", "bar", "en"};
+        List<List<String>> exp = new ArrayList<List<String>>();
+        exp.add(toList(new String[] {"foo", "bar"} ));
+        exp.add(toList(new String[] {"foo", "bar", "en"} ));
+        exp.add(toList(new String[] {"bar", "en"} ));
+        assertEquals(exp, toList(substrings(toList(words), 2, 3)));
+    }
+    
+    @Test
+    public void testSubstrings2() {
+        String[] words = new String[] { "foo", "bar", "en"};
+        List<List<String>> exp = new ArrayList<List<String>>();
+        exp.add(toList(new String[] {"foo"} ));
+        exp.add(toList(new String[] {"foo", "bar"} ));
+        exp.add(toList(new String[] {"bar"} ));
+        exp.add(toList(new String[] {"bar", "en"} ));
+        exp.add(toList(new String[] {"en"} ));
+        assertEquals(exp, toList(substrings(toList(words), 1, 2)));
+    }
 }

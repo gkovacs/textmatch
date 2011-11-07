@@ -128,9 +128,9 @@ public class GCollectionUtils {
                             throw new NoSuchElementException();
                         List<T> retv = slice(words, j, i);
                         ++j;
-                        if (j >= i) {
-                            j = 0;
+                        if (i <= j) {
                             ++i;
+                            j = 0;
                         }
                         return retv;
                     }
@@ -143,6 +143,49 @@ public class GCollectionUtils {
                 };
             }
             
+        };
+    }
+    
+    public static <T> Iterable<List<T>> substrings(final List<T> words, final int minlength, final int maxlength) {
+        return new Iterable<List<T>>() {
+
+            @Override
+            public Iterator<List<T>> iterator() {
+                return new Iterator<List<T>>() {
+
+                    private int i = minlength;
+                    // i: the ending entry
+                    private int j = 0;
+                    // j: the starting entry
+                    
+                    @Override
+                    public boolean hasNext() {
+                        return (i <= words.size());
+                    }
+
+                    @Override
+                    public List<T> next() {
+                        if (i > words.size())
+                            throw new NoSuchElementException();
+                        List<T> retv = slice(words, j, i);
+                        ++j;
+                        if (i < j + minlength) {
+                            // length = i-j
+                            // so i-j >= minlength => i >= j + minlength
+                            // and i-j <= maxlength => i <= j + maxlength
+                            ++i;
+                            j = Math.max(i - maxlength, 0);
+                        }
+                        return retv;
+                    }
+
+                    @Override
+                    public void remove() {
+                        throw new UnsupportedOperationException();
+                    }
+                    
+                };
+            }
         };
     }
 }

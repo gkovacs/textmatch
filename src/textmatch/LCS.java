@@ -23,8 +23,8 @@ public class LCS {
         return C;
     }
     
-    public static int LCSScore(final char[] X, final char[] Y) {
-        return lastElem(LCSMatrix(X, Y));
+    public static double LCSScore(final char[] X, final char[] Y) {
+        return ((double)lastElem(LCSMatrix(X, Y))) / max(X.length, Y.length);
     }
     
     public static Pair<int[][], CharTree[][]> LCSMatrixTemplated(final char[] X, final char[] Y) {

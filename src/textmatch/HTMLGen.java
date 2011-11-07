@@ -10,6 +10,7 @@ import static textmatch.GIOUtils.*;
 import static textmatch.LCS.*;
 
 public class HTMLGen {
+    
     public static void main(String[] args) throws Exception {
         // args[0]: an annotated po file
         List<String> msgfilelines = readLines(new FileReader(args[0]));
@@ -20,11 +21,18 @@ public class HTMLGen {
         List<String> h = new ArrayList<String>();
         // contains the html stuff, namely the canvas ids and text
         int i = 0;
+        List<Pair<MsgAnnotation, String>> annotatedMsgBlocks = new ArrayList<Pair<MsgAnnotation, String>>();
         for (String x : msgblocks) {
             MsgAnnotation annotation = annotationFromMsgIdBlock(x);
             if (annotation == null)
                 continue;
             String msgtext = textFromMsgIdBlock(x);
+            annotatedMsgBlocks.add(makePair(annotation, msgtext));
+        }
+        Collections.sort(annotatedMsgBlocks, new PairFirstComparator<MsgAnnotation>(new MsgAnnotationRegionComparator()));
+        for (Pair<MsgAnnotation, String> annotationAndText : annotatedMsgBlocks) {
+            MsgAnnotation annotation = annotationAndText.Item1;
+            String msgtext = annotationAndText.Item2;
             Integer[] coordinates = new Integer[] {annotation.x, annotation.y, annotation.w, annotation.h};
             String coordargs = join(coordinates, ",");
             String canvasname = "c" + i;

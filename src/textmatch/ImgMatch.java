@@ -30,5 +30,19 @@ public class ImgMatch extends Match {
     public String toString() {
         return text;
     }
+    
+    @Override
+    public boolean equals(Object other) {
+        if (other instanceof ImgMatch) {
+            ImgMatch o = (ImgMatch)other;
+            return (this.text().equals(o.text()));
+        }
+        return false;
+    }
+    
+    @Override
+    public int hashCode() {
+        return this.text().hashCode();
+    }
 
 }

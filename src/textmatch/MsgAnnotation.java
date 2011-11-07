@@ -8,6 +8,8 @@ import static textmatch.GStringUtils.*;
 import static textmatch.LCS.*;
 
 public class MsgAnnotation {
+
+    
     public final String filename;
     public final int x;
     public final int y;

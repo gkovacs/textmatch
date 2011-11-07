@@ -1,11 +1,11 @@
 package textmatch;
-import java.util.Iterator;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 import org.sikuli.script.Region;
 
 import static textmatch.GCollectionUtils.*;
+
+import static java.lang.Math.*;
 
 public class GStringUtils {
     public static <T> String join(Iterable<T> list, String delim) {
@@ -68,6 +68,31 @@ public class GStringUtils {
     
     public static <T extends Region> String tostr(T r) {
         return r.x + "," + r.y + "," + r.w + "," + r.h;
+    }
+    
+    public static HashMap<String, Integer> ngrams(String s, int n) {
+        HashMap<String, Integer> output = new HashMap<String, Integer>();
+        for (int i = 0; i < s.length() - n; ++i) {
+            String curngram = s.substring(i, i + n);
+            if (!output.containsKey(curngram))
+                output.put(curngram, 1);
+            else
+                output.put(curngram, output.get(curngram) + 1);
+        }
+        return output;
+    }
+    
+    public static double ngramMatchFraction(HashMap<String, Integer> source, HashMap<String, Integer> target) {
+        int numMatches = 0;
+        int optimalMatches = 0;
+        for (String x : source.keySet()) {
+            int numOccurrences = source.get(x);
+            numMatches += numOccurrences;
+            if (target.containsKey(x)) {
+                numMatches += min(numOccurrences, target.get(x));
+            }
+        }
+        return ((double)numMatches)/optimalMatches;
     }
     
 }
