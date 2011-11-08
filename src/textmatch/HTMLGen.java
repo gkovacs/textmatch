@@ -33,14 +33,17 @@ public class HTMLGen {
         for (Pair<MsgAnnotation, String> annotationAndText : annotatedMsgBlocks) {
             MsgAnnotation annotation = annotationAndText.Item1;
             String blockText = annotationAndText.Item2;
+            String blockTextMinusForeign = excludeForeignMsgStr(blockText);
             String msgtext = textFromMsgIdBlock(blockText);
+            String foreigntext = foreignTextFromMsgIdBlock(blockText);
             Integer[] coordinates = new Integer[] {annotation.x, annotation.y, annotation.w, annotation.h};
             String coordargs = join(coordinates, ",");
             String canvasname = "c" + i;
             j.add("annotate('" + canvasname + "', '" + annotation.filename + "', " + coordargs + ")");
             h.add("<canvas id='" + canvasname + "'></canvas>");
             h.add("<p><b>" + substituteIntoTemplateMarked(msgtext, annotation.templateSubstitutions) + "</b></p>");
-            h.add("<p>" + blockText.replace("\n", "<br/>").replace("~~~~~~", "~~~").replace("~~~", "<br/>#& ") + "</p>");
+            h.add("<input type='text' size=100 value='" + foreigntext + "' />");
+            h.add("<p>" + blockTextMinusForeign.replace("\n", "<br/>").replace("~~~~~~", "~~~").replace("~~~", "<br/>#& ") + "</p>");
             i += 1;
         }
         List<String> o = new ArrayList<String>();

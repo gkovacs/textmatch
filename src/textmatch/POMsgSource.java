@@ -39,6 +39,17 @@ public class POMsgSource {
         return null;
     }
     
+    public static String excludeForeignMsgStr(String msgidblock) throws Exception {
+        List<String> curmsg = new ArrayList<String>();
+        for (String line : readLines(new StringReader(msgidblock))) {
+            if (line.startsWith("msgstr \"")) {
+                break;
+            }
+            curmsg.add(line);
+        }
+        return join(curmsg, "\n");
+    }
+    
     public static String textFromMsgIdBlock(String msgidblock) throws Exception {
         List<String> curmsg = new ArrayList<String>();
         boolean active = false;
@@ -57,6 +68,27 @@ public class POMsgSource {
                 line = stripSuffix(line, "\"");
                 line = line.replace("\\\"", "\"");
                 line = line.replace("%s", Character.toString(SUBCHAR));
+                line = line.replace("\\n", " ");
+                curmsg.add(line);
+            }
+        }
+        return join(curmsg, "").trim();
+    }
+    
+    public static String foreignTextFromMsgIdBlock(String msgidblock) throws Exception {
+        List<String> curmsg = new ArrayList<String>();
+        boolean active = false;
+        for (String line : readLines(new StringReader(msgidblock))) {
+            if (line.startsWith("msgstr \"")) {
+                active = true;
+                line = stripPrefix(line, "msgstr \"");
+            }
+            if (line.startsWith("#"))
+                continue;
+            if (active) {
+                line = stripPrefix(line, "\"");
+                line = stripSuffix(line, "\"");
+                line = line.replace("\\\"", "\"");
                 line = line.replace("\\n", " ");
                 curmsg.add(line);
             }

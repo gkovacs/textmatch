@@ -89,11 +89,13 @@ public class Main {
             List<ImgMatch> matches = matchesAcrossImages.get(i);
             for (List<ImgMatch> match : substrings(matches)) {
                 String xstr = join(match, " ");
+                /*
                 int numOccurrences = 0;
                 if (occurrenceCount.containsKey(xstr))
                     numOccurrences = occurrenceCount.get(xstr);
                 if (numOccurrences >= xstr.length()*3/2)
                     continue;
+                */
                 //if (blacklist.contains(xstr))
                 //    continue;
                 char[] x = xstr.toCharArray();
@@ -105,7 +107,7 @@ public class Main {
                     continue;
                 Pair<double[][], CharTree[][]> p = LCSMatrixTemplated(msg, x);
                 double curratio = LCSTemplatedScore(msg, x, p.Item1, p.Item2);
-                curratio -= ((double)numOccurrences) / x.length;
+                //curratio -= ((double)numOccurrences) / x.length;
                 if (curratio >= bestratio) {
                     String templateText = charTreeToString(lastElem(p.Item2));
                     double textlen = lastElem(p.Item1);
@@ -139,8 +141,8 @@ public class Main {
             ngramsForImages.add(ngrams(s, 3));
         }
         */
-        List<Pair<Double, String>> msgStrToScore = new ArrayList<Pair<Double, String>>();
-        HashMap<String, Integer> occurrenceCount = new HashMap<String, Integer>();
+        //List<Pair<Double, String>> msgStrToScore = new ArrayList<Pair<Double, String>>();
+        HashMap<String, Integer> occurrenceCount = null; //new HashMap<String, Integer>();
         for (String msgstr : msgstrings) {
             MatchResults m = bestMatch(msgstr, matchesAcrossImages, ngramsForImages, occurrenceCount);
             if (m == null)
@@ -149,16 +151,17 @@ public class Main {
             List<ImgMatch> bestmatch = m.match;
             String templateMatchText = m.templateMatchText;
             if (bestratio >= 1/1.5) {
-                /*
+                
                 Region spanningRegion = spannedRegion(bestmatch);
                 String filename = bestmatch.get(0).getImgName();
-                MsgAnnotation annotation = new MsgAnnotation(filename, spanningRegion, getSubstitutedStrings(templateMatchText));
+                MsgAnnotation annotation = new MsgAnnotation(filename, spanningRegion, getSubstitutedStrings(templateMatchText), join(bestmatch, " "));
                 System.err.println(annotation.toString());
                 output.put(msgstr, annotation.toString());
-                */
-                msgStrToScore.add(makePair(bestratio, msgstr));
+                
+                //msgStrToScore.add(makePair(bestratio, msgstr));
             }
         }
+        /*
         Collections.sort(msgStrToScore, new PairFirstComparator<Double>(new Comparator<Double>() {
             @Override
             public int compare(Double o1, Double o2) {
@@ -194,8 +197,17 @@ public class Main {
                 //msgStrToScore.add(makePair(bestratio, msgstr));
             }
         }
+        */
         return output;
     }
+    
+    /*
+    public static <T> List<List<T>> regionsNotWithCommonSubstrings(List<T> current, List<T> previous) {
+        List<List<T>> output = new ArrayList<List<T>>();
+        
+        return output;
+    }
+    */
     
     public static void main(String[] args) throws Exception {
         // TODO Auto-generated method stub
