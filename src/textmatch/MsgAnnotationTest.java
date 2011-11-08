@@ -19,21 +19,21 @@ public class MsgAnnotationTest {
         assertEquals(4, annotation.h);
         String[] expectedTemplateSubstitutions = new String[] {"sa", "foo"};
         assertArrayEquals(expectedTemplateSubstitutions, annotation.templateSubstitutions);
-        annotation = new MsgAnnotation("foo.png(1,2,3,4)~~~分分foo");
+        annotation = new MsgAnnotation("foo.png(1,2,3,4)~~~分分foo~~~");
         expectedTemplateSubstitutions = new String[] {"", "foo"};
         assertArrayEquals(expectedTemplateSubstitutions, annotation.templateSubstitutions);
-        annotation = new MsgAnnotation("foo.png(1,2,3,4)~~~分Launch media player分Activate the window menu");
+        annotation = new MsgAnnotation("foo.png(1,2,3,4)~~~分Launch media player分Activate the window menu~~~");
         expectedTemplateSubstitutions = new String[] {"Launch media player", "Activate the window menu"};
         assertArrayEquals(expectedTemplateSubstitutions, annotation.templateSubstitutions);
     }
     
     @Test
     public void testMsgAnnotationToString() {
-        String expected = "foo.png(1,2,3,4)~~~分sa分foo";
+        String expected = "foo.png(1,2,3,4)~~~分sa分foo~~~";
         assertEquals(expected, new MsgAnnotation(expected).toString());
-        expected = "foo.png(1,2,3,4)~~~分Launch media player分Activate the window menu";
+        expected = "foo.png(1,2,3,4)~~~分Launch media player分Activate the window menu~~~";
         assertEquals(expected, new MsgAnnotation(expected).toString());
-        expected = "foo.png(1,2,3,4)~~~分分Activate the window menu";
+        expected = "foo.png(1,2,3,4)~~~分分Activate the window menu~~~";
         assertEquals(expected, new MsgAnnotation(expected).toString());
     }
 }

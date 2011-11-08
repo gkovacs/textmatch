@@ -182,7 +182,7 @@ public class Main {
             if (bestratio >= 1/1.5) {
                 Region spanningRegion = spannedRegion(bestmatch);
                 String filename = bestmatch.get(0).getImgName();
-                MsgAnnotation annotation = new MsgAnnotation(filename, spanningRegion, getSubstitutedStrings(templateMatchText));
+                MsgAnnotation annotation = new MsgAnnotation(filename, spanningRegion, getSubstitutedStrings(templateMatchText), join(bestmatch, " "));
                 System.err.println(annotation.toString());
                 System.err.println(join(bestmatch, " "));
                 output.put(msgstr, annotation.toString());

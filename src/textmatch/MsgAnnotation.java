@@ -16,18 +16,20 @@ public class MsgAnnotation {
     public final int w;
     public final int h;
     public final String[] templateSubstitutions;
+    public final String matchedText;
 
-    public MsgAnnotation(final String filename, int x, int y, int w, int h, final String[] templateSubstitutions) {
+    public MsgAnnotation(final String filename, int x, int y, int w, int h, final String[] templateSubstitutions, final String matchedText) {
         this.filename = filename;
         this.x = x;
         this.y = y;
         this.w = w;
         this.h = h;
         this.templateSubstitutions = templateSubstitutions;
+        this.matchedText = matchedText;
     }
     
-    public MsgAnnotation(final String filename, final Region r, final String[] templateSubstitutions) {
-        this(filename, r.x, r.y, r.w, r.h, templateSubstitutions);
+    public MsgAnnotation(final String filename, final Region r, final String[] templateSubstitutions, String matchedText) {
+        this(filename, r.x, r.y, r.w, r.h, templateSubstitutions, matchedText);
     }
     
     public MsgAnnotation(String annotationText) {
@@ -47,6 +49,10 @@ public class MsgAnnotation {
             templateSubstitutions = new String[0];
         } else {
             templateSubstitutions = getSubstitutedStrings(annotationParts[1]);
+        } if (annotationParts.length < 3) {
+        	matchedText = "";
+        } else {
+        	matchedText = annotationParts[2];
         }
     }
     
@@ -60,6 +66,8 @@ public class MsgAnnotation {
         if (templateSubstitutions.length > 0)
             templateSubstitutionsText = SPLITCHAR + join(templateSubstitutions, SPLITCHAR);
         b.append(templateSubstitutionsText);
+        b.append("~~~");
+        b.append(matchedText);
         return b.toString();
     }
 }
