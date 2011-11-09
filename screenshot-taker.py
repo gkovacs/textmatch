@@ -4,6 +4,10 @@ import gtk
 import gc
 import os
 import glob
+from time import time
+
+prev_screenshot = ''
+prev_screenshot_time = 0
 
 def take_screenshot(seen_screenshots, series_num, screenshot_num):
     # Calculate the size of the whole screen
@@ -36,6 +40,17 @@ def take_screenshot(seen_screenshots, series_num, screenshot_num):
             screenposx, screenposy, 0, 0, w, h)
 
     pixels = screenshot.get_pixels()
+    curtime = time()
+    global prev_screenshot
+    global prev_screenshot_time
+    
+    if prev_screenshot != pixels:
+        prev_screenshot = pixels
+        prev_screenshot_time = curtime
+        return False
+    if curtime < prev_screenshot_time + 0.3:
+        return False
+
     if pixels in seen_screenshots:
         return False
     seen_screenshots.add(pixels)
