@@ -17,8 +17,7 @@ import static textmatch.CharTree.*;
 
 public class Main {
 
-    public static List<ImgMatch> getImgMatches(String imagefile) throws Exception {
-        BufferedImage img = ImageIO.read(new File(imagefile));
+    public static List<ImgMatch> getImgMatches(BufferedImage img, String imgFileName) throws Exception {
         TextRecognizer recognizer = TextRecognizer.getInstance();
         //Mat mat = OpenCV.convertBufferedImageToMat(img.getImage());
         Rectangle rect = new java.awt.Rectangle(img.getWidth(), img.getHeight());
@@ -28,9 +27,14 @@ public class Main {
         for (Match m : matches) {
             if (m.w < 0 || m.h < 0)
                 continue;
-            output.add(new ImgMatch(m, imagefile));
+            output.add(new ImgMatch(m, imgFileName));
         }
         return output;
+    }
+    
+    public static List<ImgMatch> getImgMatches(String imgFileName) throws Exception {
+        BufferedImage img = ImageIO.read(new File(imgFileName));
+        return getImgMatches(img, imgFileName);
     }
     
     public static Region spannedRegion(List<? extends Region> regions) {
@@ -131,8 +135,8 @@ public class Main {
     
     
     
-    public static HashMap<String, String> msgToAnnotations(List<String> msgstrings, List<List<ImgMatch>> matchesAcrossImages) {
-        HashMap<String, String> output = new HashMap<String, String>();
+    public static HashMap<String, MsgAnnotation> msgToAnnotations(List<String> msgstrings, List<List<ImgMatch>> matchesAcrossImages) {
+        HashMap<String, MsgAnnotation> output = new HashMap<String, MsgAnnotation>();
         
         List<HashMap<String, Integer>> ngramsForImages = null; //new ArrayList<HashMap<String, Integer>>();
         /*
@@ -156,7 +160,7 @@ public class Main {
                 String filename = bestmatch.get(0).getImgName();
                 MsgAnnotation annotation = new MsgAnnotation(filename, spanningRegion, getSubstitutedStrings(templateMatchText), join(bestmatch, " "));
                 System.err.println(annotation.toString());
-                output.put(msgstr, annotation.toString());
+                output.put(msgstr, annotation);
                 
                 //msgStrToScore.add(makePair(bestratio, msgstr));
             }
@@ -221,8 +225,12 @@ public class Main {
         List<List<ImgMatch>> matchesAcrossImages = new ArrayList<List<ImgMatch>>();
         for (List<ImgMatch> x : matchesAcrossImagesH)
             matchesAcrossImages.add(x);
-        HashMap<String, String> annotations = msgToAnnotations(msgstrings, matchesAcrossImages);
-        String annotatedmsgfile = msgsrc.makeAnnotatedMsgFile(annotations);
+        HashMap<String, MsgAnnotation> annotations = msgToAnnotations(msgstrings, matchesAcrossImages);
+        HashMap<String, String> annotationStrings = new HashMap<String, String>();
+        for (String x : annotations.keySet()) {
+            annotationStrings.put(x, annotations.get(x).toString());
+        }
+        String annotatedmsgfile = msgsrc.makeAnnotatedMsgFile(annotationStrings);
         System.out.println(annotatedmsgfile);
     }
 

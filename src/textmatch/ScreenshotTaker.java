@@ -4,14 +4,20 @@ package textmatch;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.image.BufferedImage;
+import java.awt.image.ColorModel;
 import java.awt.image.DataBuffer;
 import java.awt.image.Raster;
+import java.awt.image.WritableRaster;
+import java.io.FileReader;
+import java.util.HashMap;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import static textmatch.GCollectionUtils.*;
+import static textmatch.GIOUtils.readLines;
 
 public class ScreenshotTaker {
     
@@ -22,7 +28,17 @@ public class ScreenshotTaker {
     private static native int getWidth();
     private static native int getHeight();
     
+    static BufferedImage deepCopy(BufferedImage bi) {
+        ColorModel cm = bi.getColorModel();
+        boolean isAlphaPremultiplied = cm.isAlphaPremultiplied();
+        WritableRaster raster = bi.copyData(null);
+        return new BufferedImage(cm, raster, isAlphaPremultiplied, null);
+       }
+    
     public static void main(String[] args) throws Exception {
+        List<String> msgfilecontents = readLines(new FileReader(args[0]));
+        POMsgSource msgsrc = new POMsgSource(msgfilecontents);
+        List<String> msgstrings = msgsrc.getMsgStrings();
         Robot robot = new Robot();
         JFrame frame = new JFrame("Display image");
         frame.setFocusable(false);
@@ -51,8 +67,36 @@ public class ScreenshotTaker {
             if (curtime < prev_screenshot_time + 250) {
                 continue;
             }
+            
+            List<ImgMatch> imgMatches = Main.getImgMatches(img, "");
+            if (imgMatches.size() > 100) {
+                System.err.println("too many words");
+                continue;
+            }
+            HashMap<String, MsgAnnotation> annotations = Main.msgToAnnotations(msgstrings, GCollectionUtils.singleElemList(imgMatches));
+            BufferedImage displayImage = deepCopy(img);
+            for (MsgAnnotation annotation : annotations.values()) {
+                /*int[] values = new int[annotation.w * annotation.h * 3];
+                for (int i = 0; i < annotation.w * annotation.h; ++i) {
+                    values[3*i] = 255;
+                    values[3*i + 1] = 0;
+                    values[3*i + 2] = 0;
+                }*/
+                for (int y = annotation.y; y < annotation.y + annotation.h; ++y) {
+                    for (int x = annotation.x; x < annotation.x + annotation.w; ++x) {
+                        int[] curpixel = new int[3];
+                        displayImage.getRaster().getPixel(x, y, curpixel);
+                        //int r = curpixel[0];
+                        //int g = 255; //curpixel[1];
+                        //int b = curpixel[2];
+                        curpixel[1] = 255;
+                        displayImage.getRaster().setPixel(x, y, curpixel);
+                    }
+                }
+                //displayImage.getRaster().setPixels(annotation.x, annotation.y, annotation.w, annotation.h, values);
+            }
             prev_screenshot_time = curtime;
-            picLabel.setIcon(new ImageIcon(img));
+            picLabel.setIcon(new ImageIcon(displayImage));
         }
     }
     static {
