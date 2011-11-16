@@ -9,6 +9,7 @@ import java.awt.image.DataBuffer;
 import java.awt.image.Raster;
 import java.awt.image.WritableRaster;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -36,7 +37,9 @@ public class ScreenshotTaker {
        }
     
     public static void main(String[] args) throws Exception {
-        List<String> msgfilecontents = readLines(new FileReader(args[0]));
+        List<String> msgfilecontents = new ArrayList<String>();
+        if (args.length > 0)
+            msgfilecontents = readLines(new FileReader(args[0]));
         POMsgSource msgsrc = new POMsgSource(msgfilecontents);
         List<String> msgstrings = msgsrc.getMsgStrings();
         Robot robot = new Robot();
@@ -67,14 +70,15 @@ public class ScreenshotTaker {
             if (curtime < prev_screenshot_time + 250) {
                 continue;
             }
-            
+            BufferedImage displayImage = deepCopy(img);
+            if (msgstrings.size() > 0) {
             List<ImgMatch> imgMatches = Main.getImgMatches(img, "");
             if (imgMatches.size() > 100) {
                 System.err.println("too many words");
                 continue;
             }
             HashMap<String, MsgAnnotation> annotations = Main.msgToAnnotations(msgstrings, GCollectionUtils.singleElemList(imgMatches));
-            BufferedImage displayImage = deepCopy(img);
+            
             for (MsgAnnotation annotation : annotations.values()) {
                 /*int[] values = new int[annotation.w * annotation.h * 3];
                 for (int i = 0; i < annotation.w * annotation.h; ++i) {
@@ -94,6 +98,7 @@ public class ScreenshotTaker {
                     }
                 }
                 //displayImage.getRaster().setPixels(annotation.x, annotation.y, annotation.w, annotation.h, values);
+            }
             }
             prev_screenshot_time = curtime;
             picLabel.setIcon(new ImageIcon(displayImage));
