@@ -88,17 +88,62 @@ public class GCollectionUtils {
     }
     
     public static <T> List<T> slice(T[] x, int start, int end) {
-        List<T> output = new ArrayList<T>();
+        List<T> output = new ArrayList<T>(end - start);
         for (int i = start; i < end; ++i) {
             output.add(x[i]);
         }
         return output;
     }
-    
-    public static <T> List<T> slice(List<T> x, int start, int end) {
+    /*
+    public static <T> Iterable<T> lazySlice(List<T> x, final int start, final int end) {
+        return new Iterable<T>() {
+
+            @Override
+            public Iterator<T> iterator() {
+                return new Iterator<T>() {
+
+                    private int i = start;
+                    
+                    @Override
+                    public boolean hasNext() {
+                        return i < end;
+                    }
+
+                    @Override
+                    public T next() {
+                        // TODO Auto-generated method stub
+                        return null;
+                    }
+
+                    @Override
+                    public void remove() {
+                        throw new UnsupportedOperationException();
+                    }
+                    
+                };
+            }
+            
+        }
         List<T> output = new ArrayList<T>();
         for (int i = start; i < end; ++i) {
             output.add(x.get(i));
+        }
+        return output;
+    }
+    */
+    
+    public static <T> List<T> slice(List<T> x, int start, int end) {
+        List<T> output = new ArrayList<T>(end - start);
+        for (int i = start; i < end; ++i) {
+            output.add(x.get(i));
+        }
+        return output;
+    }
+    
+    public static ImgMatch[] arraySlice(List<ImgMatch> x, int start, int end) {
+        ImgMatch[] output = new ImgMatch[end - start];
+        for (int i = start; i < end; ++i) {
+            output[i - start] = x.get(i);
         }
         return output;
     }
@@ -112,7 +157,7 @@ public class GCollectionUtils {
     }
     
     public static <T> List<T> toList(T[] l) {
-        List<T> output = new ArrayList<T>();
+        List<T> output = new ArrayList<T>(l.length);
         for (T x : l) {
             output.add(x);
         }
@@ -156,6 +201,26 @@ public class GCollectionUtils {
         return new Region(minx, miny, w, h);
     }
     
+    public static int spanningArea(ImgMatch[] regions) {
+        int minx = Integer.MAX_VALUE;
+        int maxx = Integer.MIN_VALUE;
+        int miny = Integer.MAX_VALUE;
+        int maxy = Integer.MIN_VALUE;
+        for (ImgMatch r : regions) {
+            if (r.x < minx)
+                minx = r.x;
+            if (r.y < miny)
+                miny = r.y;
+            if (r.x + r.w > maxx)
+                maxx = r.x + r.w;
+            if (r.y + r.h > maxy)
+                maxy = r.y + r.h;
+        }
+        int w = maxx - minx;
+        int h = maxy - miny;
+        return w * h;
+    }
+    
     public static int spanningArea(List<? extends Region> regions) {
         int minx = Integer.MAX_VALUE;
         int maxx = Integer.MIN_VALUE;
@@ -179,6 +244,14 @@ public class GCollectionUtils {
     public static int totalArea(List<? extends Region> regions) {
         int total = 0;
         for (Region x : regions) {
+            total += x.w * x.h;
+        }
+        return total;
+    }
+    
+    public static int totalArea(ImgMatch[] regions) {
+        int total = 0;
+        for (ImgMatch x : regions) {
             total += x.w * x.h;
         }
         return total;
@@ -260,6 +333,47 @@ public class GCollectionUtils {
                         List<T> retv = slice(words, j, i);
                         ++i;
                         while (j < wordsSize && (i > wordsSize || !acceptor.isAccepted(slice(words, j, i)))) {
+                            ++j;
+                            i = j + 1;
+                        }
+                        return retv;
+                    }
+
+                    @Override
+                    public void remove() {
+                        throw new UnsupportedOperationException();
+                    }
+                    
+                };
+            }
+            
+        };
+    }
+    
+    public static Iterable<IntPair> substrings(final int wordsSize, final IntPairAcceptor acceptor) {
+        // if acceptor rejects something, all subsequent substrings at that start point are also rejected
+        return new Iterable<IntPair>() {
+            @Override
+            public Iterator<IntPair> iterator() {
+                return new Iterator<IntPair>() {
+
+                    private int i = 0;
+                    // i: the ending entry
+                    private int j = 0;
+                    // j: the starting entry
+                    
+                    @Override
+                    public boolean hasNext() {
+                        return (j < wordsSize);
+                    }
+
+                    @Override
+                    public IntPair next() {
+                        if (j >= wordsSize)
+                            throw new NoSuchElementException();
+                        IntPair retv = new IntPair(j, i);
+                        ++i;
+                        while (j < wordsSize && (i > wordsSize || !acceptor.isAccepted(j, i))) {
                             ++j;
                             i = j + 1;
                         }

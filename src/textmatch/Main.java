@@ -77,11 +77,13 @@ public class Main {
             //if (!isTemplated && i != bestImgIdx) {
             //    continue;
             //}
-            List<ImgMatch> matches = matchesAcrossImages.get(i);
-            for (List<ImgMatch> match : substrings(matches, new Acceptor<List<ImgMatch>>() {
+            final List<ImgMatch> matches = matchesAcrossImages.get(i);
+            for (final IntPair matchIdxs : substrings(matches.size(), new IntPairAcceptor() {
 
                 @Override
-                public boolean isAccepted(List<ImgMatch> nMatch) {
+                public boolean isAccepted(int j, int i) {
+                    //List<ImgMatch> nMatch = slice(matches, j, i);
+                    ImgMatch[] nMatch = arraySlice(matches, j, i);
                     int totalarea = totalArea(nMatch);
                     int spanningarea = spanningArea(nMatch);
                     if (totalarea * 4 >= spanningarea * 5)
@@ -112,12 +114,38 @@ public class Main {
                 */
                 //if (blacklist.contains(xstr))
                 //    continue;
+                ImgMatch[] match = arraySlice(matches, matchIdxs.Item1, matchIdxs.Item2);
                 String xstr = join(match, " ");
                 char[] x = xstr.toCharArray();
                 if (x.length*3 < msg.length*2)
                     continue;
                 Pair<double[][], CharTree[][]> p = LCSMatrixTemplated(msg, x);
                 double curratio = LCSTemplatedScore(msg, x, p.Item1, p.Item2);
+                
+                
+                int currentWhitespace = spanningArea(match) - totalArea(match);
+                int whitespaceExpanded = currentWhitespace;
+                double whitespaceScore = 1.0;
+                if (matchIdxs.Item1 > 0 && matchIdxs.Item2 < matches.size()) {
+                    ImgMatch[] addedLeft = arraySlice(matches, matchIdxs.Item1 - 1, matchIdxs.Item2);
+                    int areaExpansionLeft = totalArea(addedLeft) - totalArea(match);
+                    int whitespaceExpansionLeft = spanningArea(addedLeft) - spanningArea(match) - areaExpansionLeft;
+                    double whitespaceToAreaExpansionLeft = ((double)whitespaceExpansionLeft) / areaExpansionLeft;
+                    ImgMatch[] addedRight = arraySlice(matches, matchIdxs.Item1, matchIdxs.Item2 + 1);
+                    int areaExpansionRight = totalArea(addedRight) - totalArea(match);
+                    int whitespaceExpansionRight = spanningArea(addedRight) - spanningArea(match) - areaExpansionRight;
+                    double whitespaceToAreaExpansionRight = ((double)whitespaceExpansionRight) / areaExpansionRight;
+                    whitespaceScore = min(whitespaceToAreaExpansionLeft, whitespaceToAreaExpansionRight);
+                    whitespaceScore = min(whitespaceScore, 1.0);
+                    whitespaceScore = max(whitespaceScore, 0.5);
+                }
+                /*
+                int whitespaceExpansion = whitespaceExpanded - currentWhitespace; // more expansion -> higher score
+                
+                curratio = areaNonExpansionScore * curratio;
+                */
+                curratio = whitespaceScore * curratio;
+                
                 //curratio -= ((double)numOccurrences) / x.length;
                 if (curratio >= bestratio) {
                     String templateText = charTreeToString(lastElem(p.Item2));
@@ -130,7 +158,7 @@ public class Main {
                                 continue;
                         }
                     }
-                    bestmatch = match;
+                    bestmatch = toList(match);
                     bestratio = curratio;
                     bestlength = textlen;
                     templateMatchText = templateText;
