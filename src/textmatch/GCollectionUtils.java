@@ -4,6 +4,8 @@ import static textmatch.GCollectionUtils.slice;
 
 import java.util.*;
 
+import org.sikuli.script.Region;
+
 public class GCollectionUtils {
     public static <T> List<T> singleElemList(T elem) {
         List<T> output = new ArrayList<T>();
@@ -37,6 +39,10 @@ public class GCollectionUtils {
     
     public static <T> T lastElem(T[][] u) {
         return lastElem(u[u.length - 1]);
+    }
+    
+    public static <T> T lastElem(List<T> u) {
+        return u.get(u.size() - 1);
     }
     
     public static int count(int[] x, int elem) {
@@ -130,9 +136,66 @@ public class GCollectionUtils {
         return true;
     }
     
+    public static Region spannedRegion(List<? extends Region> regions) {
+        int minx = Integer.MAX_VALUE;
+        int maxx = Integer.MIN_VALUE;
+        int miny = Integer.MAX_VALUE;
+        int maxy = Integer.MIN_VALUE;
+        for (Region r : regions) {
+            if (r.x < minx)
+                minx = r.x;
+            if (r.y < miny)
+                miny = r.y;
+            if (r.x + r.w > maxx)
+                maxx = r.x + r.w;
+            if (r.y + r.h > maxy)
+                maxy = r.y + r.h;
+        }
+        int w = maxx - minx;
+        int h = maxy - miny;
+        return new Region(minx, miny, w, h);
+    }
+    
+    public static int spanningArea(List<? extends Region> regions) {
+        int minx = Integer.MAX_VALUE;
+        int maxx = Integer.MIN_VALUE;
+        int miny = Integer.MAX_VALUE;
+        int maxy = Integer.MIN_VALUE;
+        for (Region r : regions) {
+            if (r.x < minx)
+                minx = r.x;
+            if (r.y < miny)
+                miny = r.y;
+            if (r.x + r.w > maxx)
+                maxx = r.x + r.w;
+            if (r.y + r.h > maxy)
+                maxy = r.y + r.h;
+        }
+        int w = maxx - minx;
+        int h = maxy - miny;
+        return w * h;
+    }
+    
+    public static int totalArea(List<? extends Region> regions) {
+        int total = 0;
+        for (Region x : regions) {
+            total += x.w * x.h;
+        }
+        return total;
+    }
+    
     public static <T> Iterable<List<T>> substrings(final List<T> words) {
-        return new Iterable<List<T>>() {
+        return substrings(words, new Acceptor<List<T>>() {
 
+            @Override
+            public boolean isAccepted(List<T> x) {
+                return true;
+            }
+            
+        });
+        /*
+        final int wordsSize = words.size();
+        return new Iterable<List<T>>() {
             @Override
             public Iterator<List<T>> iterator() {
                 return new Iterator<List<T>>() {
@@ -144,18 +207,61 @@ public class GCollectionUtils {
                     
                     @Override
                     public boolean hasNext() {
-                        return (i <= words.size());
+                        return (j < wordsSize);
                     }
 
                     @Override
                     public List<T> next() {
-                        if (i > words.size())
+                        if (j >= wordsSize)
                             throw new NoSuchElementException();
                         List<T> retv = slice(words, j, i);
-                        ++j;
-                        if (i <= j) {
-                            ++i;
-                            j = 0;
+                        ++i;
+                        if (i > wordsSize) {
+                            ++j;
+                            i = j + 1;
+                        }
+                        return retv;
+                    }
+
+                    @Override
+                    public void remove() {
+                        throw new UnsupportedOperationException();
+                    }
+                    
+                };
+            }
+            
+        };
+        */
+    }
+    
+    public static <T> Iterable<List<T>> substrings(final List<T> words, final Acceptor<List<T>> acceptor) {
+        // if acceptor rejects something, all subsequent substrings at that start point are also rejected
+        final int wordsSize = words.size();
+        return new Iterable<List<T>>() {
+            @Override
+            public Iterator<List<T>> iterator() {
+                return new Iterator<List<T>>() {
+
+                    private int i = 0;
+                    // i: the ending entry
+                    private int j = 0;
+                    // j: the starting entry
+                    
+                    @Override
+                    public boolean hasNext() {
+                        return (j < wordsSize);
+                    }
+
+                    @Override
+                    public List<T> next() {
+                        if (j >= wordsSize)
+                            throw new NoSuchElementException();
+                        List<T> retv = slice(words, j, i);
+                        ++i;
+                        while (j < wordsSize && (i > wordsSize || !acceptor.isAccepted(slice(words, j, i)))) {
+                            ++j;
+                            i = j + 1;
                         }
                         return retv;
                     }
@@ -170,7 +276,7 @@ public class GCollectionUtils {
             
         };
     }
-    
+    /*
     public static <T> Iterable<List<T>> substrings(final List<T> words, final int minlength, final int maxlength) {
         return new Iterable<List<T>>() {
 
@@ -213,4 +319,5 @@ public class GCollectionUtils {
             }
         };
     }
+    */
 }

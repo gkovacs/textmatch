@@ -73,7 +73,7 @@ public class ScreenshotTaker {
             BufferedImage displayImage = deepCopy(img);
             if (msgstrings.size() > 0) {
             List<ImgMatch> imgMatches = Main.getImgMatches(img, "");
-            if (imgMatches.size() > 100) {
+            if (imgMatches.size() > 300) {
                 System.err.println("too many words");
                 continue;
             }

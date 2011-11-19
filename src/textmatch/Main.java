@@ -37,34 +37,21 @@ public class Main {
         return getImgMatches(img, imgFileName);
     }
     
-    public static Region spannedRegion(List<? extends Region> regions) {
-        int minx = Integer.MAX_VALUE;
-        int maxx = Integer.MIN_VALUE;
-        int miny = Integer.MAX_VALUE;
-        int maxy = Integer.MIN_VALUE;
-        for (Region r : regions) {
-            if (r.x < minx)
-                minx = r.x;
-            if (r.y < miny)
-                miny = r.y;
-            if (r.x + r.w > maxx)
-                maxx = r.x + r.w;
-            if (r.y + r.h > maxy)
-                maxy = r.y + r.h;
-        }
-        int w = maxx - minx;
-        int h = maxy - miny;
-        return new Region(minx, miny, w, h);
-    }
+    
     
     public static MatchResults bestMatch(String msgstr, List<List<ImgMatch>> matchesAcrossImages, List<HashMap<String, Integer>> ngramsForImages, HashMap<String, Integer> occurrenceCount) {
         double bestratio = -1.0;
         double bestlength = -1.0;
         List<ImgMatch> bestmatch = null;
         String templateMatchText = "";
-        char[] msg = msgstr.toCharArray();
+        final char[] msg = msgstr.toCharArray();
         final int maxMsgLength;
-        boolean isTemplated = (count(msg, SUBCHAR) != 0);
+        final boolean isTemplated = (count(msg, SUBCHAR) != 0);
+        
+        final int filterCutoff = (isTemplated ? msgstr.indexOf(SUBCHAR) : msg.length);
+        
+        final HashMap<String, Integer> ngramsForCurMsg = ngrams(msgstr.substring(0, filterCutoff), 2);
+        
         if (isTemplated)
             maxMsgLength = msg.length*3;
         else
@@ -91,8 +78,31 @@ public class Main {
             //    continue;
             //}
             List<ImgMatch> matches = matchesAcrossImages.get(i);
-            for (List<ImgMatch> match : substrings(matches)) {
-                String xstr = join(match, " ");
+            for (List<ImgMatch> match : substrings(matches, new Acceptor<List<ImgMatch>>() {
+
+                @Override
+                public boolean isAccepted(List<ImgMatch> nMatch) {
+                    int totalarea = totalArea(nMatch);
+                    int spanningarea = spanningArea(nMatch);
+                    if (totalarea * 4 >= spanningarea * 5)
+                        return false;
+                    String xstr = join(nMatch, " ");
+                    if (xstr.length() > maxMsgLength)
+                        return false;
+                    if (xstr.length() == 0)
+                        return false;
+                    if (xstr.length() > 4 && xstr.length() < filterCutoff) {
+                        HashMap<String, Integer> ngramsForCurSubstring = ngrams(xstr, 2);
+                        if (ngramMatchFraction(ngramsForCurSubstring, ngramsForCurMsg) < 0.5)
+                            return false;
+                    }
+                    
+                    return true;
+                }
+                
+            })) {
+                
+                
                 /*
                 int numOccurrences = 0;
                 if (occurrenceCount.containsKey(xstr))
@@ -102,12 +112,9 @@ public class Main {
                 */
                 //if (blacklist.contains(xstr))
                 //    continue;
+                String xstr = join(match, " ");
                 char[] x = xstr.toCharArray();
                 if (x.length*3 < msg.length*2)
-                    continue;
-                if (x.length > maxMsgLength)
-                    continue;
-                if (x.length == 0)
                     continue;
                 Pair<double[][], CharTree[][]> p = LCSMatrixTemplated(msg, x);
                 double curratio = LCSTemplatedScore(msg, x, p.Item1, p.Item2);

@@ -106,7 +106,7 @@ public class GStringUtils {
         int optimalMatches = 0;
         for (String x : source.keySet()) {
             int numOccurrences = source.get(x);
-            numMatches += numOccurrences;
+            optimalMatches += numOccurrences;
             if (target.containsKey(x)) {
                 numMatches += min(numOccurrences, target.get(x));
             }
