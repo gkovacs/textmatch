@@ -90,6 +90,7 @@ public class POMsgSource {
                 line = stripSuffix(line, "\"");
                 line = line.replace("\\\"", "\"");
                 line = line.replace("\\n", " ");
+                line = line.replace("_", "");
                 curmsg.add(line);
             }
         }
