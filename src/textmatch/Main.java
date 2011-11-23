@@ -128,16 +128,49 @@ public class Main {
                 double whitespaceScore = 1.0;
                 if (matchIdxs.Item1 > 0 && matchIdxs.Item2 < matches.size()) {
                     ImgMatch[] addedLeft = arraySlice(matches, matchIdxs.Item1 - 1, matchIdxs.Item2);
-                    int areaExpansionLeft = totalArea(addedLeft) - totalArea(match);
-                    int whitespaceExpansionLeft = spanningArea(addedLeft) - spanningArea(match) - areaExpansionLeft;
-                    double whitespaceToAreaExpansionLeft = ((double)whitespaceExpansionLeft) / areaExpansionLeft;
+                    //int areaExpansionLeft = totalArea(addedLeft) - totalArea(match);
+                    int whitespaceLeft = spanningArea(addedLeft) - totalArea(addedLeft);
+                    int whitespaceExpansionLeft = whitespaceLeft - currentWhitespace; // areaExpansionLeft;
+                    //double whitespaceToAreaExpansionLeft = ((double)whitespaceExpansionLeft) / areaExpansionLeft;
                     ImgMatch[] addedRight = arraySlice(matches, matchIdxs.Item1, matchIdxs.Item2 + 1);
-                    int areaExpansionRight = totalArea(addedRight) - totalArea(match);
-                    int whitespaceExpansionRight = spanningArea(addedRight) - spanningArea(match) - areaExpansionRight;
-                    double whitespaceToAreaExpansionRight = ((double)whitespaceExpansionRight) / areaExpansionRight;
+                    //int areaExpansionRight = totalArea(addedRight) - totalArea(match);
+                    int whitespaceRight = spanningArea(addedRight) - totalArea(addedRight);
+                    int whitespaceExpansionRight = whitespaceRight - currentWhitespace; // - areaExpansionRight;
+                    //double whitespaceToAreaExpansionRight = ((double)whitespaceExpansionRight) / areaExpansionRight;
+                    /*
                     whitespaceScore = min(whitespaceToAreaExpansionLeft, whitespaceToAreaExpansionRight);
                     whitespaceScore = min(whitespaceScore, 1.0);
                     whitespaceScore = max(whitespaceScore, 0.5);
+                    */
+                    int minWhitespaceExpansion = min(whitespaceExpansionLeft, whitespaceExpansionRight);
+                    double logWhitespaceExpansion = 0.0;
+                    if (minWhitespaceExpansion > 1) {
+                        logWhitespaceExpansion = log(minWhitespaceExpansion);
+                    } else if (minWhitespaceExpansion < -1) {
+                        logWhitespaceExpansion = -log(-minWhitespaceExpansion);
+                    }
+                    whitespaceScore = ((logWhitespaceExpansion + 2.8) / 10.0);
+                    if (whitespaceScore > 1.0)
+                        whitespaceScore = 1.0;
+                    //System.err.println(whitespaceScore);
+                    if (whitespaceScore < 1.0/1.5)
+                        continue;
+                        //whitespaceScore = 1.0/1.5;
+                    //System.err.println(whitespaceScore);
+                    /*
+                    if (minWhitespaceExpansion < 0) {
+                        System.err.println("negative whitespace expansion");
+                        if (whitespaceExpansionLeft < whitespaceExpansionRight) {
+                            System.err.println("left");
+                            System.err.println(whitespaceLeft);
+                            System.err.println(currentWhitespace);
+                        } else {
+                            System.err.println("right");
+                        }
+                        System.err.println(minWhitespaceExpansion);
+                    }
+                    */
+                    
                 }
                 /*
                 int whitespaceExpansion = whitespaceExpanded - currentWhitespace; // more expansion -> higher score
@@ -253,6 +286,8 @@ public class Main {
         List<String> msgfilecontents = readLines(new FileReader(args[0]));
         POMsgSource msgsrc = new POMsgSource(msgfilecontents);
         List<String> msgstrings = msgsrc.getMsgStrings();
+        Collections.sort(msgstrings, new StringLengthComparator());
+        Collections.reverse(msgstrings);
         HashSet<List<ImgMatch>> matchesAcrossImagesH = new HashSet<List<ImgMatch>>();
         for (int i = 1; i < args.length; ++i) {
             matchesAcrossImagesH.add(getImgMatches(args[i]));

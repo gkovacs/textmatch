@@ -69,6 +69,7 @@ public class POMsgSource {
                 line = line.replace("\\\"", "\"");
                 line = line.replace("%s", Character.toString(SUBCHAR));
                 line = line.replace("\\n", " ");
+                line = line.replace("_", "");
                 curmsg.add(line);
             }
         }

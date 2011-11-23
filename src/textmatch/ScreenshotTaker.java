@@ -1,6 +1,10 @@
 package textmatch;
 
 
+import java.awt.Color;
+import java.awt.Composite;
+import java.awt.Graphics2D;
+import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.image.BufferedImage;
@@ -46,7 +50,12 @@ public class ScreenshotTaker {
         JFrame frame = new JFrame("Display image");
         frame.setFocusable(false);
         JLabel picLabel = new JLabel();
+        frame.setLayout(null);
         frame.add(picLabel);
+        
+        //picLabel.setLocation(new Point(0, 0));
+        picLabel.setBounds(0, 0, 900, 700);
+        picLabel.repaint();
         frame.setVisible(true);
         frame.setSize(900, 700);
         initializeXInteraction();
@@ -78,7 +87,7 @@ public class ScreenshotTaker {
                 continue;
             }
             HashMap<String, MsgAnnotation> annotations = Main.msgToAnnotations(msgstrings, GCollectionUtils.singleElemList(imgMatches));
-            
+            Graphics2D g = displayImage.createGraphics();
             for (MsgAnnotation annotation : annotations.values()) {
                 /*int[] values = new int[annotation.w * annotation.h * 3];
                 for (int i = 0; i < annotation.w * annotation.h; ++i) {
@@ -86,6 +95,7 @@ public class ScreenshotTaker {
                     values[3*i + 1] = 0;
                     values[3*i + 2] = 0;
                 }*/
+                /*
                 for (int y = annotation.y; y < annotation.y + annotation.h; ++y) {
                     for (int x = annotation.x; x < annotation.x + annotation.w; ++x) {
                         int[] curpixel = new int[3];
@@ -97,6 +107,12 @@ public class ScreenshotTaker {
                         displayImage.getRaster().setPixel(x, y, curpixel);
                     }
                 }
+                */
+                //g.setComposite(new Composite());
+                g.setColor(new Color(0 ,255, 255, 100));
+                Rectangle rect = new Rectangle(annotation.x, annotation.y, annotation.w, annotation.h);
+                g.fill(rect);
+                //g.draw(rect);
                 //displayImage.getRaster().setPixels(annotation.x, annotation.y, annotation.w, annotation.h, values);
             }
             }
