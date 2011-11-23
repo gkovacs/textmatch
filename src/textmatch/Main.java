@@ -42,6 +42,7 @@ public class Main {
     public static MatchResults bestMatch(String msgstr, List<List<ImgMatch>> matchesAcrossImages, List<HashMap<String, Integer>> ngramsForImages, HashMap<String, Integer> occurrenceCount) {
         double bestratio = -1.0;
         double bestlength = -1.0;
+        IntPair bestmatchIdxs = null;
         List<ImgMatch> bestmatch = null;
         String templateMatchText = "";
         final char[] msg = msgstr.toCharArray();
@@ -114,18 +115,14 @@ public class Main {
                 */
                 //if (blacklist.contains(xstr))
                 //    continue;
+                
                 ImgMatch[] match = arraySlice(matches, matchIdxs.Item1, matchIdxs.Item2);
-                String xstr = join(match, " ");
-                char[] x = xstr.toCharArray();
-                if (x.length*3 < msg.length*2)
-                    continue;
-                Pair<double[][], CharTree[][]> p = LCSMatrixTemplated(msg, x);
-                double curratio = LCSTemplatedScore(msg, x, p.Item1, p.Item2);
                 
                 
                 int currentWhitespace = spanningArea(match) - totalArea(match);
-                int whitespaceExpanded = currentWhitespace;
+                //int whitespaceExpanded = currentWhitespace;
                 double whitespaceScore = 1.0;
+                
                 if (matchIdxs.Item1 > 0 && matchIdxs.Item2 < matches.size()) {
                     ImgMatch[] addedLeft = arraySlice(matches, matchIdxs.Item1 - 1, matchIdxs.Item2);
                     //int areaExpansionLeft = totalArea(addedLeft) - totalArea(match);
@@ -137,11 +134,6 @@ public class Main {
                     int whitespaceRight = spanningArea(addedRight) - totalArea(addedRight);
                     int whitespaceExpansionRight = whitespaceRight - currentWhitespace; // - areaExpansionRight;
                     //double whitespaceToAreaExpansionRight = ((double)whitespaceExpansionRight) / areaExpansionRight;
-                    /*
-                    whitespaceScore = min(whitespaceToAreaExpansionLeft, whitespaceToAreaExpansionRight);
-                    whitespaceScore = min(whitespaceScore, 1.0);
-                    whitespaceScore = max(whitespaceScore, 0.5);
-                    */
                     int minWhitespaceExpansion = min(whitespaceExpansionLeft, whitespaceExpansionRight);
                     double logWhitespaceExpansion = 0.0;
                     if (minWhitespaceExpansion > 1) {
@@ -156,28 +148,41 @@ public class Main {
                     if (whitespaceScore < 1.0/1.5)
                         continue;
                         //whitespaceScore = 1.0/1.5;
+                    
+                    
                     //System.err.println(whitespaceScore);
-                    /*
-                    if (minWhitespaceExpansion < 0) {
-                        System.err.println("negative whitespace expansion");
-                        if (whitespaceExpansionLeft < whitespaceExpansionRight) {
-                            System.err.println("left");
-                            System.err.println(whitespaceLeft);
-                            System.err.println(currentWhitespace);
-                        } else {
-                            System.err.println("right");
-                        }
-                        System.err.println(minWhitespaceExpansion);
-                    }
-                    */
                     
                 }
+                
+                
+                
+                String xstr = join(match, " ");
+                char[] x = xstr.toCharArray();
+                if (x.length*3 < msg.length*2)
+                    continue;
+                Pair<double[][], CharTree[][]> p = LCSMatrixTemplated(msg, x);
+                double curratio = LCSTemplatedScore(msg, x, p.Item1, p.Item2);
+                
+                
+
+                double bannedNgramScore = 1.0;
+                int totalNgrams = 0;
+                int dupNgrams = 0;
+                for (int ngsi = max(0, matchIdxs.Item1 - 1); ngsi < min(matches.size(), matchIdxs.Item2 + 1) - 1; ++ngsi) {
+                    String curngram = join(arraySlice(matches, ngsi, ngsi+2), " "); // 2-grams
+                    totalNgrams++;
+                    if (occurrenceCount.containsKey(curngram)) {
+                        ++dupNgrams;
+                        System.err.println("NSKGNASLG:" +  curngram);
+                    }
+                }
+                bannedNgramScore = 1.0 - ((double)dupNgrams / totalNgrams);
                 /*
                 int whitespaceExpansion = whitespaceExpanded - currentWhitespace; // more expansion -> higher score
                 
                 curratio = areaNonExpansionScore * curratio;
                 */
-                curratio = whitespaceScore * curratio;
+                curratio = whitespaceScore * curratio * bannedNgramScore;
                 
                 //curratio -= ((double)numOccurrences) / x.length;
                 if (curratio >= bestratio) {
@@ -191,14 +196,24 @@ public class Main {
                                 continue;
                         }
                     }
+                    bestmatchIdxs = matchIdxs;
                     bestmatch = toList(match);
                     bestratio = curratio;
                     bestlength = textlen;
                     templateMatchText = templateText;
+                    /*
+                    for (int ngsi = max(0, matchIdxs.Item1 - 1); i < min(matches.size(), matchIdxs.Item2 + 1) - 1; ++i) {
+                        String curngram = join(arraySlice(matches, ngsi, ngsi+2), " "); // 2-grams
+                        if (occurrenceCount.containsKey(curngram)) {
+                            occurrenceCount.put(curngram, occurrenceCount.get(curngram) + 1);
+                        } else {
+                            occurrenceCount.put(curngram, 1);
+                        }
+                    }*/
                 }
             }
         }
-        return new MatchResults(bestmatch, bestratio, templateMatchText);
+        return new MatchResults(bestmatch, bestratio, templateMatchText, bestmatchIdxs);
     }
     
     
@@ -214,7 +229,7 @@ public class Main {
         }
         */
         //List<Pair<Double, String>> msgStrToScore = new ArrayList<Pair<Double, String>>();
-        HashMap<String, Integer> occurrenceCount = null; //new HashMap<String, Integer>();
+        HashMap<String, Integer> occurrenceCount = new HashMap<String, Integer>();
         for (String msgstr : msgstrings) {
             MatchResults m = bestMatch(msgstr, matchesAcrossImages, ngramsForImages, occurrenceCount);
             if (m == null)
@@ -229,7 +244,15 @@ public class Main {
                 MsgAnnotation annotation = new MsgAnnotation(filename, spanningRegion, getSubstitutedStrings(templateMatchText), join(bestmatch, " "));
                 System.err.println(annotation.toString());
                 output.put(msgstr, annotation);
-                
+                IntPair matchIdxs = m.matchIdxs;
+                for (int ngsi = 0; ngsi < bestmatch.size() - 1; ++ngsi) {
+                    String curngram = join(arraySlice(bestmatch, ngsi, ngsi+2), " "); // 2-grams
+                    if (occurrenceCount.containsKey(curngram)) {
+                        occurrenceCount.put(curngram, occurrenceCount.get(curngram) + 1);
+                    } else {
+                        occurrenceCount.put(curngram, 1);
+                    }
+                }
                 //msgStrToScore.add(makePair(bestratio, msgstr));
             }
         }
