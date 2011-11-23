@@ -172,8 +172,14 @@ public class Main {
                     String curngram = join(arraySlice(matches, ngsi, ngsi+2), " "); // 2-grams
                     totalNgrams++;
                     if (occurrenceCount.containsKey(curngram)) {
-                        ++dupNgrams;
-                        System.err.println("NSKGNASLG:" +  curngram);
+                        int numOccurrencesAlready = occurrenceCount.get(curngram);
+                        int numOccurrencesInCurImage = 0;
+                        if (ngramsForImages.get(i).containsKey(curngram)) {
+                            numOccurrencesInCurImage = ngramsForImages.get(i).get(curngram);
+                        }
+                        if (numOccurrencesAlready >= numOccurrencesInCurImage) {
+                            ++dupNgrams;
+                        }
                     }
                 }
                 bannedNgramScore = 1.0 - ((double)dupNgrams / totalNgrams);
@@ -221,7 +227,19 @@ public class Main {
     public static HashMap<String, MsgAnnotation> msgToAnnotations(List<String> msgstrings, List<List<ImgMatch>> matchesAcrossImages) {
         HashMap<String, MsgAnnotation> output = new HashMap<String, MsgAnnotation>();
         
-        List<HashMap<String, Integer>> ngramsForImages = null; //new ArrayList<HashMap<String, Integer>>();
+        List<HashMap<String, Integer>> ngramsForImages = new ArrayList<HashMap<String, Integer>>();
+        for (List<ImgMatch> matches : matchesAcrossImages) {
+            HashMap<String, Integer> occurrenceCount = new HashMap<String, Integer>();
+            for (int ngsi = 0; ngsi < matches.size() - 1; ++ngsi) {
+                String curngram = join(arraySlice(matches, ngsi, ngsi+2), " "); // 2-grams
+                if (occurrenceCount.containsKey(curngram)) {
+                    occurrenceCount.put(curngram, occurrenceCount.get(curngram) + 1);
+                } else {
+                    occurrenceCount.put(curngram, 1);
+                }
+            }
+            ngramsForImages.add(occurrenceCount);
+        }
         /*
         for (List<ImgMatch> matches : matchesAcrossImages) {
             String s = join(matches, " ");
