@@ -24,6 +24,7 @@ public class RunOCR {
         for (Match x : matches) {
             System.out.println(x.text());
         }
+        /*
         System.out.println(recognizer.recognize(img));
         Mat mat = OpenCV.convertBufferedImageToMat(img);
         FindResults results = Vision.findBlobs(mat);
@@ -36,6 +37,7 @@ public class RunOCR {
                 System.out.println(ic.text());
             }
         }
+        */
     }
 
 }

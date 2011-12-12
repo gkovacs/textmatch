@@ -141,7 +141,7 @@ public class Main {
                     } else if (minWhitespaceExpansion < -1) {
                         logWhitespaceExpansion = -log(-minWhitespaceExpansion);
                     }
-                    whitespaceScore = ((logWhitespaceExpansion + 2.8) / 10.0);
+                    whitespaceScore = ((logWhitespaceExpansion + 3.2) / 10.0);
                     if (whitespaceScore > 1.0)
                         whitespaceScore = 1.0;
                     //System.err.println(whitespaceScore);

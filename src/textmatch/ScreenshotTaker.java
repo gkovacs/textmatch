@@ -15,6 +15,7 @@ import java.awt.image.WritableRaster;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 import javax.swing.ImageIcon;
@@ -46,6 +47,7 @@ public class ScreenshotTaker {
             msgfilecontents = readLines(new FileReader(args[0]));
         POMsgSource msgsrc = new POMsgSource(msgfilecontents);
         List<String> msgstrings = msgsrc.getMsgStrings();
+        int numMsgStrings = msgstrings.size();
         Robot robot = new Robot();
         JFrame frame = new JFrame("Display image");
         frame.setFocusable(false);
@@ -54,10 +56,16 @@ public class ScreenshotTaker {
         frame.add(picLabel);
         
         //picLabel.setLocation(new Point(0, 0));
-        picLabel.setBounds(0, 0, 900, 700);
-        picLabel.repaint();
+        //picLabel.setBounds(0, 0, 900, 600);
+        picLabel.setSize(900, 600);
+        //picLabel.repaint();
         frame.setVisible(true);
         frame.setSize(900, 700);
+        JLabel matchCount = new JLabel();
+        HashSet<String> matchedMsgStrs = new HashSet<String>();
+        matchCount.setText(matchedMsgStrs.size() + " / " + numMsgStrings);
+        matchCount.setSize(100, 30);
+        frame.add(matchCount);
         initializeXInteraction();
         int[] prevData = new int[0];
         int[] curData = new int[0];
@@ -88,7 +96,9 @@ public class ScreenshotTaker {
             }
             HashMap<String, MsgAnnotation> annotations = Main.msgToAnnotations(msgstrings, GCollectionUtils.singleElemList(imgMatches));
             Graphics2D g = displayImage.createGraphics();
-            for (MsgAnnotation annotation : annotations.values()) {
+            for (String msgstr : annotations.keySet()) {
+            	matchedMsgStrs.add(msgstr);
+            	MsgAnnotation annotation = annotations.get(msgstr);
                 /*int[] values = new int[annotation.w * annotation.h * 3];
                 for (int i = 0; i < annotation.w * annotation.h; ++i) {
                     values[3*i] = 255;
@@ -116,6 +126,7 @@ public class ScreenshotTaker {
                 //displayImage.getRaster().setPixels(annotation.x, annotation.y, annotation.w, annotation.h, values);
             }
             }
+            matchCount.setText(matchedMsgStrs.size() + " / " + numMsgStrings);
             prev_screenshot_time = curtime;
             picLabel.setIcon(new ImageIcon(displayImage));
         }
