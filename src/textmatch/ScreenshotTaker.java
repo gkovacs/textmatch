@@ -7,17 +7,22 @@ import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Robot;
+import java.awt.PageAttributes.OriginType;
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
 import java.awt.image.DataBuffer;
 import java.awt.image.Raster;
 import java.awt.image.WritableRaster;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -43,8 +48,16 @@ public class ScreenshotTaker {
     
     public static void main(String[] args) throws Exception {
         List<String> msgfilecontents = new ArrayList<String>();
+        String screenshotSavePath = "";
+        int screenshotNum = 0;
+        boolean savingScreenshots = false;
         if (args.length > 0)
             msgfilecontents = readLines(new FileReader(args[0]));
+        if (args.length > 1) {
+        	 screenshotSavePath = args[1] + "/";
+         	new File(screenshotSavePath).mkdirs();
+        	 savingScreenshots = true;
+        }
         POMsgSource msgsrc = new POMsgSource(msgfilecontents);
         List<String> msgstrings = msgsrc.getMsgStrings();
         int numMsgStrings = msgstrings.size();
@@ -87,6 +100,8 @@ public class ScreenshotTaker {
             if (curtime < prev_screenshot_time + 250) {
                 continue;
             }
+            boolean containsNewMsgStrs = false;
+            int origNumMatchedMsgStrs = 0;
             BufferedImage displayImage = deepCopy(img);
             if (msgstrings.size() > 0) {
             List<ImgMatch> imgMatches = Main.getImgMatches(img, "");
@@ -96,6 +111,7 @@ public class ScreenshotTaker {
             }
             HashMap<String, MsgAnnotation> annotations = Main.msgToAnnotations(msgstrings, GCollectionUtils.singleElemList(imgMatches));
             Graphics2D g = displayImage.createGraphics();
+            origNumMatchedMsgStrs = matchedMsgStrs.size();
             for (String msgstr : annotations.keySet()) {
             	matchedMsgStrs.add(msgstr);
             	MsgAnnotation annotation = annotations.get(msgstr);
@@ -126,8 +142,15 @@ public class ScreenshotTaker {
                 //displayImage.getRaster().setPixels(annotation.x, annotation.y, annotation.w, annotation.h, values);
             }
             }
-            matchCount.setText(matchedMsgStrs.size() + " / " + numMsgStrings);
+            if (origNumMatchedMsgStrs != matchedMsgStrs.size()) {
+                matchCount.setText(matchedMsgStrs.size() + " / " + numMsgStrings);
+                containsNewMsgStrs = true;
+            }
             prev_screenshot_time = curtime;
+            if (savingScreenshots && containsNewMsgStrs) {
+            	ImageIO.write(img, "png", new File(screenshotSavePath + screenshotNum + ".png"));
+                ++screenshotNum;
+            }
             picLabel.setIcon(new ImageIcon(displayImage));
         }
     }
