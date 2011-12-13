@@ -6,6 +6,11 @@ import java.awt.image.*;
 import java.io.*;
 import java.util.List;
 import java.util.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
 import javax.imageio.*;
 
 import static java.lang.Math.*;
@@ -220,9 +225,29 @@ public class Main {
             }
         }
         return new MatchResults(bestmatch, bestratio, templateMatchText, bestmatchIdxs);
+    }    
+    
+    /*
+
+    public static HashMap<String, MsgAnnotation> msgToAnnotationsWithTimeout(final List<String> msgstrings, final List<List<ImgMatch>> matchesAcrossImages, int timeoutMS) throws Exception {
+    	final MutableValue<HashMap<String, MsgAnnotation>> retv = new MutableValue<HashMap<String, MsgAnnotation>>();
+    	Thread tx = new Thread(new Runnable() {
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			retv.value = msgToAnnotations(msgstrings, matchesAcrossImages);
+		}
+    	   
+       });
+    	tx.start();
+    	Thread.sleep(timeoutMS);
+    	tx.interrupt();
+    	tx.join();
+        return retv.value;
     }
     
-    
+    */
     
     public static HashMap<String, MsgAnnotation> msgToAnnotations(List<String> msgstrings, List<List<ImgMatch>> matchesAcrossImages) {
         HashMap<String, MsgAnnotation> output = new HashMap<String, MsgAnnotation>();
@@ -249,6 +274,11 @@ public class Main {
         //List<Pair<Double, String>> msgStrToScore = new ArrayList<Pair<Double, String>>();
         HashMap<String, Integer> occurrenceCount = new HashMap<String, Integer>();
         for (String msgstr : msgstrings) {
+        	Thread.yield();
+        	if (Thread.interrupted())
+        		return null;
+        		//return output;
+        		//throw new InterruptedException();
             MatchResults m = bestMatch(msgstr, matchesAcrossImages, ngramsForImages, occurrenceCount);
             if (m == null)
                 continue;
