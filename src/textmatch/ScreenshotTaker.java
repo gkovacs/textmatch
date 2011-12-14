@@ -223,12 +223,14 @@ public class ScreenshotTaker {
     	        if (matchedMsgStrs.contains(msgstr)) {
                 	if (newMsgStrs.contains(msgstr)) {
                     	msgsFound.append("<p bgcolor='#FFFF00'>" + msgstr + "</p>\n");
-                	} else {
+                	} else if (annotations.keySet().contains(msgstr)) {
+                  	msgsFound.append("<p bgcolor='#00FFFF'>" + msgstr + "</p>\n");
+    	          } else {
                     	msgsFound.append("<p>" +  msgstr + "</p>\n");
                 	}
-            	} else {
-            		msgsToBeFound.append("<p>" + msgstr + "</p>\n");
-            	}
+    			} else {
+    				msgsToBeFound.append("<p>" + msgstr + "</p>\n");
+    			}
     		}
         }
         /*

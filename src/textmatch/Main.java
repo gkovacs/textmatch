@@ -123,7 +123,7 @@ public class Main {
                 
                 ImgMatch[] match = arraySlice(matches, matchIdxs.Item1, matchIdxs.Item2);
                 
-                
+                /*
                 int currentWhitespace = spanningArea(match) - totalArea(match);
                 //int whitespaceExpanded = currentWhitespace;
                 double whitespaceScore = 1.0;
@@ -150,6 +150,8 @@ public class Main {
                     if (whitespaceScore > 1.0)
                         whitespaceScore = 1.0;
                     //System.err.println(whitespaceScore);
+                    if (whitespaceScore < 0.0)
+                    	whitespaceScore = 0.0;
                     if (whitespaceScore < 1.0/1.5)
                         continue;
                         //whitespaceScore = 1.0/1.5;
@@ -158,7 +160,7 @@ public class Main {
                     //System.err.println(whitespaceScore);
                     
                 }
-                
+                */
                 
                 
                 String xstr = join(match, " ");
@@ -193,7 +195,7 @@ public class Main {
                 
                 curratio = areaNonExpansionScore * curratio;
                 */
-                curratio = whitespaceScore * curratio * bannedNgramScore;
+                curratio = /*whitespaceScore * */ curratio * bannedNgramScore;
                 
                 //curratio -= ((double)numOccurrences) / x.length;
                 if (curratio >= bestratio) {
