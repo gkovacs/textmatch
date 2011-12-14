@@ -51,60 +51,112 @@ public class ScreenshotTaker {
         return new BufferedImage(cm, raster, isAlphaPremultiplied, null);
        }
     
-    public static void main(String[] args) throws Exception {
-        List<String> msgfilecontents = new ArrayList<String>();
-        String screenshotSavePath = "";
-        int screenshotNum = 0;
-        boolean savingScreenshots = false;
-        if (args.length > 0)
-            msgfilecontents = readLines(new FileReader(args[0]));
-        if (args.length > 1) {
-        	 screenshotSavePath = args[1] + "/";
-         	new File(screenshotSavePath).mkdirs();
-        	 savingScreenshots = true;
-        }
-        POMsgSource msgsrc = new POMsgSource(msgfilecontents);
-        final List<String> msgstrings = msgsrc.getMsgStrings();
-        int numMsgStrings = msgstrings.size();
-        Robot robot = new Robot();
-        JFrame frame = new JFrame("Display image");
+    private BufferedImage img;
+    private final List<String> msgstrings;
+    private final String screenshotSavePath;
+    private boolean savingScreenshots;
+    private final Robot robot;
+    private JFrame frame;
+    private JLabel picLabel;
+    private JLabel matchCount;
+    
+    private HashSet<String> matchedMsgStrs;
+    
+    private int[] prevData = new int[0];
+    private int[] curData = new int[0];
+    
+    private int screenshotNum = 0;
+    
+    public ScreenshotTaker(final List<String> msgstrings, String screenshotSavePath, HashSet<String> matchedMsgStrs) throws Exception {
+    	this.msgstrings = msgstrings;
+    	this.matchedMsgStrs = matchedMsgStrs;
+    	this.screenshotSavePath = screenshotSavePath;
+    	if (screenshotSavePath.equals(""))
+    		savingScreenshots = false;
+    	else
+    		savingScreenshots = true;
+    	robot = new Robot();
+        initializeXInteraction();
+    }
+    
+    public void guisetup() {
+        frame = new JFrame("Display image");
         frame.setFocusable(false);
-        JLabel picLabel = new JLabel();
+        picLabel = new JLabel();
         frame.setLayout(null);
         frame.add(picLabel);
-        
-        //picLabel.setLocation(new Point(0, 0));
-        //picLabel.setBounds(0, 0, 900, 600);
         picLabel.setSize(900, 600);
         //picLabel.repaint();
         frame.setVisible(true);
         frame.setSize(900, 700);
-        JLabel matchCount = new JLabel();
-        HashSet<String> matchedMsgStrs = new HashSet<String>();
-        matchCount.setText(matchedMsgStrs.size() + " / " + numMsgStrings);
+        
+        matchCount = new JLabel();
         matchCount.setSize(100, 30);
         frame.add(matchCount);
-        initializeXInteraction();
-        int[] prevData = new int[0];
-        int[] curData = new int[0];
-        //long prev_screenshot_time = 0;
+        updateMatchCount();
+    }
+    
+    private void updateMatchCount() {
+        matchCount.setText(matchedMsgStrs.size() + " / " + msgstrings.size());
+    }
+    
+    // returns true if new image is actually different from previous
+    private boolean captureNewImage() {
+    	img = robot.createScreenCapture(new Rectangle(getX(), getY(), getWidth(), getHeight()));
+        //long curtime = System.currentTimeMillis();
+        if (curData.length != img.getWidth() * img.getHeight() * 3)
+            curData = new int[img.getWidth() * img.getHeight() * 3];
+        img.getData().getPixels(0, 0, img.getWidth(), img.getHeight(), curData);
+        if (!arraysEqual(curData, prevData)) {
+            prevData = curData;
+       //     prev_screenshot_time = curtime;
+            return true;
+        }
+        return false;
+    }
+    
+    private void annotateScreenshot(BufferedImage displayImage, HashMap<String, MsgAnnotation> annotations) {
+    	Graphics2D g = displayImage.createGraphics();
+        for (String msgstr : annotations.keySet()) {
+        	MsgAnnotation annotation = annotations.get(msgstr);
+            /*int[] values = new int[annotation.w * annotation.h * 3];
+            for (int i = 0; i < annotation.w * annotation.h; ++i) {
+                values[3*i] = 255;
+                values[3*i + 1] = 0;
+                values[3*i + 2] = 0;
+            }*/
+            /*
+            for (int y = annotation.y; y < annotation.y + annotation.h; ++y) {
+                for (int x = annotation.x; x < annotation.x + annotation.w; ++x) {
+                    int[] curpixel = new int[3];
+                    displayImage.getRaster().getPixel(x, y, curpixel);
+                    //int r = curpixel[0];
+                    //int g = 255; //curpixel[1];
+                    //int b = curpixel[2];
+                    curpixel[1] = 255;
+                    displayImage.getRaster().setPixel(x, y, curpixel);
+                }
+            }
+            */
+            //g.setComposite(new Composite());
+            g.setColor(new Color(0 ,255, 255, 100));
+            Rectangle rect = new Rectangle(annotation.x, annotation.y, annotation.w, annotation.h);
+            g.fill(rect);
+            //g.draw(rect);
+            //displayImage.getRaster().setPixels(annotation.x, annotation.y, annotation.w, annotation.h, values);
+        }
+    }
+    
+    public void runme() throws Exception {
         while (true) {
             if (frame.isFocused())
                 continue;
             refreshInfo();
-            BufferedImage img = robot.createScreenCapture(new Rectangle(getX(), getY(), getWidth(), getHeight()));
-            //long curtime = System.currentTimeMillis();
-            if (curData.length != img.getWidth() * img.getHeight() * 3)
-                curData = new int[img.getWidth() * img.getHeight() * 3];
-            img.getData().getPixels(0, 0, img.getWidth(), img.getHeight(), curData);
-            if (!arraysEqual(curData, prevData)) {
-                prevData = curData;
-           //     prev_screenshot_time = curtime;
-                continue;
-            }
+            
             //if (curtime < prev_screenshot_time + 250) {
             //    continue;
             //}
+            captureNewImage();
             boolean containsNewMsgStrs = false;
             int origNumMatchedMsgStrs = 0;
             BufferedImage displayImage = deepCopy(img);
@@ -134,68 +186,69 @@ public class ScreenshotTaker {
         	tx.start();
         	//tx.join(3000);
         	while (tx.isAlive()) {
-            	BufferedImage nimg = robot.createScreenCapture(new Rectangle(getX(), getY(), getWidth(), getHeight()));
-                if (curData.length != nimg.getWidth() * nimg.getHeight() * 3)
-                    curData = new int[nimg.getWidth() * nimg.getHeight() * 3];
-                img.getData().getPixels(0, 0, nimg.getWidth(), nimg.getHeight(), curData);
-                if (!arraysEqual(curData, prevData)) {
-                    prevData = curData;
-                   // prev_screenshot_time = curtime;
-                    tx.interrupt();
-                    break;
-                }
+            	if (captureNewImage()) {
+            		tx.interrupt();
+            		break;
+            	}
             	Thread.sleep(300);
         	}
             
         	HashMap<String, MsgAnnotation> annotations = retv.value;
         	if (annotations == null)
         		continue;
+        	
+        	origNumMatchedMsgStrs = matchedMsgStrs.size();
+            for (String msgstr : annotations.keySet()) {
+            	matchedMsgStrs.add(msgstr);
+            }
+            
+            annotateScreenshot(displayImage, annotations);
+        	
             //HashMap<String, MsgAnnotation> annotations = Main.msgToAnnotationsWithTimeout(msgstrings, GCollectionUtils.singleElemList(imgMatches), 3000);
             //if (annotations == null)
             // 	continue;
-            Graphics2D g = displayImage.createGraphics();
-            origNumMatchedMsgStrs = matchedMsgStrs.size();
-            for (String msgstr : annotations.keySet()) {
-            	matchedMsgStrs.add(msgstr);
-            	MsgAnnotation annotation = annotations.get(msgstr);
-                /*int[] values = new int[annotation.w * annotation.h * 3];
-                for (int i = 0; i < annotation.w * annotation.h; ++i) {
-                    values[3*i] = 255;
-                    values[3*i + 1] = 0;
-                    values[3*i + 2] = 0;
-                }*/
-                /*
-                for (int y = annotation.y; y < annotation.y + annotation.h; ++y) {
-                    for (int x = annotation.x; x < annotation.x + annotation.w; ++x) {
-                        int[] curpixel = new int[3];
-                        displayImage.getRaster().getPixel(x, y, curpixel);
-                        //int r = curpixel[0];
-                        //int g = 255; //curpixel[1];
-                        //int b = curpixel[2];
-                        curpixel[1] = 255;
-                        displayImage.getRaster().setPixel(x, y, curpixel);
-                    }
-                }
-                */
-                //g.setComposite(new Composite());
-                g.setColor(new Color(0 ,255, 255, 100));
-                Rectangle rect = new Rectangle(annotation.x, annotation.y, annotation.w, annotation.h);
-                g.fill(rect);
-                //g.draw(rect);
-                //displayImage.getRaster().setPixels(annotation.x, annotation.y, annotation.w, annotation.h, values);
-            }
+            
             }
             if (origNumMatchedMsgStrs != matchedMsgStrs.size()) {
-                matchCount.setText(matchedMsgStrs.size() + " / " + numMsgStrings);
+                updateMatchCount();
                 containsNewMsgStrs = true;
             }
           //  prev_screenshot_time = curtime;
             if (savingScreenshots && containsNewMsgStrs) {
+            	while (new File(screenshotSavePath + screenshotNum + ".png").exists()) {
+                    ++screenshotNum;
+            	}
             	ImageIO.write(img, "png", new File(screenshotSavePath + screenshotNum + ".png"));
-                ++screenshotNum;
             }
             picLabel.setIcon(new ImageIcon(displayImage));
         }
+    }
+    
+    public static void main(String[] args) throws Exception {
+        List<String> msgfilecontents = new ArrayList<String>();
+        if (args.length > 0)
+            msgfilecontents = readLines(new FileReader(args[0]));
+        POMsgSource msgsrc = new POMsgSource(msgfilecontents);
+        final List<String> msgstrings = msgsrc.getMsgStrings();
+        String screenshotSavePath = "";
+        HashSet<String> matchedMsgStrs = new HashSet<String>();
+        if (args.length > 1) {
+        	 screenshotSavePath = args[1] + "/";
+         	if (!new File(screenshotSavePath).exists()) {
+         		new File(screenshotSavePath).mkdirs();
+         	} else {
+         		
+         	}
+        }
+        ScreenshotTaker st = new ScreenshotTaker(msgstrings, screenshotSavePath, matchedMsgStrs);
+        st.guisetup();
+        st.runme();
+
+        
+
+
+        //long prev_screenshot_time = 0;
+
     }
     static {
         System.loadLibrary("textmatch_ScreenshotTaker");
