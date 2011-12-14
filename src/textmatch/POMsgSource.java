@@ -50,6 +50,24 @@ public class POMsgSource {
         return "";
     }
     
+    public static String msgSourceConciseFromMsgIdBlock(String msgidblock) throws Exception {
+    	String fullMsgSrc = msgSourceFromMsgIdBlock(msgidblock);
+    	int lastColonIdx = fullMsgSrc.lastIndexOf(':');
+    	if (lastColonIdx != -1) {
+    		fullMsgSrc = fullMsgSrc.substring(0, lastColonIdx);
+    	}
+    	int lastSlashIdx = fullMsgSrc.lastIndexOf('/');
+    	if (lastSlashIdx != -1) {
+    		fullMsgSrc = fullMsgSrc.substring(lastSlashIdx + 1);
+    	}
+    	int lastDotIdx = fullMsgSrc.lastIndexOf('.');
+    	if (lastDotIdx != -1 && fullMsgSrc.length() <= lastDotIdx + 4) {
+    		fullMsgSrc = fullMsgSrc.substring(0, lastDotIdx);
+    	}
+    	return fullMsgSrc;
+    	
+    }
+    
     public static String excludeForeignMsgStr(String msgidblock) throws Exception {
         List<String> curmsg = new ArrayList<String>();
         for (String line : readLines(new StringReader(msgidblock))) {

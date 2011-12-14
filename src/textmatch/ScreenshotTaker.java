@@ -29,10 +29,12 @@ import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.text.html.HTMLDocument;
 
 import static textmatch.GCollectionUtils.*;
 import static textmatch.GIOUtils.readLines;
@@ -61,7 +63,8 @@ public class ScreenshotTaker {
     private JFrame frame;
     private JLabel picLabel;
     private JLabel matchCount;
-    private JTextArea textArea;
+    private JEditorPane textArea;
+    private JEditorPane textAreaSeen;
     
     private HashSet<String> matchedMsgStrs;
     
@@ -90,11 +93,11 @@ public class ScreenshotTaker {
     }
     
     public void guisetup() {
-        frame = new JFrame("Display image");
+        frame = new JFrame("Screenshot Gatherer");
         //frame.setFocusable(false);
         
         frame.setLayout(null);
-        frame.setSize(900, 600);
+        frame.setSize(1000, 600);
         //frame.setVisible(true);
         
         matchCount = new JLabel();
@@ -103,7 +106,7 @@ public class ScreenshotTaker {
         
         picLabel = new JLabel();
         picLabel.setLocation(0, 30);
-        picLabel.setSize(900, 550);
+        picLabel.setSize(600, 550);
         frame.add(picLabel);
         
         //picLabel.repaint();
@@ -116,16 +119,27 @@ public class ScreenshotTaker {
         
         updateMatchCount();
         
-        textArea = new JTextArea();
+        textArea = new JEditorPane();
         textArea.setLocation(0, 0);
         textArea.setSize(200, 600);
         
         JScrollPane scrollable = new JScrollPane(textArea);
-        scrollable.setLocation(700, 0);
+        scrollable.setLocation(600, 0);
         scrollable.setSize(200, 600);
+        scrollable.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        frame.add(scrollable);
+        
+        textAreaSeen = new JEditorPane();
+        textAreaSeen.setLocation(0, 0);
+        textAreaSeen.setSize(200, 600);
+        
+        JScrollPane scrollable2 = new JScrollPane(textAreaSeen);
+        scrollable2.setLocation(800, 0);
+        scrollable2.setSize(200, 600);
+        scrollable2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         
         //frame.add(textArea);
-        frame.add(scrollable);
+        frame.add(scrollable2);
         
         //
     }
@@ -149,22 +163,41 @@ public class ScreenshotTaker {
         return false;
     }
     
-    private void addNewAnnotations(HashMap<String, MsgAnnotation> annotations) throws Exception {
+    public void addNewAnnotations(HashMap<String, MsgAnnotation> annotations) throws Exception {
         for (String msgstr : annotations.keySet()) {
         	matchedMsgStrs.add(msgstr);
         }
+        String curMsgSource = "";
+        String curMsgSourceFound = "";
         StringBuilder msgsToBeFound = new StringBuilder();
+        msgsToBeFound.append("<html><body>");
+        StringBuilder msgsFound = new StringBuilder();
+        msgsFound.append("<html><body>");
         for (String msgidblock : msgsrc.splitIntoMsgIdBlocks()) {
         	String msgstr = msgsrc.textFromMsgIdBlock(msgidblock);
-        	if (msgstr.isEmpty() || matchedMsgStrs.contains(msgstr))
+        	if (msgstr.isEmpty())
         		continue;
-        	String msgsource = msgsrc.msgSourceFromMsgIdBlock(msgidblock);
-        	if (!msgsource.isEmpty()) {
-        		msgsToBeFound.append(msgsource + "\n");
+        	String msgsource = msgsrc.msgSourceConciseFromMsgIdBlock(msgidblock);
+        	if (matchedMsgStrs.contains(msgstr)) {
+            	if (!msgsource.isEmpty() && !msgsource.equals(curMsgSourceFound)) {
+            		curMsgSourceFound = msgsource;
+            		msgsFound.append("<b>" + msgsource + "</b><br/>\n");
+            	}
+            	msgsFound.append(msgstr + "<br/>\n");
+        	} else {
+        		if (!msgsource.isEmpty() && !msgsource.equals(curMsgSource)) {
+            		curMsgSource = msgsource;
+            		msgsToBeFound.append("<b>" + msgsource + "</b><br/>\n");
+            	}
+        		msgsToBeFound.append(msgstr + "<br/>\n");
         	}
-        	msgsToBeFound.append(msgstr + "\n\n");
         }
-        textArea.setText(msgsToBeFound.toString());
+        msgsToBeFound.append("</body></html>");
+        msgsFound.append("</body></html>");
+        textArea.setContentType("text/html");
+        textArea.setText( msgsToBeFound.toString());
+        textAreaSeen.setContentType("text/html");
+        textAreaSeen.setText( msgsFound.toString());
         updateMatchCount();
     }
     
@@ -298,6 +331,7 @@ public class ScreenshotTaker {
         }
         ScreenshotTaker st = new ScreenshotTaker(msgsrc, screenshotSavePath);
         st.guisetup();
+        st.addNewAnnotations(new HashMap<String, MsgAnnotation>());
         for (String filename : existingScreenshotPaths) {
         	// add those messages that are covered by existing screenshots to matchedMsgStrs
         	System.out.println(filename);
