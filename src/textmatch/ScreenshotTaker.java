@@ -19,6 +19,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -34,6 +36,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextPane;
 import javax.swing.text.html.HTMLDocument;
 
 import static textmatch.GCollectionUtils.*;
@@ -57,14 +60,15 @@ public class ScreenshotTaker {
     
     private BufferedImage prevImg;
     private final List<String> msgstrings;
+    private final List<String> msgidblocks;
     private final String screenshotSavePath;
     private boolean savingScreenshots;
     private final Robot robot;
     private JFrame frame;
     private JLabel picLabel;
     private JLabel matchCount;
-    private JEditorPane textArea;
-    private JEditorPane textAreaSeen;
+    private JTextPane textArea;
+    private JTextPane textAreaSeen;
     
     private HashSet<String> matchedMsgStrs;
     
@@ -77,6 +81,7 @@ public class ScreenshotTaker {
     
     public ScreenshotTaker(final POMsgSource msgsrc, String screenshotSavePath) throws Exception {
     	this.msgsrc = msgsrc;
+    	this.msgidblocks = msgsrc.splitIntoMsgIdBlocks();
     	this.msgstrings = msgsrc.getMsgStrings();
     	this.matchedMsgStrs = new HashSet<String>();
     	this.screenshotSavePath = screenshotSavePath;
@@ -119,7 +124,7 @@ public class ScreenshotTaker {
         
         updateMatchCount();
         
-        textArea = new JEditorPane();
+        textArea = new JTextPane();
         textArea.setLocation(0, 0);
         textArea.setSize(200, 600);
         
@@ -129,7 +134,7 @@ public class ScreenshotTaker {
         scrollable.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         frame.add(scrollable);
         
-        textAreaSeen = new JEditorPane();
+        textAreaSeen = new JTextPane();
         textAreaSeen.setLocation(0, 0);
         textAreaSeen.setSize(200, 600);
         
@@ -172,14 +177,62 @@ public class ScreenshotTaker {
             	newMsgStrs.add(msgstr);
     		}
         }
-        String curMsgSource = "";
-        String curMsgSourceFound = "";
+    	final HashMap<String, Integer> numOccurrencesOfSources = new HashMap<String, Integer>();
+    	// gnome-mouse-properties => #of times it occurs on the current screenshot
+    	for (String msgidblock : this.msgidblocks) {
+    		String msgfsrc = msgsrc.msgSourceConciseFromMsgIdBlock(msgidblock);
+    		if (!numOccurrencesOfSources.containsKey(msgfsrc))
+    			numOccurrencesOfSources.put(msgfsrc, 0);
+    		String msgstr = msgsrc.textFromMsgIdBlock(msgidblock);
+    		if (annotations.keySet().contains(msgstr)) {
+    			numOccurrencesOfSources.put(msgfsrc, numOccurrencesOfSources.get(msgfsrc) + 1);
+    		}
+    	}
+    	
+    	List<List<String>> msgsGroupedBySource = msgsrc.groupByMsgSouce(msgidblocks);
+    	Collections.sort(msgsGroupedBySource, new Comparator<List<String>>() {
+
+			@Override
+			public int compare(List<String> o1, List<String> o2) {
+				try {
+					String src1 = msgsrc.msgSourceConciseFromMsgIdBlock(o1.get(0));
+					String src2 = msgsrc.msgSourceConciseFromMsgIdBlock(o2.get(0));
+					return numOccurrencesOfSources.get(src2) - numOccurrencesOfSources.get(src1);
+				} catch (Exception e) {
+					return 0;
+				}
+			}
+    		
+    	});
+    	
+        //String curMsgSource = "";
+        //String curMsgSourceFound = "";
         StringBuilder msgsToBeFound = new StringBuilder();
         msgsToBeFound.append("<html><body>");
         StringBuilder msgsFound = new StringBuilder();
         msgsFound.append("<html><body>");
-        for (String msgidblock : msgsrc.splitIntoMsgIdBlocks()) {
-        	String msgstr = msgsrc.textFromMsgIdBlock(msgidblock);
+        //for (String msgidblock : msgsrc.splitIntoMsgIdBlocks()) {
+        for (List<String> msgidblockGroup : msgsGroupedBySource) {
+        	String msgsource = msgsrc.msgSourceConciseFromMsgIdBlock(msgidblockGroup.get(0));
+    		msgsFound.append("<p><b>" + msgsource + "</b></p>\n");
+    		msgsToBeFound.append("<p><b>" + msgsource + "</b></p>\n");
+    		for (String msgidblock : msgidblockGroup) {
+    			String msgstr = msgsrc.textFromMsgIdBlock(msgidblock);
+    	        if (msgstr.isEmpty())
+    	        	continue;
+    	        if (matchedMsgStrs.contains(msgstr)) {
+                	if (newMsgStrs.contains(msgstr)) {
+                    	msgsFound.append("<p bgcolor='#FFFF00'>" + msgstr + "</p>\n");
+                	} else {
+                    	msgsFound.append("<p>" +  msgstr + "</p>\n");
+                	}
+            	} else {
+            		msgsToBeFound.append("<p>" + msgstr + "</p>\n");
+            	}
+    		}
+        }
+        /*
+          String msgstr = msgsrc.textFromMsgIdBlock(msgidblock);
         	if (msgstr.isEmpty())
         		continue;
         	String msgsource = msgsrc.msgSourceConciseFromMsgIdBlock(msgidblock);
@@ -201,6 +254,7 @@ public class ScreenshotTaker {
         		msgsToBeFound.append("<p>" + msgstr + "</p>\n");
         	}
         }
+        */
         msgsToBeFound.append("</body></html>");
         msgsFound.append("</body></html>");
         textArea.setContentType("text/html");
@@ -234,7 +288,7 @@ public class ScreenshotTaker {
             }
             */
             //g.setComposite(new Composite());
-            g.setColor(new Color(0 ,255, 255, 100));
+            g.setColor(new Color(0, 255, 255, 100));
             Rectangle rect = new Rectangle(annotation.x, annotation.y, annotation.w, annotation.h);
             g.fill(rect);
             //g.draw(rect);

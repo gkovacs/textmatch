@@ -79,7 +79,23 @@ public class POMsgSource {
         return join(curmsg, "\n");
     }
     
-    
+    public static List<List<String>> groupByMsgSouce(List<String> msgidblocks) throws Exception {
+    	HashMap<String, Integer> msgSrcToIdx = new HashMap<String, Integer>();
+    	List<List<String>> groupedMsgs = new ArrayList<List<String>>();
+    	for (String msgidblock : msgidblocks) {
+    		String msgsrc = msgSourceConciseFromMsgIdBlock(msgidblock);
+    		int idxInGroupedMsgs;
+    		if (!msgSrcToIdx.containsKey(msgsrc)) {
+    			idxInGroupedMsgs = groupedMsgs.size();
+    			msgSrcToIdx.put(msgsrc, idxInGroupedMsgs);
+    			groupedMsgs.add(new ArrayList<String>());
+    		} else {
+    			idxInGroupedMsgs = msgSrcToIdx.get(msgsrc);
+    		}
+    		groupedMsgs.get(idxInGroupedMsgs).add(msgidblock);
+    	}
+    	return groupedMsgs;
+    }
     
     public static String textFromMsgIdBlock(String msgidblock) throws Exception {
         List<String> curmsg = new ArrayList<String>();
