@@ -55,7 +55,7 @@ public class ScreenshotTaker {
         return new BufferedImage(cm, raster, isAlphaPremultiplied, null);
        }
     
-    private BufferedImage img;
+    private BufferedImage prevImg;
     private final List<String> msgstrings;
     private final String screenshotSavePath;
     private boolean savingScreenshots;
@@ -148,19 +148,20 @@ public class ScreenshotTaker {
         matchCount.setText(matchedMsgStrs.size() + " / " + msgstrings.size());
     }
     
+    private boolean sameImages(BufferedImage img, BufferedImage img2) {
+    	if (img == null || img2 == null)
+    		return false;
+    	int[] img1data = new int[img.getWidth() * img.getHeight() * 3];
+    	int[] img2data = new int[img2.getWidth() * img2.getHeight() * 3];
+    	img.getData().getPixels(0, 0, img.getWidth(), img.getHeight(), img1data);
+    	img2.getData().getPixels(0, 0, img2.getWidth(), img2.getHeight(), img2data);
+    	return arraysEqual(img1data, img2data);
+    }
+    
     // returns true if new image is actually different from previous
-    private boolean captureNewImage() {
-    	img = robot.createScreenCapture(new Rectangle(getX(), getY(), getWidth(), getHeight()));
-        //long curtime = System.currentTimeMillis();
-        if (curData.length != img.getWidth() * img.getHeight() * 3)
-            curData = new int[img.getWidth() * img.getHeight() * 3];
-        img.getData().getPixels(0, 0, img.getWidth(), img.getHeight(), curData);
-        if (!arraysEqual(curData, prevData)) {
-            prevData = curData;
-       //     prev_screenshot_time = curtime;
-            return true;
-        }
-        return false;
+    private BufferedImage captureNewImage() {
+    	refreshInfo();
+    	return robot.createScreenCapture(new Rectangle(getX(), getY(), getWidth(), getHeight()));
     }
     
     public void addNewAnnotations(HashMap<String, MsgAnnotation> annotations) throws Exception {
@@ -237,12 +238,15 @@ public class ScreenshotTaker {
         while (true) {
             if (frame.isFocused())
                 continue;
-            refreshInfo();
             
             //if (curtime < prev_screenshot_time + 250) {
             //    continue;
             //}
-            captureNewImage();
+            //captureNewImage();
+            BufferedImage img = captureNewImage();
+            if (sameImages(img, prevImg))
+            	continue;
+            
             boolean containsNewMsgStrs = false;
             int origNumMatchedMsgStrs = 0;
             BufferedImage displayImage = deepCopy(img);
@@ -270,14 +274,17 @@ public class ScreenshotTaker {
         	   
            });
         	tx.start();
+
         	while (tx.isAlive()) {
-            	if (captureNewImage()) {
+            	BufferedImage newImg = captureNewImage();
+        		if (!sameImages(img, newImg)) {
             		tx.interrupt();
             		break;
             	}
             	tx.join(1000);
         	}
-            
+
+        	//tx.join();
         	HashMap<String, MsgAnnotation> annotations = retv.value;
         	if (annotations == null)
         		continue;
@@ -306,6 +313,7 @@ public class ScreenshotTaker {
             	ImageIO.write(img, "png", new File(screenshotSavePath + screenshotNum + ".png"));
             }
             picLabel.setIcon(new ImageIcon(displayImage));
+            prevImg = img;
         }
     }
     
