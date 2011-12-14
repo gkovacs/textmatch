@@ -92,21 +92,24 @@ public class ScreenshotTaker {
     public void guisetup() {
         frame = new JFrame("Display image");
         //frame.setFocusable(false);
-        picLabel = new JLabel();
+        
         frame.setLayout(null);
-        frame.setSize(900, 650);
+        frame.setSize(900, 600);
         //frame.setVisible(true);
         
-        picLabel.setLocation(0, 40);
-        picLabel.setSize(900, 600);
+        matchCount = new JLabel();
+        matchCount.setLocation(0, 0);
+        matchCount.setSize(100, 30);
+        
+        picLabel = new JLabel();
+        picLabel.setLocation(0, 30);
+        picLabel.setSize(900, 550);
         frame.add(picLabel);
         
         //picLabel.repaint();
         
         
-        matchCount = new JLabel();
-        matchCount.setLocation(0, 0);
-        matchCount.setSize(100, 30);
+
         
         frame.add(matchCount);
         
@@ -115,11 +118,11 @@ public class ScreenshotTaker {
         
         textArea = new JTextArea();
         textArea.setLocation(0, 0);
-        textArea.setSize(200, 650);
+        textArea.setSize(200, 600);
         
         JScrollPane scrollable = new JScrollPane(textArea);
         scrollable.setLocation(700, 0);
-        scrollable.setSize(200, 650);
+        scrollable.setSize(200, 600);
         
         //frame.add(textArea);
         frame.add(scrollable);
@@ -155,7 +158,11 @@ public class ScreenshotTaker {
         	String msgstr = msgsrc.textFromMsgIdBlock(msgidblock);
         	if (msgstr.isEmpty() || matchedMsgStrs.contains(msgstr))
         		continue;
-        	msgsToBeFound.append(msgstr + "\n");
+        	String msgsource = msgsrc.msgSourceFromMsgIdBlock(msgidblock);
+        	if (!msgsource.isEmpty()) {
+        		msgsToBeFound.append(msgsource + "\n");
+        	}
+        	msgsToBeFound.append(msgstr + "\n\n");
         }
         textArea.setText(msgsToBeFound.toString());
         updateMatchCount();

@@ -170,4 +170,14 @@ public class POMsgSourceTest {
         ex.add("msgid \"click clack\"");
         assertEquals(join(ex, "\n"), new POMsgSource(po).makeAnnotatedMsgFile(annotations));
     }
+    
+    @Test
+    public void testGetMessageSource() throws Exception {
+    	 List<String> po = new ArrayList<String>();
+        po.add("#: ../capplets/keybindings/gnome-keybinding-properties.c:1207");
+        po.add("#, c-format");
+        po.add("msgid \"Error unsetting accelerator in configuration database: %s\"");
+        String ex =  "../capplets/keybindings/gnome-keybinding-properties.c:1207";
+        assertEquals(ex, msgSourceFromMsgIdBlock(join(po, "\n")));
+    }
 }

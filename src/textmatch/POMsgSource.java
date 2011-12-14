@@ -39,6 +39,17 @@ public class POMsgSource {
         return null;
     }
     
+    public static String msgSourceFromMsgIdBlock(String msgidblock) throws Exception {
+    	for (String line : readLines(new StringReader(msgidblock))) {
+            if (line.startsWith("#: ")) {
+                String annotationText = line.substring(3);
+                return annotationText;
+
+            }
+        }
+        return "";
+    }
+    
     public static String excludeForeignMsgStr(String msgidblock) throws Exception {
         List<String> curmsg = new ArrayList<String>();
         for (String line : readLines(new StringReader(msgidblock))) {
@@ -49,6 +60,8 @@ public class POMsgSource {
         }
         return join(curmsg, "\n");
     }
+    
+    
     
     public static String textFromMsgIdBlock(String msgidblock) throws Exception {
         List<String> curmsg = new ArrayList<String>();
