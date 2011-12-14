@@ -165,8 +165,12 @@ public class ScreenshotTaker {
     }
     
     public void addNewAnnotations(HashMap<String, MsgAnnotation> annotations) throws Exception {
-        for (String msgstr : annotations.keySet()) {
-        	matchedMsgStrs.add(msgstr);
+        HashSet<String> newMsgStrs = new HashSet<String>();
+    	for (String msgstr : annotations.keySet()) {
+    		if (!matchedMsgStrs.contains(msgstr)) {
+            	matchedMsgStrs.add(msgstr);
+            	newMsgStrs.add(msgstr);
+    		}
         }
         String curMsgSource = "";
         String curMsgSourceFound = "";
@@ -182,15 +186,19 @@ public class ScreenshotTaker {
         	if (matchedMsgStrs.contains(msgstr)) {
             	if (!msgsource.isEmpty() && !msgsource.equals(curMsgSourceFound)) {
             		curMsgSourceFound = msgsource;
-            		msgsFound.append("<b>" + msgsource + "</b><br/>\n");
+            		msgsFound.append("<p><b>" + msgsource + "</b></p>\n");
             	}
-            	msgsFound.append(msgstr + "<br/>\n");
+            	if (newMsgStrs.contains(msgstr)) {
+                	msgsFound.append("<p bgcolor='#FFFF00'>" + msgstr + "</p>\n");
+            	} else {
+                	msgsFound.append("<p>" +  msgstr + "</p>\n");
+            	}
         	} else {
         		if (!msgsource.isEmpty() && !msgsource.equals(curMsgSource)) {
             		curMsgSource = msgsource;
-            		msgsToBeFound.append("<b>" + msgsource + "</b><br/>\n");
+            		msgsToBeFound.append("<p><b>" + msgsource + "</b></p>\n");
             	}
-        		msgsToBeFound.append(msgstr + "<br/>\n");
+        		msgsToBeFound.append("<p>" + msgstr + "</p>\n");
         	}
         }
         msgsToBeFound.append("</body></html>");
