@@ -31,6 +31,8 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 import static textmatch.GCollectionUtils.*;
 import static textmatch.GIOUtils.readLines;
@@ -59,6 +61,7 @@ public class ScreenshotTaker {
     private JFrame frame;
     private JLabel picLabel;
     private JLabel matchCount;
+    private JTextArea textArea;
     
     private HashSet<String> matchedMsgStrs;
     
@@ -67,9 +70,12 @@ public class ScreenshotTaker {
     
     private int screenshotNum = 0;
     
-    public ScreenshotTaker(final List<String> msgstrings, String screenshotSavePath, HashSet<String> matchedMsgStrs) throws Exception {
-    	this.msgstrings = msgstrings;
-    	this.matchedMsgStrs = matchedMsgStrs;
+    private final POMsgSource msgsrc;
+    
+    public ScreenshotTaker(final POMsgSource msgsrc, String screenshotSavePath) throws Exception {
+    	this.msgsrc = msgsrc;
+    	this.msgstrings = msgsrc.getMsgStrings();
+    	this.matchedMsgStrs = new HashSet<String>();
     	this.screenshotSavePath = screenshotSavePath;
     	if (screenshotSavePath.equals(""))
     		savingScreenshots = false;
@@ -79,21 +85,46 @@ public class ScreenshotTaker {
         initializeXInteraction();
     }
     
+    public void show() {
+    	frame.setVisible(true);
+    }
+    
     public void guisetup() {
         frame = new JFrame("Display image");
-        frame.setFocusable(false);
+        //frame.setFocusable(false);
         picLabel = new JLabel();
         frame.setLayout(null);
-        frame.add(picLabel);
+        frame.setSize(900, 650);
+        //frame.setVisible(true);
+        
+        picLabel.setLocation(0, 40);
         picLabel.setSize(900, 600);
+        frame.add(picLabel);
+        
         //picLabel.repaint();
-        frame.setVisible(true);
-        frame.setSize(900, 700);
+        
         
         matchCount = new JLabel();
+        matchCount.setLocation(0, 0);
         matchCount.setSize(100, 30);
+        
         frame.add(matchCount);
+        
+        
         updateMatchCount();
+        
+        textArea = new JTextArea();
+        textArea.setLocation(0, 0);
+        textArea.setSize(200, 650);
+        
+        JScrollPane scrollable = new JScrollPane(textArea);
+        scrollable.setLocation(700, 0);
+        scrollable.setSize(200, 650);
+        
+        //frame.add(textArea);
+        frame.add(scrollable);
+        
+        //
     }
     
     private void updateMatchCount() {
@@ -113,6 +144,21 @@ public class ScreenshotTaker {
             return true;
         }
         return false;
+    }
+    
+    private void addNewAnnotations(HashMap<String, MsgAnnotation> annotations) throws Exception {
+        for (String msgstr : annotations.keySet()) {
+        	matchedMsgStrs.add(msgstr);
+        }
+        StringBuilder msgsToBeFound = new StringBuilder();
+        for (String msgidblock : msgsrc.splitIntoMsgIdBlocks()) {
+        	String msgstr = msgsrc.textFromMsgIdBlock(msgidblock);
+        	if (msgstr.isEmpty() || matchedMsgStrs.contains(msgstr))
+        		continue;
+        	msgsToBeFound.append(msgstr + "\n");
+        }
+        textArea.setText(msgsToBeFound.toString());
+        updateMatchCount();
     }
     
     private void annotateScreenshot(BufferedImage displayImage, HashMap<String, MsgAnnotation> annotations) {
@@ -197,9 +243,9 @@ public class ScreenshotTaker {
         		continue;
         	
         	origNumMatchedMsgStrs = matchedMsgStrs.size();
-            for (String msgstr : annotations.keySet()) {
-            	matchedMsgStrs.add(msgstr);
-            }
+        	
+        	addNewAnnotations(annotations);
+
             
             annotateScreenshot(displayImage, annotations);
         	
@@ -209,7 +255,7 @@ public class ScreenshotTaker {
             
             }
             if (origNumMatchedMsgStrs != matchedMsgStrs.size()) {
-                updateMatchCount();
+                //updateMatchCount();
                 containsNewMsgStrs = true;
             }
           //  prev_screenshot_time = curtime;
@@ -230,27 +276,29 @@ public class ScreenshotTaker {
         POMsgSource msgsrc = new POMsgSource(msgfilecontents);
         final List<String> msgstrings = msgsrc.getMsgStrings();
         String screenshotSavePath = "";
-        HashSet<String> matchedMsgStrs = new HashSet<String>();
+        List<String> existingScreenshotPaths = new ArrayList<String>();
         if (args.length > 1) {
         	 screenshotSavePath = args[1] + "/";
         	 File screenshotDir = new File(screenshotSavePath);
          	if (!screenshotDir.exists()) {
          		screenshotDir.mkdirs();
          	} else {
-         		// add those messages that are covered by existing screenshots to matchedMsgStrs
          		for (String filename : screenshotDir.list()) {
          			filename = screenshotSavePath + filename;
-         			System.out.println(filename);
-         			List<ImgMatch> matches = Main.getImgMatches(filename);
-         			HashMap<String, MsgAnnotation> annotations = Main.msgToAnnotations(msgstrings, GCollectionUtils.singleElemList(matches));
-         			for (String x : annotations.keySet()) {
-         				matchedMsgStrs.add(x);
-         			}
+         			existingScreenshotPaths.add(filename);
          		}
          	}
         }
-        ScreenshotTaker st = new ScreenshotTaker(msgstrings, screenshotSavePath, matchedMsgStrs);
+        ScreenshotTaker st = new ScreenshotTaker(msgsrc, screenshotSavePath);
         st.guisetup();
+        for (String filename : existingScreenshotPaths) {
+        	// add those messages that are covered by existing screenshots to matchedMsgStrs
+        	System.out.println(filename);
+ 			List<ImgMatch> matches = Main.getImgMatches(filename);
+ 			HashMap<String, MsgAnnotation> annotations = Main.msgToAnnotations(msgstrings, GCollectionUtils.singleElemList(matches));
+ 			st.addNewAnnotations(annotations);
+        }
+        st.show();
         st.runme();
 
         
