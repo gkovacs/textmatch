@@ -184,13 +184,12 @@ public class ScreenshotTaker {
         	   
            });
         	tx.start();
-        	//tx.join(3000);
         	while (tx.isAlive()) {
             	if (captureNewImage()) {
             		tx.interrupt();
             		break;
             	}
-            	Thread.sleep(300);
+            	tx.join(1000);
         	}
             
         	HashMap<String, MsgAnnotation> annotations = retv.value;
@@ -234,10 +233,20 @@ public class ScreenshotTaker {
         HashSet<String> matchedMsgStrs = new HashSet<String>();
         if (args.length > 1) {
         	 screenshotSavePath = args[1] + "/";
-         	if (!new File(screenshotSavePath).exists()) {
-         		new File(screenshotSavePath).mkdirs();
+        	 File screenshotDir = new File(screenshotSavePath);
+         	if (!screenshotDir.exists()) {
+         		screenshotDir.mkdirs();
          	} else {
-         		
+         		// add those messages that are covered by existing screenshots to matchedMsgStrs
+         		for (String filename : screenshotDir.list()) {
+         			filename = screenshotSavePath + filename;
+         			System.out.println(filename);
+         			List<ImgMatch> matches = Main.getImgMatches(filename);
+         			HashMap<String, MsgAnnotation> annotations = Main.msgToAnnotations(msgstrings, GCollectionUtils.singleElemList(matches));
+         			for (String x : annotations.keySet()) {
+         				matchedMsgStrs.add(x);
+         			}
+         		}
          	}
         }
         ScreenshotTaker st = new ScreenshotTaker(msgstrings, screenshotSavePath, matchedMsgStrs);
