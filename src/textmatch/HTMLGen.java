@@ -53,7 +53,7 @@ public class HTMLGen {
         o.add("function annotate(canvasname, imagefile, x, y, w, h) {");
         o.add("var canvas = document.getElementById(canvasname)");
         o.add("var img = new Image()");
-        o.add("img.src = imagefile");
+        o.add("img.onload = function() {");
         o.add("canvas.width = img.width");
         o.add("canvas.height = img.height");
         o.add("var ctx = canvas.getContext('2d')");
@@ -61,12 +61,14 @@ public class HTMLGen {
         o.add("ctx.fillStyle = 'rgba(0, 200, 200, 0.5)'");
         o.add("ctx.fillRect (x, y, w, h)");
         o.add("}");
-        o.add("function draw() {");
+        o.add("img.src = imagefile");
+        o.add("}");
+        o.add("window.onload = function() {");
         o.add(join(j, "\n"));
         o.add("}");
         o.add("</script>");
         o.add("</head>");
-        o.add("<body onload='draw()'>");
+        o.add("<body>");
         o.add(join(h, "\n"));
         o.add("</body>");
         o.add("</html>");
