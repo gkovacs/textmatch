@@ -13,17 +13,17 @@ import static textmatch.LCS.*;
 
 public class HTMLGen {
     
-    public static String htmlFromAnnotations(HashMap<String, MsgAnnotation> annotations, List<Pair<String, String>> base64EncodedFiles) throws Exception {
+    public static String htmlFromAnnotations(HashMap<String, MsgAnnotation> annotations, List<Pair<String, String>> base64EncodedFiles, String auxtext) throws Exception {
         List<Pair<MsgAnnotation, String>> annotatedMsgBlocks = new ArrayList<Pair<MsgAnnotation, String>>();
         for (String x : annotations.keySet()) {
             MsgAnnotation annotation = annotations.get(x);
             annotatedMsgBlocks.add(new Pair<MsgAnnotation, String>(annotation, x));
         }
         Collections.sort(annotatedMsgBlocks, new PairFirstComparator<MsgAnnotation>(new MsgAnnotationRegionComparator()));
-        return htmlFromAnnotations(annotatedMsgBlocks, base64EncodedFiles);
+        return htmlFromAnnotations(annotatedMsgBlocks, base64EncodedFiles, auxtext);
     }
     
-    public static String htmlFromAnnotations(List<Pair<MsgAnnotation, String>> annotatedMsgBlocks, List<Pair<String, String>> base64EncodedFiles) throws Exception {
+    public static String htmlFromAnnotations(List<Pair<MsgAnnotation, String>> annotatedMsgBlocks, List<Pair<String, String>> base64EncodedFiles, String auxtext) throws Exception {
         int i = 0;
         List<String> j = new ArrayList<String>();
         // contains the javascript stuff, namely the body of the draw method
@@ -35,13 +35,17 @@ public class HTMLGen {
             String blockTextMinusForeign = excludeForeignMsgStr(blockText);
             String msgtext = textFromMsgIdBlock(blockText);
             String foreigntext = foreignTextFromMsgIdBlock(blockText);
+            
+            byte[] msgtextB = msgtext.getBytes("UTF-8");
+            String base64msgtext = DatatypeConverter.printBase64Binary(msgtextB);
+            
             Integer[] coordinates = new Integer[] {annotation.x, annotation.y, annotation.w, annotation.h};
             String coordargs = join(coordinates, ",");
             String canvasname = "c" + i;
             j.add("annotate('" + canvasname + "', '" + annotation.filename + "', " + coordargs + ")");
             h.add("<canvas id='" + canvasname + "'></canvas>");
             h.add("<p><b>" + substituteIntoTemplateMarked(msgtext, annotation.templateSubstitutions) + "</b></p>");
-            h.add("<input type='text' size=100 value='" + foreigntext + "' />");
+            h.add("<input type='text' size=100 value='" + foreigntext + "' name='t-" + base64msgtext + "' />");
             h.add("<p>" + blockTextMinusForeign.replace("\n", "<br/>").replace("~~~~~~", "~~~").replace("~~~", "<br/>#& ") + "</p>");
             i += 1;
         }
@@ -72,13 +76,17 @@ public class HTMLGen {
         o.add("</script>");
         o.add("</head>");
         o.add("<body>");
+        o.add("<form method='POST' action='textmatch-annotated.jsp'>");
+        o.add("<input type='submit' name='button' value='Download Annotated Message File' /><br/><br/>");
+        o.add(auxtext);
         o.add(join(h, "\n"));
+        o.add("</form>");
         o.add("</body>");
         o.add("</html>");
         return join(o, "\n");
     }
     
-    public static String htmlFromAnnotations(List<Pair<MsgAnnotation, String>> annotatedMsgBlocks) throws Exception {
+    public static String htmlFromAnnotations(List<Pair<MsgAnnotation, String>> annotatedMsgBlocks, String auxtext) throws Exception {
         List<String> filenames = new ArrayList<String>();
         for (Pair<MsgAnnotation, String> annotationAndText : annotatedMsgBlocks) {
             MsgAnnotation annotation = annotationAndText.Item1;
@@ -97,7 +105,7 @@ public class HTMLGen {
             String base64data = DatatypeConverter.printBase64Binary(nbuf);
             base64EncodedFiles.add(new Pair<String, String>(filename, base64data));
         }
-        return htmlFromAnnotations(annotatedMsgBlocks, base64EncodedFiles);
+        return htmlFromAnnotations(annotatedMsgBlocks, base64EncodedFiles, auxtext);
     }
     
     public static void main(String[] args) throws Exception {
@@ -115,6 +123,6 @@ public class HTMLGen {
             annotatedMsgBlocks.add(makePair(annotation, x));
         }
         Collections.sort(annotatedMsgBlocks, new PairFirstComparator<MsgAnnotation>(new MsgAnnotationRegionComparator()));
-        System.out.println(htmlFromAnnotations(annotatedMsgBlocks));
+        System.out.println(htmlFromAnnotations(annotatedMsgBlocks, ""));
     }
 }

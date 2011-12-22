@@ -3,6 +3,7 @@
    <%@ page import="java.io.File" %>
    <%@ page import="java.io.BufferedInputStream" %>
    <%@ page import="java.io.InputStream" %>
+   <%@ page import="java.io.ByteArrayInputStream" %>
    <%@ page import="org.apache.commons.fileupload.servlet.*" %>
    <%@ page import="org.apache.commons.fileupload.disk.*"%>
    <%@ page import="org.apache.commons.fileupload.servlet.*"%>
@@ -29,6 +30,7 @@ List fileItems = upload.parseRequest(request);
 List<BufferedImage> images = new ArrayList<BufferedImage>();
 List<String> base64EncodedImages = new ArrayList<String>();
 List<String> imageNames = new ArrayList<String>();
+String msgfilename = "msg.po";
 
 POMsgSource msgsrc = null;
 
@@ -47,6 +49,7 @@ InputStream fileStream = new BufferedInputStream(item.getInputStream());
 String extension = filename.substring(dotIdx + 1);
 if (extension.equals("po") || extension.equals("pot")) {
 msgsrc = new POMsgSource(fileStream);
+msgfilename = filename;
 continue;
 } else if (!extension.equals("png")) {
 continue;
@@ -99,14 +102,16 @@ return;
 }
 
 
-List<String> msgstrings = new ArrayList<String>();
+List<String> msgstrings = msgsrc.getMsgStrings();
+/*
+new ArrayList<String>();
 HashMap<String, String> msgstringToBlock = new HashMap<String, String>();
 for (String x : msgsrc.splitIntoMsgIdBlocks()) {
 String msgstr = msgsrc.textFromMsgIdBlock(x);
 if (msgstr.equals("")) continue;
 msgstrings.add(msgstr);
 msgstringToBlock.put(msgstr, x);
-}
+}*/
 
 Collections.sort(msgstrings, new StringLengthComparator());
 Collections.reverse(msgstrings);
@@ -116,6 +121,27 @@ for (int i = 0; i < imageNames.size(); ++i) {
 }
 
 HashMap<String, MsgAnnotation> annotations = Main.msgToAnnotations(msgstrings, matchesAcrossImages);
+
+HashMap<String, String> annotationStrings = new HashMap<String, String>();
+for (String x : annotations.keySet()) {
+    annotationStrings.put(x, annotations.get(x).toString());
+}
+String annotatedmsgfile = msgsrc.makeAnnotatedMsgFile(annotationStrings);
+
+byte[] annotatedmsgfileB = annotatedmsgfile.getBytes("UTF-8");
+String base64AnnotatedMsgFile = DatatypeConverter.printBase64Binary(annotatedmsgfileB);
+
+//out.println("<a href='data:text/plain;base64," + base64AnnotatedMsgFile + "' >Download Annotated Message File</a><br/><br/>");
+
+msgsrc = new POMsgSource(new ByteArrayInputStream(annotatedmsgfileB));
+
+HashMap<String, String> msgstringToBlock = new HashMap<String, String>();
+for (String x : msgsrc.splitIntoMsgIdBlocks()) {
+String msgstr = msgsrc.textFromMsgIdBlock(x);
+if (msgstr.equals("")) continue;
+msgstringToBlock.put(msgstr, x);
+}
+
 HashMap<String, MsgAnnotation> annotatedBlocks = new HashMap<String, MsgAnnotation>();
 for (String x : annotations.keySet()) {
 String blockText = msgstringToBlock.get(x);
@@ -128,6 +154,19 @@ for (int i = 0; i < imageNames.size(); ++i) {
     base64EncodedFiles.add(new Pair<String, String>(imageNames.get(i), base64EncodedImages.get(i)));
 }
 
-out.println(HTMLGen.htmlFromAnnotations(annotatedBlocks, base64EncodedFiles));
+String auxtext = "<input type='plain' style='display:none' name='origmsgfile' size=20 value='" + base64AnnotatedMsgFile + "'> \n" +
+                 "<input type='plain' style='display:none' name='origmsgfilename' size=20 value='" + msgfilename + "'>";
+
+//out.println("<form method='POST' action='textmatch-annotated.jsp'>");
+
+//out.println("<input type='submit' name='button' value='Download Annotated Message File' /><br/><br/>");
+
+out.println(HTMLGen.htmlFromAnnotations(annotatedBlocks, base64EncodedFiles, auxtext));
+
+//out.println("<input type='plain' style='display:none' name='origmsgfile' size=20 value='" + base64AnnotatedMsgFile + "'>");
+
+//out.println("<input type='plain' style='display:none' name='origmsgfilename' size=20 value='" + msgfilename + "'>");
+
+//out.println("</form>");
 
 %>
