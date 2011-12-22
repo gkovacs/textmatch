@@ -1,5 +1,9 @@
 package textmatch;
 import org.sikuli.script.*;
+import org.sikuli.script.natives.Mat;
+import org.sikuli.script.natives.OCRWord;
+import org.sikuli.script.natives.OCRWords;
+import org.sikuli.script.natives.Vision;
 
 import java.awt.*;
 import java.awt.image.*;
@@ -22,7 +26,28 @@ import static textmatch.CharTree.*;
 
 public class Main {
 
-    public static List<ImgMatch> getImgMatches(BufferedImage img, String imgFileName) throws Exception {
+    private static boolean OCRInitDone = false;
+    
+    public static List<ImgMatch> getImgMatches(BufferedImage img, String imgFileName) {
+        if (!OCRInitDone) {
+            Vision.initOCR("/usr/share/tesseract-ocr/");
+            OCRInitDone = true;
+        }
+        //TextRecognizer recognizer = TextRecognizer.getInstance();
+        List<ImgMatch> retv = new ArrayList<ImgMatch>();
+        Mat mat = OpenCV.convertBufferedImageToMat(img);
+        OCRWords words = Vision.recognize_as_ocrtext(mat).getWords();
+        for (int i = 0; i < words.size(); ++i) {
+            OCRWord word = words.get(i);
+            if (word.getWidth() < 0 || word.getHeight() < 0)
+                continue;
+            ImgMatch m = new ImgMatch(word.getX(), word.getY(), word.getWidth(), word.getHeight(), word.getString(), imgFileName);
+            retv.add(m);
+        }
+        return retv;
+    }
+    
+    public static List<ImgMatch> getImgMatchesOld(BufferedImage img, String imgFileName) throws Exception {
         TextRecognizer recognizer = TextRecognizer.getInstance();
         //Mat mat = OpenCV.convertBufferedImageToMat(img.getImage());
         Rectangle rect = new java.awt.Rectangle(img.getWidth(), img.getHeight());
@@ -289,7 +314,7 @@ public class Main {
             String templateMatchText = m.templateMatchText;
             if (bestratio >= 1/1.5) {
                 
-                Region spanningRegion = spannedRegion(bestmatch);
+                Rectangle spanningRegion = spannedRectangle(bestmatch);
                 String filename = bestmatch.get(0).getImgName();
                 MsgAnnotation annotation = new MsgAnnotation(filename, spanningRegion, getSubstitutedStrings(templateMatchText), join(bestmatch, " "));
                 System.err.println(annotation.toString());

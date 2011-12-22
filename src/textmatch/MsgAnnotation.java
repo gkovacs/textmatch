@@ -1,5 +1,6 @@
 package textmatch;
 
+import java.awt.Rectangle;
 import java.util.*;
 
 import org.sikuli.script.Region;
@@ -30,6 +31,10 @@ public class MsgAnnotation {
     
     public MsgAnnotation(final String filename, final Region r, final String[] templateSubstitutions, String matchedText) {
         this(filename, r.x, r.y, r.w, r.h, templateSubstitutions, matchedText);
+    }
+    
+    public MsgAnnotation(final String filename, final Rectangle r, final String[] templateSubstitutions, String matchedText) {
+        this(filename, r.x, r.y, r.width, r.height, templateSubstitutions, matchedText);
     }
     
     public MsgAnnotation(String annotationText) {

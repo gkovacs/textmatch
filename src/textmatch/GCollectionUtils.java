@@ -2,6 +2,7 @@ package textmatch;
 
 import static textmatch.GCollectionUtils.slice;
 
+import java.awt.Rectangle;
 import java.util.*;
 
 import org.sikuli.script.Region;
@@ -181,6 +182,26 @@ public class GCollectionUtils {
         return true;
     }
     
+    public static Rectangle spannedRectangle(List<? extends Rectangle> regions) {
+        int minx = Integer.MAX_VALUE;
+        int maxx = Integer.MIN_VALUE;
+        int miny = Integer.MAX_VALUE;
+        int maxy = Integer.MIN_VALUE;
+        for (Rectangle r : regions) {
+            if (r.x < minx)
+                minx = r.x;
+            if (r.y < miny)
+                miny = r.y;
+            if (r.x + r.width > maxx)
+                maxx = r.x + r.width;
+            if (r.y + r.height > maxy)
+                maxy = r.y + r.height;
+        }
+        int w = maxx - minx;
+        int h = maxy - miny;
+        return new Rectangle(minx, miny, w, h);
+    }
+    
     public static Region spannedRegion(List<? extends Region> regions) {
         int minx = Integer.MAX_VALUE;
         int maxx = Integer.MIN_VALUE;
@@ -211,10 +232,10 @@ public class GCollectionUtils {
                 minx = r.x;
             if (r.y < miny)
                 miny = r.y;
-            if (r.x + r.w > maxx)
-                maxx = r.x + r.w;
-            if (r.y + r.h > maxy)
-                maxy = r.y + r.h;
+            if (r.x + r.width > maxx)
+                maxx = r.x + r.width;
+            if (r.y + r.height > maxy)
+                maxy = r.y + r.height;
         }
         int w = maxx - minx;
         int h = maxy - miny;
@@ -252,7 +273,7 @@ public class GCollectionUtils {
     public static int totalArea(ImgMatch[] regions) {
         int total = 0;
         for (ImgMatch x : regions) {
-            total += x.w * x.h;
+            total += x.width * x.height;
         }
         return total;
     }
