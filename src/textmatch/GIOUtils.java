@@ -13,4 +13,14 @@ public class GIOUtils {
         }
         return lines;
     }
+    
+    public static List<String> readLines(InputStream s) throws Exception {
+        List<String> lines = new ArrayList<String>();
+        String line = null;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(s));
+            while ((line = reader.readLine()) != null) {
+                lines.add(line.trim());
+            }
+            return lines;
+        }
 }

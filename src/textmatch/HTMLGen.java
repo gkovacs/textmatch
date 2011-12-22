@@ -3,6 +3,8 @@ package textmatch;
 import java.io.*;
 import java.util.*;
 
+import javax.xml.bind.DatatypeConverter;
+
 import static textmatch.GCollectionUtils.*;
 import static textmatch.GStringUtils.*;
 import static textmatch.POMsgSource.*;
@@ -11,25 +13,22 @@ import static textmatch.LCS.*;
 
 public class HTMLGen {
     
-    public static void main(String[] args) throws Exception {
-        // args[0]: an annotated po file
-        List<String> msgfilelines = readLines(new FileReader(args[0]));
-        POMsgSource msgsrc = new POMsgSource(msgfilelines);
-        List<String> msgblocks = msgsrc.splitIntoMsgIdBlocks();
+    public static String htmlFromAnnotations(HashMap<String, MsgAnnotation> annotations, List<Pair<String, String>> base64EncodedFiles) throws Exception {
+        List<Pair<MsgAnnotation, String>> annotatedMsgBlocks = new ArrayList<Pair<MsgAnnotation, String>>();
+        for (String x : annotations.keySet()) {
+            MsgAnnotation annotation = annotations.get(x);
+            annotatedMsgBlocks.add(new Pair<MsgAnnotation, String>(annotation, x));
+        }
+        Collections.sort(annotatedMsgBlocks, new PairFirstComparator<MsgAnnotation>(new MsgAnnotationRegionComparator()));
+        return htmlFromAnnotations(annotatedMsgBlocks, base64EncodedFiles);
+    }
+    
+    public static String htmlFromAnnotations(List<Pair<MsgAnnotation, String>> annotatedMsgBlocks, List<Pair<String, String>> base64EncodedFiles) throws Exception {
+        int i = 0;
         List<String> j = new ArrayList<String>();
         // contains the javascript stuff, namely the body of the draw method
         List<String> h = new ArrayList<String>();
         // contains the html stuff, namely the canvas ids and text
-        int i = 0;
-        List<Pair<MsgAnnotation, String>> annotatedMsgBlocks = new ArrayList<Pair<MsgAnnotation, String>>();
-        for (String x : msgblocks) {
-            MsgAnnotation annotation = annotationFromMsgIdBlock(x);
-            if (annotation == null)
-                continue;
-            //String msgtext = textFromMsgIdBlock(x);
-            annotatedMsgBlocks.add(makePair(annotation, x));
-        }
-        Collections.sort(annotatedMsgBlocks, new PairFirstComparator<MsgAnnotation>(new MsgAnnotationRegionComparator()));
         for (Pair<MsgAnnotation, String> annotationAndText : annotatedMsgBlocks) {
             MsgAnnotation annotation = annotationAndText.Item1;
             String blockText = annotationAndText.Item2;
@@ -50,6 +49,10 @@ public class HTMLGen {
         o.add("<html>");
         o.add("<head>");
         o.add("<script type='application/javascript'>");
+        o.add("base64data = {} ");
+        for (Pair<String, String> p : base64EncodedFiles) {
+            o.add("base64data['" + p.Item1 + "'] = '" + p.Item2 + "'");
+        }
         o.add("function annotate(canvasname, imagefile, x, y, w, h) {");
         o.add("var canvas = document.getElementById(canvasname)");
         o.add("var img = new Image()");
@@ -61,7 +64,7 @@ public class HTMLGen {
         o.add("ctx.fillStyle = 'rgba(0, 200, 200, 0.5)'");
         o.add("ctx.fillRect (x, y, w, h)");
         o.add("}");
-        o.add("img.src = imagefile");
+        o.add("img.src = 'data:image/png;base64,' + base64data[imagefile]");
         o.add("}");
         o.add("window.onload = function() {");
         o.add(join(j, "\n"));
@@ -72,6 +75,46 @@ public class HTMLGen {
         o.add(join(h, "\n"));
         o.add("</body>");
         o.add("</html>");
-        System.out.println(join(o, "\n"));
+        return join(o, "\n");
+    }
+    
+    public static String htmlFromAnnotations(List<Pair<MsgAnnotation, String>> annotatedMsgBlocks) throws Exception {
+        List<String> filenames = new ArrayList<String>();
+        for (Pair<MsgAnnotation, String> annotationAndText : annotatedMsgBlocks) {
+            MsgAnnotation annotation = annotationAndText.Item1;
+            if (!filenames.contains(annotation.filename))
+                filenames.add(annotation.filename);
+        }
+        List<Pair<String, String>> base64EncodedFiles = new ArrayList<Pair<String, String>>();
+        byte[] buffer = new byte[1024*1024*1];
+        for (String filename : filenames) {
+            int numBytes = new FileInputStream(filename).read(buffer);
+            byte[] nbuf = new byte[numBytes];
+            for (int q = 0; q < numBytes; ++q) {
+                nbuf[q] = buffer[q];
+                buffer[q] = 0;
+            }
+            String base64data = DatatypeConverter.printBase64Binary(nbuf);
+            base64EncodedFiles.add(new Pair<String, String>(filename, base64data));
+        }
+        return htmlFromAnnotations(annotatedMsgBlocks, base64EncodedFiles);
+    }
+    
+    public static void main(String[] args) throws Exception {
+        // args[0]: an annotated po file
+        List<String> msgfilelines = readLines(new FileReader(args[0]));
+        POMsgSource msgsrc = new POMsgSource(msgfilelines);
+        List<String> msgblocks = msgsrc.splitIntoMsgIdBlocks();
+        
+        List<Pair<MsgAnnotation, String>> annotatedMsgBlocks = new ArrayList<Pair<MsgAnnotation, String>>();
+        for (String x : msgblocks) {
+            MsgAnnotation annotation = annotationFromMsgIdBlock(x);
+            if (annotation == null)
+                continue;
+            //String msgtext = textFromMsgIdBlock(x);
+            annotatedMsgBlocks.add(makePair(annotation, x));
+        }
+        Collections.sort(annotatedMsgBlocks, new PairFirstComparator<MsgAnnotation>(new MsgAnnotationRegionComparator()));
+        System.out.println(htmlFromAnnotations(annotatedMsgBlocks));
     }
 }

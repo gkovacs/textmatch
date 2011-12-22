@@ -356,18 +356,14 @@ public class Main {
     
     public static void main(String[] args) throws Exception {
         // TODO Auto-generated method stub
-        List<String> msgfilecontents = readLines(new FileReader(args[0]));
-        POMsgSource msgsrc = new POMsgSource(msgfilecontents);
+        POMsgSource msgsrc = new POMsgSource(new FileInputStream(args[0]));
         List<String> msgstrings = msgsrc.getMsgStrings();
         Collections.sort(msgstrings, new StringLengthComparator());
         Collections.reverse(msgstrings);
-        HashSet<List<ImgMatch>> matchesAcrossImagesH = new HashSet<List<ImgMatch>>();
-        for (int i = 1; i < args.length; ++i) {
-            matchesAcrossImagesH.add(getImgMatches(args[i]));
-        }
         List<List<ImgMatch>> matchesAcrossImages = new ArrayList<List<ImgMatch>>();
-        for (List<ImgMatch> x : matchesAcrossImagesH)
-            matchesAcrossImages.add(x);
+        for (int i = 1; i < args.length; ++i) {
+            matchesAcrossImages.add(getImgMatches(args[i]));
+        }
         HashMap<String, MsgAnnotation> annotations = msgToAnnotations(msgstrings, matchesAcrossImages);
         HashMap<String, String> annotationStrings = new HashMap<String, String>();
         for (String x : annotations.keySet()) {

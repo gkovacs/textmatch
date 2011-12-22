@@ -13,6 +13,10 @@ import static textmatch.GIOUtils.*;
 public class POMsgSource {
     private List<String> lines = null;
     
+    public POMsgSource(InputStream stream) throws Exception {
+        this.lines = readLines(stream);
+    }
+    
     public POMsgSource(List<String> lines) throws Exception {
         this.lines = lines;
     }
