@@ -1,3 +1,5 @@
+prereqs: tesseract-ocr tesseract-ocr-eng libcv2.1 libcvaix2.1
+
 gcc activewindow.c -lX11 -o activewindow
 
 javah textmatch.ScreenshotTaker
