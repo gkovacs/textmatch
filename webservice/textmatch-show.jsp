@@ -154,8 +154,10 @@ for (int i = 0; i < imageNames.size(); ++i) {
     base64EncodedFiles.add(new Pair<String, String>(imageNames.get(i), base64EncodedImages.get(i)));
 }
 
+
 String auxtext = "<input type='plain' style='display:none' name='origmsgfile' size=20 value='" + base64AnnotatedMsgFile + "'> \n" +
                  "<input type='plain' style='display:none' name='origmsgfilename' size=20 value='" + msgfilename + "'>";
+
 
 //out.println("<form method='POST' action='textmatch-annotated.jsp'>");
 

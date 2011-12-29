@@ -95,6 +95,22 @@ public class GCollectionUtils {
         }
         return output;
     }
+    
+    public static <T> List<T> limitLength(T[] x, int length) {
+        List<T> output = new ArrayList<T>(Math.min(x.length, length));
+        for (int i = 0; i < Math.min(x.length, length); ++i) {
+            output.add(x[i]);
+        }
+        return output;
+    }
+    
+    public static <T> List<T> limitLength(List<T> x, int length) {
+        List<T> output = new ArrayList<T>(Math.min(x.size(), length));
+        for (int i = 0; i < Math.min(x.size(), length); ++i) {
+            output.add(x.get(i));
+        }
+        return output;
+    }
     /*
     public static <T> Iterable<T> lazySlice(List<T> x, final int start, final int end) {
         return new Iterable<T>() {

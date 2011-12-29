@@ -88,6 +88,24 @@ public class POMsgSourceTest {
     }
     
     @Test
+    public void testAnnotationListFromMsgIdBlock() throws Exception {
+        List<String> po = new ArrayList<String>();
+        po.add("#* foo.png(1,2,3,4)~~~分sa分foo");
+        po.add("msgid \"\"");
+        po.add("\"Indicates whether to close the shell when an upgrade or uninstall action is \"");
+        po.add("\"performed.\"");
+        List<MsgAnnotation> annotationList = annotationListFromMsgIdBlock(join(po, "\n"));
+        MsgAnnotation annotation = annotationList.get(0);
+        assertEquals("foo.png", annotation.filename);
+        assertEquals(1, annotation.x);
+        assertEquals(2, annotation.y);
+        assertEquals(3, annotation.w);
+        assertEquals(4, annotation.h);
+        String[] expectedTemplateSubstitutions = new String[] {"sa", "foo"};
+        assertArrayEquals(expectedTemplateSubstitutions, annotation.templateSubstitutions);
+    }
+    
+    @Test
     public void testSplitIntoMsgIdBlocks() throws Exception {
         List<String> po = new ArrayList<String>();
         po.add("msgid \"- GNOME Mouse Preferences\"");

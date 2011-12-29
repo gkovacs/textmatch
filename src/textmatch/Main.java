@@ -276,9 +276,7 @@ public class Main {
     
     */
     
-    public static HashMap<String, MsgAnnotation> msgToAnnotations(List<String> msgstrings, List<List<ImgMatch>> matchesAcrossImages) {
-        HashMap<String, MsgAnnotation> output = new HashMap<String, MsgAnnotation>();
-        
+    public static List<HashMap<String, Integer>> getNgramsForImages(List<List<ImgMatch>> matchesAcrossImages) {
         List<HashMap<String, Integer>> ngramsForImages = new ArrayList<HashMap<String, Integer>>();
         for (List<ImgMatch> matches : matchesAcrossImages) {
             HashMap<String, Integer> occurrenceCount = new HashMap<String, Integer>();
@@ -292,6 +290,14 @@ public class Main {
             }
             ngramsForImages.add(occurrenceCount);
         }
+        return ngramsForImages;
+    }
+    
+    public static HashMap<String, MsgAnnotation> msgToAnnotations(List<String> msgstrings, List<List<ImgMatch>> matchesAcrossImages) {
+        HashMap<String, MsgAnnotation> output = new HashMap<String, MsgAnnotation>();
+        
+        List<HashMap<String, Integer>> ngramsForImages = getNgramsForImages(matchesAcrossImages);
+        
         /*
         for (List<ImgMatch> matches : matchesAcrossImages) {
             String s = join(matches, " ");
@@ -380,7 +386,8 @@ public class Main {
     */
     
     public static void main(String[] args) throws Exception {
-        // TODO Auto-generated method stub
+        // 1st argument: po file
+        // 2nd argument and following: png files
         POMsgSource msgsrc = new POMsgSource(new FileInputStream(args[0]));
         List<String> msgstrings = msgsrc.getMsgStrings();
         Collections.sort(msgstrings, new StringLengthComparator());

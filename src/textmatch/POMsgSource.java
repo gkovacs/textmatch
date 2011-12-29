@@ -2,6 +2,7 @@ package textmatch;
 
 
 import static textmatch.LCS.*;
+import static textmatch.GCollectionUtils.*;
 import java.util.*;
 
 import java.io.*;
@@ -19,6 +20,14 @@ public class POMsgSource {
     
     public POMsgSource(List<String> lines) throws Exception {
         this.lines = lines;
+    }
+    
+    public POMsgSource(String[] lines) throws Exception {
+        this.lines = toList(lines);
+    }
+    
+    public POMsgSource(String contents) throws Exception {
+        this.lines = splitToList(contents, '\n');
     }
     
     public List<String> getMsgStrings() throws Exception {
@@ -41,6 +50,18 @@ public class POMsgSource {
             }
         }
         return null;
+    }
+    
+    public static List<MsgAnnotation> annotationListFromMsgIdBlock(String msgidblock) throws Exception {
+        List<MsgAnnotation> output = new ArrayList<MsgAnnotation>();
+        for (String line : readLines(new StringReader(msgidblock))) {
+            if (line.startsWith("#* ")) {
+                String annotationText = line.substring(3);
+                output.add(new MsgAnnotation(annotationText));
+
+            }
+        }
+        return output;
     }
     
     public static String msgSourceFromMsgIdBlock(String msgidblock) throws Exception {
@@ -77,6 +98,17 @@ public class POMsgSource {
         for (String line : readLines(new StringReader(msgidblock))) {
             if (line.startsWith("msgstr \"")) {
                 break;
+            }
+            curmsg.add(line);
+        }
+        return join(curmsg, "\n");
+    }
+    
+    public static String excludeManualAnnotation(String msgidblock) throws Exception {
+        List<String> curmsg = new ArrayList<String>();
+        for (String line : readLines(new StringReader(msgidblock))) {
+            if (line.startsWith("#~ ")) {
+                continue;
             }
             curmsg.add(line);
         }
@@ -155,6 +187,8 @@ public class POMsgSource {
         List<String> startSignals = new ArrayList<String>();
         // order in this list is the order in which they usually appear in the file
         startSignals.add("#& ");
+        startSignals.add("#% ");
+        startSignals.add("#* ");
         startSignals.add("#. ");
         startSignals.add("#: ");
         startSignals.add("msgid \"");

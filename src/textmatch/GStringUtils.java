@@ -87,6 +87,29 @@ public class GStringUtils {
         return output;
     }
     
+    public static List<String> splitToList(String str, char delim) {
+        final char[] s = str.toCharArray();
+        final int numDelims = count(s, delim);
+        final List<String> output = new ArrayList<String>(numDelims + 1);
+        for (int i = 0; i < numDelims + 1; ++i) {
+            output.add("");
+        }
+        int curidx = 0;
+        final StringBuilder b = new StringBuilder();
+        for (char c : s) {
+            if (c == delim) {
+                output.set(curidx, b.toString());
+                b.setLength(0);
+                ++curidx;
+            } else {
+                b.append(c);
+            }
+        }
+        if (b.length() > 0)
+            output.set(curidx, b.toString());
+        return output;
+    }
+    
     
     public static <T extends Region> String tostr(T r) {
         return r.x + "," + r.y + "," + r.w + "," + r.h;
