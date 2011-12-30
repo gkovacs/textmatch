@@ -4,6 +4,8 @@
    <%@ page import="java.io.BufferedInputStream" %>
    <%@ page import="java.io.InputStream" %>
    <%@ page import="java.io.ByteArrayInputStream" %>
+   <%@ page import="java.net.URLDecoder" %>
+   <%@ page import="java.net.URLEncoder" %>
    <%@ page import="org.apache.commons.fileupload.servlet.*" %>
    <%@ page import="org.apache.commons.fileupload.disk.*"%>
    <%@ page import="org.apache.commons.fileupload.servlet.*"%>
@@ -18,17 +20,15 @@
    <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
 
-String base64origmsg = request.getParameter("origmsgfile");
+String encorigmsg = request.getParameter("origmsgfile");
 String origmsgfilename = request.getParameter("origmsgfilename");
 
 response.setContentType("text/plain");
 response.setHeader("Content-Disposition", "attachment;filename=annotated-" + origmsgfilename);
 
-byte[] origmsgB = DatatypeConverter.parseBase64Binary(base64origmsg);
+String origmsg = URLDecoder.decode(encorigmsg, "UTF-8");
 
-String origmsg = new String(origmsgB, "UTF8");
-
-POMsgSource msgsrc = new POMsgSource(new ByteArrayInputStream(origmsgB));
+POMsgSource msgsrc = new POMsgSource(origmsg);
 
 List<String> msgblocks = msgsrc.splitIntoMsgIdBlocks();
 
@@ -37,10 +37,9 @@ String msgblock = msgblocks.get(i);
 String msgtext = msgsrc.textFromMsgIdBlock(msgblock);
 String withoutforeigntext = msgsrc.excludeForeignMsgStr(msgblock);
 
-byte[] msgtextB = msgtext.getBytes("UTF-8");
-String base64msgtext = DatatypeConverter.printBase64Binary(msgtextB);
+String encmsgtext = URLEncoder.encode(msgtext, "UTF-8");
 
-String foreigntext = request.getParameter("t-" + base64msgtext);
+String foreigntext = request.getParameter("t-" + encmsgtext);
 if (foreigntext == null) {
 out.println(msgblock);
 } else {

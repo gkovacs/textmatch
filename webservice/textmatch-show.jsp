@@ -4,6 +4,8 @@
    <%@ page import="java.io.BufferedInputStream" %>
    <%@ page import="java.io.InputStream" %>
    <%@ page import="java.io.ByteArrayInputStream" %>
+   <%@ page import="java.net.URLDecoder" %>
+   <%@ page import="java.net.URLEncoder" %>
    <%@ page import="org.apache.commons.fileupload.servlet.*" %>
    <%@ page import="org.apache.commons.fileupload.disk.*"%>
    <%@ page import="org.apache.commons.fileupload.servlet.*"%>
@@ -128,12 +130,11 @@ for (String x : annotations.keySet()) {
 }
 String annotatedmsgfile = msgsrc.makeAnnotatedMsgFile(annotationStrings);
 
-byte[] annotatedmsgfileB = annotatedmsgfile.getBytes("UTF-8");
-String base64AnnotatedMsgFile = DatatypeConverter.printBase64Binary(annotatedmsgfileB);
+String encAnnotatedMsgFile = URLEncoder.encode(annotatedmsgfile, "UTF-8");
 
 //out.println("<a href='data:text/plain;base64," + base64AnnotatedMsgFile + "' >Download Annotated Message File</a><br/><br/>");
 
-msgsrc = new POMsgSource(new ByteArrayInputStream(annotatedmsgfileB));
+msgsrc = new POMsgSource(annotatedmsgfile);
 
 HashMap<String, String> msgstringToBlock = new HashMap<String, String>();
 for (String x : msgsrc.splitIntoMsgIdBlocks()) {
@@ -155,20 +156,11 @@ for (int i = 0; i < imageNames.size(); ++i) {
 }
 
 
-String auxtext = "<input type='plain' style='display:none' name='origmsgfile' size=20 value='" + base64AnnotatedMsgFile + "'> \n" +
+String auxtext = "<input type='plain' style='display:none' name='origmsgfile' size=20 value='" + encAnnotatedMsgFile + "'> \n" +
                  "<input type='plain' style='display:none' name='origmsgfilename' size=20 value='" + msgfilename + "'>";
 
 
-//out.println("<form method='POST' action='textmatch-annotated.jsp'>");
-
-//out.println("<input type='submit' name='button' value='Download Annotated Message File' /><br/><br/>");
-
 out.println(HTMLGen.htmlFromAnnotations(annotatedBlocks, base64EncodedFiles, auxtext));
 
-//out.println("<input type='plain' style='display:none' name='origmsgfile' size=20 value='" + base64AnnotatedMsgFile + "'>");
-
-//out.println("<input type='plain' style='display:none' name='origmsgfilename' size=20 value='" + msgfilename + "'>");
-
-//out.println("</form>");
 
 %>

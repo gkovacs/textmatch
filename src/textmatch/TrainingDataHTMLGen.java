@@ -84,7 +84,7 @@ public class TrainingDataHTMLGen {
                 //String highlightData = "data:image/png;base64," + base64EncodeImage(highlight);
                 String highlightData = imagesDir + imageWidth + "-" + imageHeight + "-" + annotation.x + "-" + annotation.y + "-" + annotation.w + "-" + annotation.h + ".png";
                 
-                if (!imagesDir.startsWith("http") && !new File("../" + highlightData).exists()) {
+                if (!imagesDir.startsWith("http") && !new File("../" + highlightData).exists() && new File("../" + imagesDir).exists()) {
                     ImageIO.write(GImageUtils.transparentRectangle(new Dimension(imageWidth, imageHeight), annotation.x, annotation.y, annotation.w, annotation.h), "png", new File("../" + highlightData));
                 }
                 

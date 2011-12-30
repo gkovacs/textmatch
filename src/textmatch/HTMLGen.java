@@ -5,6 +5,7 @@ import static textmatch.GCollectionUtils.*;
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.net.URLEncoder;
 import java.util.*;
 
 import javax.imageio.ImageIO;
@@ -59,8 +60,7 @@ public class HTMLGen {
             String msgtext = textFromMsgIdBlock(blockText);
             String foreigntext = foreignTextFromMsgIdBlock(blockText);
             
-            byte[] msgtextB = msgtext.getBytes("UTF-8");
-            String base64msgtext = DatatypeConverter.printBase64Binary(msgtextB);
+            String encmsgtext = URLEncoder.encode(msgtext, "UTF-8");
             
             Integer[] coordinates = new Integer[] {annotation.x, annotation.y, annotation.w, annotation.h};
             String coordargs = join(coordinates, ",");
@@ -71,7 +71,7 @@ public class HTMLGen {
             
             String highlightData = imagesDir + imageWidth + "-" + imageHeight + "-" + annotation.x + "-" + annotation.y + "-" + annotation.w + "-" + annotation.h + ".png";
             
-            if (!imagesDir.startsWith("http") && !new File("../" + highlightData).exists()) {
+            if (!imagesDir.startsWith("http") && !new File("../" + highlightData).exists() && new File("../" + imagesDir).exists()) {
                 ImageIO.write(GImageUtils.transparentRectangle(new Dimension(imageWidth, imageHeight), annotation.x, annotation.y, annotation.w, annotation.h), "png", new File("../" + highlightData));
             }
             
@@ -79,7 +79,7 @@ public class HTMLGen {
             //h.add("<canvas id='" + canvasname + "'></canvas>");
             h.add("<img id='" + canvasname + "' width=" + imageWidth + " height=" + imageHeight + " src='" + highlightData + "'></img>");
             h.add("<p><b>" + substituteIntoTemplateMarked(msgtext, annotation.templateSubstitutions) + "</b></p>");
-            h.add("<input type='text' size=100 value='" + foreigntext + "' name='t-" + base64msgtext + "' />");
+            h.add("<input type='text' size=100 value='" + foreigntext + "' name='t-" + encmsgtext + "' />");
             h.add("<p>" + blockTextMinusForeign.replace("\n", "<br/>").replace("~~~~~~", "~~~").replace("~~~", "<br/>#& ") + "</p>");
             i += 1;
         }
