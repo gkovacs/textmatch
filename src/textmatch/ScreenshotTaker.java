@@ -79,6 +79,8 @@ public class ScreenshotTaker {
     
     private final POMsgSource msgsrc;
     
+    private final HashSet<String> processedImages = new HashSet<String>();
+    
     public ScreenshotTaker(final POMsgSource msgsrc, String screenshotSavePath) throws Exception {
     	this.msgsrc = msgsrc;
     	this.msgidblocks = msgsrc.splitIntoMsgIdBlocks();
@@ -298,7 +300,21 @@ public class ScreenshotTaker {
         }
     }
     
+    private String hashable(List<ImgMatch> imgMatches) {
+        StringBuilder b = new StringBuilder();
+        for (ImgMatch x : imgMatches) {
+            b.append(x.text() + "\n");
+        }
+        return b.toString();
+    }
+    
     public void runme() throws Exception {
+        BufferedImage img = null;
+        boolean imgCaptured = false;
+        String imgMatchesHashable = null;
+        List<ImgMatch> imgMatches = null;
+        
+        
         while (true) {
             if (frame.isFocused())
                 continue;
@@ -307,15 +323,22 @@ public class ScreenshotTaker {
             //    continue;
             //}
             //captureNewImage();
-            BufferedImage img = captureNewImage();
-            if (sameImages(img, prevImg))
-            	continue;
+            if (!imgCaptured) {
+                img = captureNewImage();
+                if (sameImages(img, prevImg))
+                    continue;
+                imgMatches = Main.getImgMatches(img, "");
+                imgMatchesHashable = hashable(imgMatches);
+            }
             
             boolean containsNewMsgStrs = false;
             int origNumMatchedMsgStrs = 0;
-            BufferedImage displayImage = deepCopy(img);
-            if (msgstrings.size() > 0) {
-            final List<ImgMatch> imgMatches = Main.getImgMatches(img, "");
+            
+            BufferedImage displayImage = null;
+            if (msgstrings.size() == 0) {
+                displayImage = img;
+            } else {
+            
             /*
             if (imgMatches.size() > 300) {
                 System.err.println("too many words");
@@ -324,13 +347,14 @@ public class ScreenshotTaker {
             */
             
           final MutableValue<HashMap<String, MsgAnnotation>> retv = new MutableValue<HashMap<String, MsgAnnotation>>();
-        	Thread tx = new Thread(new Runnable() {
+          final List<ImgMatch> imgMatchesF = imgMatches;
+          Thread tx = new Thread(new Runnable() {
 
     		@Override
     		public void run() {
     			// TODO Auto-generated method stub
     			try {
-    				retv.value = Main.msgToAnnotations(msgstrings, GCollectionUtils.singleElemList(imgMatches));
+    				retv.value = Main.msgToAnnotations(msgstrings, GCollectionUtils.singleElemList(imgMatchesF));
     			} catch (Exception e) {
     				
     			}
@@ -338,21 +362,35 @@ public class ScreenshotTaker {
         	   
            });
         	tx.start();
+        	boolean interrupted = false;
 
         	while (tx.isAlive()) {
             	BufferedImage newImg = captureNewImage();
         		if (!sameImages(img, newImg)) {
-            		tx.interrupt();
-            		break;
+        		    List<ImgMatch> newImgMatches = Main.getImgMatches(newImg, "");
+        		    String newImgMatchesHashable = hashable(newImgMatches);
+        		    if (!processedImages.contains(newImgMatchesHashable)) {
+        		        interrupted = true;
+        		        tx.interrupt();
+                        imgCaptured = true;
+                        img = newImg;
+                        imgMatches = newImgMatches;
+                        imgMatchesHashable = newImgMatchesHashable;
+                        break;
+        		    }
             	}
             	tx.join(1000);
         	}
 
         	//tx.join();
         	HashMap<String, MsgAnnotation> annotations = retv.value;
-        	if (annotations == null)
+        	if (interrupted || annotations == null)
         		continue;
         	
+        	imgCaptured = false;
+        	processedImages.add(imgMatchesHashable);
+        	
+        	displayImage = deepCopy(img);
         	origNumMatchedMsgStrs = matchedMsgStrs.size();
         	
         	addNewAnnotations(annotations);
@@ -410,6 +448,7 @@ public class ScreenshotTaker {
  			List<ImgMatch> matches = Main.getImgMatches(filename);
  			HashMap<String, MsgAnnotation> annotations = Main.msgToAnnotations(msgstrings, GCollectionUtils.singleElemList(matches));
  			st.addNewAnnotations(annotations);
+            st.processedImages.add(st.hashable(matches));
         }
         st.show();
         st.runme();

@@ -33,6 +33,33 @@ Window get_toplevel_parent(Window window)
 }
 */
 
+void get_toplevel_parent(Window window, Window *active_ret)
+{
+     Window parent;
+     Window root;
+     Window * children;
+     unsigned int num_children;
+
+     while (1) {
+         if (0 == XQueryTree(display, window, &root,
+                   &parent, &children, &num_children)) {
+             //fprintf(stderr, "XQueryTree error\n");
+             //abort(); //change to whatever error handling you prefer
+         }
+         if (children) { //must test for null
+             XFree(children);
+         }
+         if (window == root || parent == root) {
+             *active_ret = window;
+             return;
+         }
+         else {
+             window = parent;
+         }
+     }
+}
+
+/*
 void get_toplevel_parent(Window window, Window *active_ret, Window *previous_ret)
 {
      Window parent;
@@ -61,6 +88,7 @@ void get_toplevel_parent(Window window, Window *active_ret, Window *previous_ret
          }
      }
 }
+*/
 
 JNIEXPORT void JNICALL Java_textmatch_ScreenshotTaker_initializeXInteraction
   (JNIEnv *e, jclass c) {
@@ -72,34 +100,38 @@ JNIEXPORT void JNICALL Java_textmatch_ScreenshotTaker_refreshInfo
 Window active_window;
 int focus_state;
 XGetInputFocus(display, &active_window, &focus_state);
-Window active_window_act, active_window_child;
-get_toplevel_parent(active_window, &active_window_act, &active_window_child);
+Window active_window_act;
+get_toplevel_parent(active_window, &active_window_act);
 XGetWindowAttributes(display, active_window_act, &attributes);
-XGetWindowAttributes(display, active_window_child, &child_attributes);
+//XGetWindowAttributes(display, active_window_child, &child_attributes);
 }
 
 
 JNIEXPORT jint JNICALL Java_textmatch_ScreenshotTaker_getX
   (JNIEnv *e, jclass c) {
-  return attributes.x + (attributes.width - child_attributes.width);
+  //return attributes.x + (attributes.width - child_attributes.width);
+  return attributes.x;
 }
 
 
 JNIEXPORT jint JNICALL Java_textmatch_ScreenshotTaker_getY
   (JNIEnv *e, jclass c) {
   // used to exclude window decorations
-  return attributes.y + (attributes.height - child_attributes.height);
+  //return attributes.y + (attributes.height - child_attributes.height);
+  return attributes.y;
 }
 
 
 JNIEXPORT jint JNICALL Java_textmatch_ScreenshotTaker_getWidth
   (JNIEnv *e, jclass c) {
-  return child_attributes.width;
+  //return child_attributes.width;
+  return attributes.width;
 }
 
 
 JNIEXPORT jint JNICALL Java_textmatch_ScreenshotTaker_getHeight
   (JNIEnv *e, jclass c) {
-  return child_attributes.height;
+  //return child_attributes.height;
+  return attributes.height;
 }
 

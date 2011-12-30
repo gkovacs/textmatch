@@ -64,6 +64,28 @@ public class POMsgSource {
         return output;
     }
     
+    public static List<MsgAnnotation> checkedAnnotationListFromMsgIdBlock(String msgidblock) throws Exception {
+        List<MsgAnnotation> output = new ArrayList<MsgAnnotation>();
+        for (String line : readLines(new StringReader(msgidblock))) {
+            if (line.startsWith("#% ")) {
+                String annotationText = line.substring(3);
+                output.add(new MsgAnnotation(annotationText));
+
+            }
+        }
+        return output;
+    }
+    
+    // returns true if we manually specified that are no matches for the given block
+    public static boolean noMatchesForMsgIdBlock(String msgidblock) throws Exception {
+        for (String line : readLines(new StringReader(msgidblock))) {
+            if (line.startsWith("#% nomatches")) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public static String msgSourceFromMsgIdBlock(String msgidblock) throws Exception {
     	for (String line : readLines(new StringReader(msgidblock))) {
             if (line.startsWith("#: ")) {

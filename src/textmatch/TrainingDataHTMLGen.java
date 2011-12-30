@@ -120,7 +120,8 @@ public class TrainingDataHTMLGen {
 
 
 
-            h.add("<b>" + msgtext + "</b><br/><br/>");
+            h.add("<b>" + msgtext + "</b><br/>");
+            h.add(msgSourceConciseFromMsgIdBlock(blockText) + "<br/><br/>");
             //h.add("<input type='text' size=100 value='" + foreigntext + "' name='t-" + base64msgtext + "' />");
             //h.add("<p>" + blockTextMinusForeign.replace("\n", "<br/>").replace("~~~~~~", "~~~").replace("~~~", "<br/>#& ") + "</p>");
             i += 1;
@@ -215,7 +216,14 @@ public class TrainingDataHTMLGen {
         List<String> msgblocks = msgsrc.splitIntoMsgIdBlocks();
         
         List<Pair<List<MsgAnnotation>, String>> annotatedMsgBlocks = new ArrayList<Pair<List<MsgAnnotation>, String>>();
+        HashSet<String> checkedMsgBlocks = new HashSet<String>();
         for (String x : msgblocks) {
+            List<MsgAnnotation> checkedAnnotationList = checkedAnnotationListFromMsgIdBlock(x);
+            if (checkedAnnotationList.size() != 0)
+                continue;
+            else if (noMatchesForMsgIdBlock(x))
+                continue;
+            
             List<MsgAnnotation> annotationList = annotationListFromMsgIdBlock(x);
             if (annotationList.size() == 0)
                 continue;

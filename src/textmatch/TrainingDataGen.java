@@ -18,6 +18,8 @@ import java.util.List;
 
 public class TrainingDataGen {
 
+    public static int numSelections = 5;
+    
     public static List<MatchResults> orderMatches(String msgstr, List<List<ImgMatch>> matchesAcrossImages /*, List<HashMap<String, Integer>> ngramsForImages*/) {
         List<MatchResults> matchresults = new ArrayList<MatchResults>();
         
@@ -100,7 +102,7 @@ public class TrainingDataGen {
             filteredMatchResults.add(x);
         }
         
-        return limitLength(filteredMatchResults, 10);
+        return limitLength(filteredMatchResults, numSelections);
         
     }
     
