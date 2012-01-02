@@ -15,6 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png(275,465,38,13)~~~~~~page
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/81.png(275,275,38,13)~~~~~~page
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/21.png(132,311,39,13)~~~~~~Image
@@ -57,6 +58,12 @@ msgstr "OPCIÓN"
 #: ../terminal/main.c:57
 msgid "General Options"
 msgstr "Opciones generales"
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/81.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/94.png
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/90.png(614,166,70,16)~~~~~~display
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/91.png(614,166,70,16)~~~~~~display
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/92.png(614,128,70,16)~~~~~~display
@@ -118,6 +125,13 @@ msgstr "Ventanas o pestañas separadas"
 #: ../terminal/main.c:70
 msgid "Tab Options"
 msgstr "Opciones de la pestaña"
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/90.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/91.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/92.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/94.png
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png(92,258,63,10)~~~~~~command
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png(92,258,63,10)~~~~~~command
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png(92,258,63,10)~~~~~~command
@@ -132,6 +146,13 @@ msgstr "Opciones de la pestaña"
 #: ../terminal/main.c:72
 msgid "command"
 msgstr "comando"
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/90.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/91.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/92.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/94.png
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png(83,160,25,10)~~~~~~title
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png(83,160,25,10)~~~~~~title
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png(83,160,25,10)~~~~~~title
@@ -216,6 +237,11 @@ msgstr "rol"
 #: ../terminal/main.c:91
 msgid "string"
 msgstr "cadena"
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/81.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/94.png
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png(425,394,38,12)~~~~~~icon
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png(245,215,27,12)~~~~~~ion
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png(245,158,27,12)~~~~~~ion
@@ -623,6 +649,7 @@ msgstr "La opción \"--working-directory\" requiere que se especifique el direct
 #, c-format
 msgid "Option \"--title/-T\" requires specifying the title as its parameter"
 msgstr "La opción \"--title/-T\" requiere que se especifique el título como su parámetro"
+#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/94.png
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/90.png(6,166,786,31)~~~~~~-display requires specifying the default X display its as par ameter
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/91.png(6,166,786,31)~~~~~~-display requires specifying the default X display its as par ameter
 #* /home/geza/workspace/textmatch/xfce-terminal-screenshots/92.png(6,128,786,31)~~~~~~-display requires specifying the default X display its as par ameter

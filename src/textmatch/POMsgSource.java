@@ -64,10 +64,27 @@ public class POMsgSource {
         return output;
     }
     
+    public static List<String> checkedAnnotationFileListFromMsgIdBlock(String msgidblock) throws Exception {
+        List<String> output = new ArrayList<String>();
+        if (noMatchesForMsgIdBlock(msgidblock))
+            return output;
+        for (String line : readLines(new StringReader(msgidblock))) {
+            if (line.startsWith("#% ") || line.startsWith("#^ ")) {
+                String annotationText = line.substring(3);
+                try {
+                    output.add(new MsgAnnotation(annotationText).filename);
+                } catch (Exception e) {
+                    output.add(annotationText);
+                }
+            }
+        }
+        return output;
+    }
+    
     public static List<MsgAnnotation> checkedAnnotationListFromMsgIdBlock(String msgidblock) throws Exception {
         List<MsgAnnotation> output = new ArrayList<MsgAnnotation>();
         for (String line : readLines(new StringReader(msgidblock))) {
-            if (line.startsWith("#% ")) {
+            if (line.startsWith("#% ") || line.startsWith("#^ ")) {
                 String annotationText = line.substring(3);
                 try {
                     output.add(new MsgAnnotation(annotationText));
@@ -82,7 +99,7 @@ public class POMsgSource {
     // returns true if we manually specified that are no matches for the given block
     public static boolean noMatchesForMsgIdBlock(String msgidblock) throws Exception {
         for (String line : readLines(new StringReader(msgidblock))) {
-            if (line.startsWith("#% nomatches")) {
+            if (line.startsWith("#^ nomatches") || line.startsWith("#% nomatches")) {
                 return true;
             }
         }
@@ -217,6 +234,7 @@ public class POMsgSource {
         List<String> startSignals = new ArrayList<String>();
         // order in this list is the order in which they usually appear in the file
         startSignals.add("#& ");
+        startSignals.add("#^ ");
         startSignals.add("#% ");
         startSignals.add("#* ");
         startSignals.add("#. ");

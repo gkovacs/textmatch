@@ -25,11 +25,7 @@ public class AccuracyReporter {
                 notinscreenshots++;
                 continue;
             }
-            List<MsgAnnotation> manualAnnotations = msgsrc.annotationListFromMsgIdBlock(msgidblock);
-            List<String> manualFiles = new ArrayList<String>();
-            for (MsgAnnotation ma : manualAnnotations) {
-                manualFiles.add(ma.filename);
-            }
+            List<String> manualFiles = msgsrc.checkedAnnotationFileListFromMsgIdBlock(msgidblock);
             if (manualFiles.size() == 0) {
                 noannotations++;
                 continue;
