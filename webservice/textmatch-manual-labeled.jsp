@@ -26,7 +26,6 @@ ByteArrayOutputStream byteout = new ByteArrayOutputStream();
 
 PrintWriter pw = new PrintWriter(byteout);
 
-//String base64origmsg = request.getParameter("origmsgfile");
 String encorigmsg = request.getParameter("origmsgfile");
 String origmsgfilename = request.getParameter("origmsgfilename");
 
@@ -52,13 +51,7 @@ if (newmsgfilename.contains(".")) {
 response.setContentType("text/plain");
 response.setHeader("Content-Disposition", "attachment;filename=" + newmsgfilename);
 
-//byte[] origmsgB = DatatypeConverter.parseBase64Binary(base64origmsg);
-
-//String origmsg = new String(origmsgB, "UTF8");
-
 String origmsg = URLDecoder.decode(encorigmsg, "UTF-8");
-
-//POMsgSource msgsrc = new POMsgSource(new ByteArrayInputStream(origmsgB));
 
 POMsgSource msgsrc = new POMsgSource(origmsg);
 
@@ -67,30 +60,28 @@ List<String> msgblocks = msgsrc.splitIntoMsgIdBlocks();
 for (int i = 0; i < msgblocks.size(); ++i) {
 String msgblock = msgblocks.get(i);
 
-String msgtext = msgsrc.textFromMsgIdBlock(msgblock);
-String withoutforeigntext = msgsrc.excludeForeignMsgStr(msgblock);
-String withoutManualAnnotation = msgsrc.excludeManualAnnotation(msgblock);
-
-List<MsgAnnotation> annotationList = null;
-try {
-annotationList = msgsrc.annotationListFromMsgIdBlock(msgblock);
-} catch (Exception e) {
-throw new RuntimeException(msgblock);
+if (msgsrc.noMatchesForMsgIdBlock(msgblock) || msgsrc.checkedAnnotationListFromMsgIdBlock(msgblock).size() != 0) {
+    pw.println(msgblock);
+    continue;
 }
 
-//byte[] msgtextB = msgtext.getBytes("UTF-8");
-//String base64msgtext = DatatypeConverter.printBase64Binary(msgtextB);
+String msgtext = msgsrc.textFromMsgIdBlock(msgblock);
+
+String withoutManualAnnotation = msgsrc.excludeManualAnnotation(msgblock);
+
+List<MsgAnnotation> annotationList = msgsrc.annotationListFromMsgIdBlock(msgblock);
+
 String encmsgtext = URLEncoder.encode(msgtext, "UTF-8");
 
 String matchedNothing = request.getParameter("qn-" + encmsgtext);
 if (matchedNothing != null) {
-pw.println("#~ nomatches");
+pw.println("#% nomatches");
 } else {
-for (int jc = 0; jc < 10; ++jc) {
+for (int jc = 0; jc < TrainingDataGen.numSelections; ++jc) {
 String selected = request.getParameter("q-" + encmsgtext + "-" + jc);
 if (selected == null) continue;
 if (annotationList.size() == 0) continue;
-pw.println("#~ " + annotationList.get(jc));
+pw.println("#% " + annotationList.get(jc));
 }
 }
 pw.println(withoutManualAnnotation);

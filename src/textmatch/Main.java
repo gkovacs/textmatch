@@ -44,6 +44,7 @@ public class Main {
             ImgMatch m = new ImgMatch(word.getX(), word.getY(), word.getWidth(), word.getHeight(), word.getString(), imgFileName);
             retv.add(m);
         }
+        Collections.sort(retv, new ImgMatchComparator());
         return retv;
     }
     
@@ -147,6 +148,8 @@ public class Main {
                 //    continue;
                 
                 ImgMatch[] match = arraySlice(matches, matchIdxs.Item1, matchIdxs.Item2);
+                
+                if (match.length < 1) continue;
                 
                 /*
                 int currentWhitespace = spanningArea(match) - totalArea(match);
@@ -293,10 +296,56 @@ public class Main {
         return ngramsForImages;
     }
     
-    public static HashMap<String, MsgAnnotation> msgToAnnotations(List<String> msgstrings, List<List<ImgMatch>> matchesAcrossImages) {
-        HashMap<String, MsgAnnotation> output = new HashMap<String, MsgAnnotation>();
-        
+    public static List<Pair<Double, String>> msgToScores(List<String> msgstrings, List<List<ImgMatch>> matchesAcrossImages, List<HashMap<String, Integer>> ngramsForImages) {
+        List<Pair<Double, String>> msgStrToScore = new ArrayList<Pair<Double, String>>();
+        HashMap<String, Integer> occurrenceCount = new HashMap<String, Integer>();
+        for (String msgstr : msgstrings) {
+            Thread.yield();
+            if (Thread.interrupted())
+                return null;
+                //return output;
+                //throw new InterruptedException();
+            MatchResults m = bestMatch(msgstr, matchesAcrossImages, ngramsForImages, occurrenceCount);
+            if (m == null)
+                continue;
+            double bestratio = m.ratio;
+            List<ImgMatch> bestmatch = m.match;
+            String templateMatchText = m.templateMatchText;
+            if (bestratio >= 1/1.5) {
+                msgStrToScore.add(makePair(bestratio, msgstr));
+            }
+        }
+        Collections.sort(msgStrToScore, new PairFirstComparator<Double>(new Comparator<Double>() {
+            @Override
+            public int compare(Double o1, Double o2) {
+                if (o1 < o2)
+                    return 1;
+                if (o2 < o1)
+                    return -1;
+                return 0;
+            }
+        }));
+        return msgStrToScore;
+    }
+    
+    public static HashMap<String, MsgAnnotation> msgToAnnotationsTwoPass(List<String> msgstrings, List<List<ImgMatch>> matchesAcrossImages) {
         List<HashMap<String, Integer>> ngramsForImages = getNgramsForImages(matchesAcrossImages);
+        List<Pair<Double, String>> msgStrToScore = msgToScores(msgstrings, matchesAcrossImages, ngramsForImages);
+        if (msgStrToScore == null)
+            return null;
+        List<String> newMsgStrings = new ArrayList<String>(msgStrToScore.size());
+        for (Pair<Double, String> p : msgStrToScore) {
+            newMsgStrings.add(p.Item2);
+        }
+        return msgToAnnotations(newMsgStrings, matchesAcrossImages, ngramsForImages, true);
+    }
+    
+    public static HashMap<String, MsgAnnotation> msgToAnnotations(List<String> msgstrings, List<List<ImgMatch>> matchesAcrossImages) {
+        return msgToAnnotations(msgstrings, matchesAcrossImages, getNgramsForImages(matchesAcrossImages), true);
+    }
+    
+    public static HashMap<String, MsgAnnotation> msgToAnnotations(List<String> msgstrings, List<List<ImgMatch>> matchesAcrossImages, List<HashMap<String, Integer>> ngramsForImages, boolean penalizeDuplicates) {
+        HashMap<String, MsgAnnotation> output = new HashMap<String, MsgAnnotation>();
         
         /*
         for (List<ImgMatch> matches : matchesAcrossImages) {
@@ -326,6 +375,7 @@ public class Main {
                 System.err.println(annotation.toString());
                 output.put(msgstr, annotation);
                 IntPair matchIdxs = m.matchIdxs;
+                if (penalizeDuplicates) {
                 for (int ngsi = 0; ngsi < bestmatch.size() - 1; ++ngsi) {
                     String curngram = join(arraySlice(bestmatch, ngsi, ngsi+2), " "); // 2-grams
                     if (occurrenceCount.containsKey(curngram)) {
@@ -333,6 +383,7 @@ public class Main {
                     } else {
                         occurrenceCount.put(curngram, 1);
                     }
+                }
                 }
                 //msgStrToScore.add(makePair(bestratio, msgstr));
             }

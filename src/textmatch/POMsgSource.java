@@ -69,8 +69,11 @@ public class POMsgSource {
         for (String line : readLines(new StringReader(msgidblock))) {
             if (line.startsWith("#% ")) {
                 String annotationText = line.substring(3);
-                output.add(new MsgAnnotation(annotationText));
-
+                try {
+                    output.add(new MsgAnnotation(annotationText));
+                } catch (Exception e) {
+                    
+                }
             }
         }
         return output;
@@ -163,7 +166,7 @@ public class POMsgSource {
                 active = true;
                 line = stripPrefix(line, "msgid \"");
             }
-            else if (line.startsWith("msgstr \"")) {
+            else if (line.startsWith("msgstr \"") || line.startsWith("msgid_plural \"")) {
                 active = false;
             }
             if (line.startsWith("#"))
@@ -173,6 +176,10 @@ public class POMsgSource {
                 line = stripSuffix(line, "\"");
                 line = line.replace("\\\"", "\"");
                 line = line.replace("%s", Character.toString(SUBCHAR));
+                line = line.replace("%d", Character.toString(SUBCHAR));
+                line = line.replace("%1", Character.toString(SUBCHAR));
+                line = line.replace("%2", Character.toString(SUBCHAR));
+                line = line.replace("%3", Character.toString(SUBCHAR));
                 line = line.replace("\\n", " ");
                 line = line.replace("_", "");
                 curmsg.add(line);
@@ -182,6 +189,7 @@ public class POMsgSource {
     }
     
     public static String foreignTextFromMsgIdBlock(String msgidblock) throws Exception {
+        // TODO: plurals; (msgstr[0], msgstr[1])
         List<String> curmsg = new ArrayList<String>();
         boolean active = false;
         for (String line : readLines(new StringReader(msgidblock))) {

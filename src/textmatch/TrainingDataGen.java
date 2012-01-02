@@ -18,7 +18,7 @@ import java.util.List;
 
 public class TrainingDataGen {
 
-    public static int numSelections = 5;
+    public static int numSelections = 10;
     
     public static List<MatchResults> orderMatches(String msgstr, List<List<ImgMatch>> matchesAcrossImages /*, List<HashMap<String, Integer>> ngramsForImages*/) {
         List<MatchResults> matchresults = new ArrayList<MatchResults>();

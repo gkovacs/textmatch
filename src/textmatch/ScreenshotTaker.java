@@ -1,6 +1,6 @@
 package textmatch;
 
-
+import static textmatch.GStringUtils.*;
 import java.awt.Color;
 import java.awt.Composite;
 import java.awt.Graphics2D;
@@ -31,6 +31,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JCheckBox;
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -70,6 +71,8 @@ public class ScreenshotTaker {
     private JTextPane textArea;
     private JTextPane textAreaSeen;
     
+    private JCheckBox recordingCheckbox;
+    
     private HashSet<String> matchedMsgStrs;
     
     private int[] prevData = new int[0];
@@ -89,8 +92,18 @@ public class ScreenshotTaker {
     	this.screenshotSavePath = screenshotSavePath;
     	if (screenshotSavePath.equals(""))
     		savingScreenshots = false;
-    	else
+    	else {
     		savingScreenshots = true;
+    		for (String x : new File(screenshotSavePath).list()) {
+    		    x = stripSuffix(x, ".png");
+    		    try {
+    	            int q = Integer.parseInt(x);
+    	            screenshotNum = Math.max(q, screenshotNum);
+    		    } catch (Exception e) {
+    		        
+    		    }
+    		}
+    	}
     	robot = new Robot();
         initializeXInteraction();
     }
@@ -148,7 +161,11 @@ public class ScreenshotTaker {
         //frame.add(textArea);
         frame.add(scrollable2);
         
-        //
+        recordingCheckbox = new JCheckBox();
+        recordingCheckbox.setLocation(300, 0);
+        recordingCheckbox.setSize(100, 30);
+        recordingCheckbox.setText("Recording");
+        frame.add(recordingCheckbox);
     }
     
     private void updateMatchCount() {
@@ -316,8 +333,14 @@ public class ScreenshotTaker {
         
         
         while (true) {
-            if (frame.isFocused())
+            if (frame.isFocused()) {
+                imgCaptured = false;
                 continue;
+            }
+            if (!recordingCheckbox.isSelected()) {
+                imgCaptured = false;
+                continue;
+            }
             
             //if (curtime < prev_screenshot_time + 250) {
             //    continue;
@@ -329,6 +352,15 @@ public class ScreenshotTaker {
                     continue;
                 imgMatches = Main.getImgMatches(img, "");
                 imgMatchesHashable = hashable(imgMatches);
+            }
+            
+            if (frame.isFocused()) {
+                imgCaptured = false;
+                continue;
+            }
+            if (!recordingCheckbox.isSelected()) {
+                imgCaptured = false;
+                continue;
             }
             
             boolean containsNewMsgStrs = false;
@@ -354,9 +386,9 @@ public class ScreenshotTaker {
     		public void run() {
     			// TODO Auto-generated method stub
     			try {
-    				retv.value = Main.msgToAnnotations(msgstrings, GCollectionUtils.singleElemList(imgMatchesF));
+    				retv.value = Main.msgToAnnotationsTwoPass(msgstrings, GCollectionUtils.singleElemList(imgMatchesF));
     			} catch (Exception e) {
-    				
+    				e.printStackTrace();
     			}
     		}
         	   
@@ -365,8 +397,12 @@ public class ScreenshotTaker {
         	boolean interrupted = false;
 
         	while (tx.isAlive()) {
+        	    if (!recordingCheckbox.isSelected()) continue;
+        	    if (frame.isFocused()) continue;
             	BufferedImage newImg = captureNewImage();
-        		if (!sameImages(img, newImg)) {
+            	if (frame.isFocused()) continue;
+            	if (!recordingCheckbox.isSelected()) continue;
+            	if (!sameImages(img, newImg)) {
         		    List<ImgMatch> newImgMatches = Main.getImgMatches(newImg, "");
         		    String newImgMatchesHashable = hashable(newImgMatches);
         		    if (!processedImages.contains(newImgMatchesHashable)) {
@@ -446,7 +482,7 @@ public class ScreenshotTaker {
         	// add those messages that are covered by existing screenshots to matchedMsgStrs
         	System.out.println(filename);
  			List<ImgMatch> matches = Main.getImgMatches(filename);
- 			HashMap<String, MsgAnnotation> annotations = Main.msgToAnnotations(msgstrings, GCollectionUtils.singleElemList(matches));
+ 			HashMap<String, MsgAnnotation> annotations = Main.msgToAnnotationsTwoPass(msgstrings, GCollectionUtils.singleElemList(matches));
  			st.addNewAnnotations(annotations);
             st.processedImages.add(st.hashable(matches));
         }

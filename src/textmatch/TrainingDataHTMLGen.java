@@ -202,12 +202,9 @@ public class TrainingDataHTMLGen {
         return htmlFromAnnotations(annotatedMsgBlocks, base64EncodedFiles, auxtext);
     }
     
-    public static void main(String[] args) throws Exception {
-        // args[0]: an annotated po file
-        List<String> msgfilelines = readLines(new FileReader(args[0]));
-        //String base64AnnotatedMsgFile = DatatypeConverter.printBase64Binary(join(msgfilelines, "\n").getBytes());
+    public static String makeTrainingDataHTML(InputStream s, String msgfilename) throws Exception {
+        List<String> msgfilelines = readLines(s);
         String urlencAnnotatedMsgFile = URLEncoder.encode(join(msgfilelines, "\n"), "UTF-8");
-        String msgfilename = args[0];
         POMsgSource msgsrc = new POMsgSource(msgfilelines);
         
         String auxtext = "<input type='hidden' name='origmsgfile' value='" + urlencAnnotatedMsgFile + "'> \n" +
@@ -231,6 +228,11 @@ public class TrainingDataHTMLGen {
             annotatedMsgBlocks.add(makePair(annotationList, x));
         }
         //Collections.sort(annotatedMsgBlocks, new PairFirstComparator<MsgAnnotation>(new MsgAnnotationRegionComparator()));
-        System.out.println(htmlFromAnnotations(annotatedMsgBlocks, auxtext));
+        return htmlFromAnnotations(annotatedMsgBlocks, auxtext);
+    }
+    
+    public static void main(String[] args) throws Exception {
+        // args[0]: an annotated po file
+        System.out.println(makeTrainingDataHTML(new FileInputStream(args[0]), args[0]));
     }
 }
