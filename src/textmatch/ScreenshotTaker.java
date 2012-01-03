@@ -31,6 +31,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
@@ -72,6 +73,8 @@ public class ScreenshotTaker {
     private JTextPane textAreaSeen;
     
     private JCheckBox recordingCheckbox;
+    
+    private JButton saveScreenshotButton;
     
     private HashSet<String> matchedMsgStrs;
     
@@ -122,7 +125,7 @@ public class ScreenshotTaker {
         
         matchCount = new JLabel();
         matchCount.setLocation(0, 0);
-        matchCount.setSize(100, 30);
+        matchCount.setSize(150, 30);
         
         picLabel = new JLabel();
         picLabel.setLocation(0, 30);
@@ -162,14 +165,21 @@ public class ScreenshotTaker {
         frame.add(scrollable2);
         
         recordingCheckbox = new JCheckBox();
-        recordingCheckbox.setLocation(300, 0);
-        recordingCheckbox.setSize(100, 30);
-        recordingCheckbox.setText("Recording");
+        recordingCheckbox.setLocation(150, 0);
+        recordingCheckbox.setSize(270, 30);
+        recordingCheckbox.setText("Automatically Save Screenshots");
         frame.add(recordingCheckbox);
+        
+        
+        saveScreenshotButton = new JButton();
+        saveScreenshotButton.setLocation(420, 0);
+        saveScreenshotButton.setSize(180, 30);
+        saveScreenshotButton.setText("Save Screenshot");
+        frame.add(saveScreenshotButton);
     }
     
     private void updateMatchCount() {
-        matchCount.setText(matchedMsgStrs.size() + " / " + msgstrings.size());
+        matchCount.setText(matchedMsgStrs.size() + " / " + msgstrings.size() + " messages");
     }
     
     private boolean sameImages(BufferedImage img, BufferedImage img2) {
@@ -228,8 +238,10 @@ public class ScreenshotTaker {
         //String curMsgSourceFound = "";
         StringBuilder msgsToBeFound = new StringBuilder();
         msgsToBeFound.append("<html><body>");
+        msgsToBeFound.append("<h3>Messages Not Found:</h3>");
         StringBuilder msgsFound = new StringBuilder();
         msgsFound.append("<html><body>");
+        msgsFound.append("<h3>Messages Found:</h3>");
         //for (String msgidblock : msgsrc.splitIntoMsgIdBlocks()) {
         for (List<String> msgidblockGroup : msgsGroupedBySource) {
         	String msgsource = msgsrc.msgSourceConciseFromMsgIdBlock(msgidblockGroup.get(0));
