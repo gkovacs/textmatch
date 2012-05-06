@@ -16,7 +16,7 @@ You will also need to install Ruby 1.9 to use the convenience scripts.
 
     ./textmatch.rb message-file.po imgfile1.png imgfile2.png > annotated-message-file.po
 
-The output of this command is a po file where each message is annotated with a comment indicating the region in the screenshot that matches it.
+Where the input, mesage-file.po, is a gettext-format message file, and the png files are screenshots of the program. The output of this command is a po file where each message is annotated with a comment indicating the region in the screenshot that matches it.
 
     ./htmlgen.rg annotated-message-file.po
 
@@ -24,7 +24,7 @@ The output of this command is a html file where each of the screenshots are disp
 
 # License
 
-This is Free/Open-source software, licensed under the MIT License, which you can find in LICENSE.txt
+This is Free/open-source software, licensed under the MIT License, which you can find in LICENSE.txt
 
 # Contact
 
