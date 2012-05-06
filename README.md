@@ -20,7 +20,7 @@ The output of this command is a html file where each of the screenshots are disp
 
 # License
 
-This is Free/Open-source software, licensed under the MIT License, which you can find in LICENSE.TXT
+This is Free/Open-source software, licensed under the MIT License, which you can find in LICENSE.txt
 
 # Contact
 
