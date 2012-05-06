@@ -6,7 +6,11 @@ The details of this system are published in http://groups.csail.mit.edu/uid/othe
 
 # Prereqs
 
-Place sikuli-script.jar from http://sikuli.org/ into this directory
+Place sikuli-script.jar from http://sikuli.org/ into this directory.
+
+Then compile the Java class files into the subdirectory bin.
+
+You will also need to install Ruby 1.9 to use the convenience scripts.
 
 # Running
 
