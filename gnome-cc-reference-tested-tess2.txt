@@ -1,6 +1,6 @@
 total:783
 notinscreenshots:384
-matches:341
-misses:56
-falsepositives:35
+matches:345
+misses:52
+falsepositives:36
 noannotations:2

@@ -72,7 +72,10 @@ public class POMsgSource {
             if (line.startsWith("#% ") || line.startsWith("#^ ")) {
                 String annotationText = line.substring(3);
                 try {
-                    output.add(new MsgAnnotation(annotationText).filename);
+                    String annotationFileName = new MsgAnnotation(annotationText).filename;
+                    if (annotationFileName.indexOf('/') != -1)
+                        annotationFileName = annotationFileName.substring(annotationFileName.lastIndexOf('/')+1);
+                    output.add(annotationFileName);
                 } catch (Exception e) {
                     output.add(annotationText);
                 }
