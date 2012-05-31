@@ -6,13 +6,15 @@ The details of this system are published in http://groups.csail.mit.edu/uid/othe
 
 # Prereqs
 
-These instructions were tested on Ubuntu 11.04, 32-bit. It should also work with 11.10 (though I haven't tested it myself), though if you're using 12.04 then you will need to install tesseract2 manually (only version 3 is available in the repos). For 64-bit installs, you'll need to replace the included sikuli-script.jar with a 64-bit version (from http://sikuli.org/ )
+A VMware image is available at http://gkovacs.xvm.mit.edu/screenmatch-ubuntu-natty.7z in case you want to skip these steps (username and password are transifex; compiled code is in ~/textmatch).
 
-Once Ubuntu 11.04 is installed, install the following packages:
+These instructions were tested on Ubuntu 11.04 32-bit. It should also work with 11.10 (though I haven't tested it myself), though if you're using 12.04 then you will need to install tesseract2 manually (only version 3 is available in the repos). For 64-bit installs, you'll need to replace the included sikuli-script.jar with a 64-bit version (from http://sikuli.org/ ).
+
+Once Ubuntu 11.04 32-bit is installed, install the following packages:
 
     sudo apt-get install ant openjdk-6-jdk tesseract-ocr tesseract-ocr-eng libcv2.1 libcvaux2.1 ruby1.9.1
 
-Run the following command so that it'll find ruby 1.9 (needed for the convenience scripts)
+Then make ruby1.9 point to ruby1.9.1 (needed for the convenience scripts)
 
     sudo ln -s /usr/bin/ruby1.9.1 /usr/bin/ruby1.9
 
@@ -37,6 +39,20 @@ In this case, we have the matched screenshot file, followed by (x,y,width,height
     ./htmlgen.rg pcmanfm-annotated.po > pcmanfm-annotated.html
 
 If you open the file pcmanfm-annotated.html, it will have each of the screenshots displayed alongside the messages.
+
+# Testing
+
+This software was tested by comparing the automatic screenshot-message matches to manual matches. The manual matches for pcmanfm are stored in pcmanfm-reference.po; the possible screenshots which would be valid matches are indicated by a comment starting with #%
+
+    #% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png(229,160,117,10)~~~~~~Detailed List View
+    #% /home/geza/workspace/textmatch/pcmanfm-screenshots/5.png(229,160,117,10)~~~~~~Detailed Llst View
+    #% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png(229,160,117,10)~~~~~~Detailed Llst View
+    #% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png(229,160,117,10)~~~~~~Detalled Llst View
+
+We can then assess the accuracy of the software by seeing whether the match made by textmatch.rb is among these. This is done by the script accuracy.rb, which you supply a message file containing both #& (automatic match) and #% (manual match) annotations, and it reports statistics:
+
+    ./textmatch.rb pcmanfm-reference.po pcmanfm-screenshots/*.png > pcmanfm-reference-tested-tess2.po
+    ./accuracy.rb pcmanfm-reference-tested-tess2.po > pcmanfm-reference-tested-tess2.txt
 
 # License
 
