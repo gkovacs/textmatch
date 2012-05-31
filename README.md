@@ -43,12 +43,12 @@ If you open the file pcmanfm-annotated.html, it will have each of the screenshot
 
 # Testing
 
-This software was tested by comparing the automatic screenshot-message matches to manual matches. The manual matches for pcmanfm are stored in pcmanfm-reference.po; the possible screenshots which would be valid matches are indicated by a comment starting with #%
+This software was tested by comparing the automatic screenshot-message matches to manual matches. The manual matches for pcmanfm are stored in pcmanfm-reference.po; the possible screenshots which would be valid matches are indicated by a comment starting with #% (or #% nomatches, if there were no matches among the screenshots for that message)
 
-    #% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png(229,160,117,10)~~~~~~Detailed List View
-    #% /home/geza/workspace/textmatch/pcmanfm-screenshots/5.png(229,160,117,10)~~~~~~Detailed Llst View
-    #% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png(229,160,117,10)~~~~~~Detailed Llst View
-    #% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png(229,160,117,10)~~~~~~Detalled Llst View
+    #% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
+    #% /home/geza/workspace/textmatch/pcmanfm-screenshots/5.png
+    #% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png
+    #% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
     msgid "Detailed List View"
 
 We can then assess the accuracy of the software by seeing whether the match made by textmatch.rb is among these. This is done by the script accuracy.rb, which you supply a message file containing both #& (automatic match) and #% (manual match) annotations, and it reports statistics:
