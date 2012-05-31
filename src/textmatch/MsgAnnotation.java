@@ -41,6 +41,10 @@ public class MsgAnnotation {
         // filename(x,y,w,h)~~~templateSubstitutions
         String[] annotationParts = annotationText.split("~~~");
         String fnCoords = annotationParts[0];
+        if (fnCoords.indexOf('(') == -1) {
+        filename = fnCoords;
+        x = y = w = h = 0;
+        } else {
         filename = fnCoords.substring(0, fnCoords.indexOf('('));
         String coords = fnCoords.substring(fnCoords.indexOf('('));
         coords = stripPrefix(coords, "(");
@@ -50,6 +54,7 @@ public class MsgAnnotation {
         y = Integer.parseInt(coordl[1]);
         w = Integer.parseInt(coordl[2]);
         h = Integer.parseInt(coordl[3]);
+        }
         if (annotationParts.length < 2) {
             templateSubstitutions = new String[0];
         } else {
