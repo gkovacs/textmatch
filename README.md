@@ -6,7 +6,7 @@ The details of this system are published in http://groups.csail.mit.edu/uid/othe
 
 # Prereqs
 
-A VMware image is available at http://gkovacs.xvm.mit.edu/screenmatch-ubuntu-natty.7z in case you want to skip these steps (username and password are transifex; compiled code is in ~/textmatch).
+A VMware image is available at http://gkovacs.xvm.mit.edu/screenmatch-ubuntu-natty-i386.7z in case you want to skip these steps (username and password are transifex; compiled code is in ~/textmatch).
 
 These instructions were tested on Ubuntu 11.04 32-bit. It should also work with 11.10 (though I haven't tested it myself), though if you're using 12.04 then you will need to install tesseract2 manually (only version 3 is available in the repos). For 64-bit installs, you'll need to replace the included sikuli-script.jar with a 64-bit version (from http://sikuli.org/ ).
 
