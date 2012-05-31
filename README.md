@@ -26,13 +26,14 @@ Then make ruby1.9 point to ruby1.9.1 (needed for the convenience scripts)
 
 # Running
 
-The following is an example of how one would use this tool for pcmanfm. First we'll need a file pcmanfm-es.po which is a gettext-format message file, and the directory pcmanfm-screenshots contains screenshots of pcmanfm in png format.
+The following is an example of how one would use this tool for pcmanfm. First we'll need a file pcmanfm-es.po which is a gettext-format message file, and a directory pcmanfm-screenshots which contains screenshots of pcmanfm in png format.
 
     ./textmatch.rb pcmanfm-es.po pcmanfm-screenshots/*.png > pcmanfm-annotated.po
 
 The output of this command is a po file where each message is annotated with a comment starting with #& that indicates the region in the screenshot that matches it. The format of the comment is:
 
     #& /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png(229,160,117,10)~~~~~~Detailed Llst View
+    msgid "Detailed List View"
 
 In this case, we have the matched screenshot file, followed by (x,y,width,height) of the rectangle in the screenshot containing the matched text. (The remainder is debug output and can be ignored). To visualize the output, you can use the command:
 
@@ -48,6 +49,7 @@ This software was tested by comparing the automatic screenshot-message matches t
     #% /home/geza/workspace/textmatch/pcmanfm-screenshots/5.png(229,160,117,10)~~~~~~Detailed Llst View
     #% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png(229,160,117,10)~~~~~~Detailed Llst View
     #% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png(229,160,117,10)~~~~~~Detalled Llst View
+    msgid "Detailed List View"
 
 We can then assess the accuracy of the software by seeing whether the match made by textmatch.rb is among these. This is done by the script accuracy.rb, which you supply a message file containing both #& (automatic match) and #% (manual match) annotations, and it reports statistics:
 
