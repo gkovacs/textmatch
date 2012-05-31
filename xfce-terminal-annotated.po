@@ -15,972 +15,777 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
+
 #: ../terminal/main.c:52
 msgid "Usage:"
 msgstr "Uso:"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/79.png(178,158,72,15)~~~~~~[OPTION.
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
 #: ../terminal/main.c:52
 msgid "OPTION"
 msgstr "OPCIÓN"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/79.png(6,196,146,16)~~~~~~General Options
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
 #: ../terminal/main.c:57
 msgid "General Options"
 msgstr "Opciones generales"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/92.png(446,109,78,16)~~~~~~-display
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/81.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/94.png
 #. parameter of --default-display
 #. parameter of --display
 #: ../terminal/main.c:59 ../terminal/main.c:85
 msgid "display"
 msgstr "mostrar"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/93.png(614,185,90,16)~~~~~~directory
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
 #. parameter of --default-working-directory
 #. parameter of --working-directory
 #: ../terminal/main.c:61 ../terminal/main.c:76
 msgid "directory"
 msgstr "directorio"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/94.png(5,128,237,16)~~~~~~Window Tab Sepa rators
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
 #: ../terminal/main.c:65
 msgid "Window or Tab Separators"
 msgstr "Ventanas o pestañas separadas"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/94.png(5,185,107,16)~~~~~~Tab Options
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
 #: ../terminal/main.c:70
 msgid "Tab Options"
 msgstr "Opciones de la pestaña"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/92.png(15,90,68,13)~~~~~~command
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/90.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/91.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/92.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/94.png
 #. parameter of --command
 #: ../terminal/main.c:72
 msgid "command"
 msgstr "comando"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(152,195,25,10)~~~~~~title
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/90.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/91.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/92.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/94.png
 #. parameter of --title
 #: ../terminal/main.c:74
 msgid "title"
 msgstr "título"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/94.png(5,261,137,16)~~~~~~Window Options
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/81.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
 #: ../terminal/main.c:83
 msgid "Window Options"
 msgstr "Opciones de la ventana"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/93.png(385,262,68,14)~~~~~~eomet ry
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/91.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/92.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png
 #. parameter of --geometry
 #: ../terminal/main.c:87
 msgid "geometry"
 msgstr "geometría"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/94.png(497,280,37,13)~~~~~~role
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
 #. parameter of --role
 #: ../terminal/main.c:89
 msgid "role"
 msgstr "rol"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/83.png(126,196,87,16)~~~~~~id=string
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/81.png
 #. parameter of --startup-id
 #: ../terminal/main.c:91
 msgid "string"
 msgstr "cadena"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/93.png(425,394,38,12)~~~~~~icon
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/81.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/94.png
 #. parameter of --icon
 #: ../terminal/main.c:93
 msgid "icon"
 msgstr "ícono"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/94.png(6,375,727,16)~~~分xfce4-ter~~~See the xfce4-terminal for full explanation of the options above
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/81.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
 #: ../terminal/main.c:95
 #, c-format
 msgid "See the %s man page for full explanation of the options above."
 msgstr "Vea la página del manual de %s para una completa explicación de las opciones anteriores."
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(201,160,57,10)~~~~~~Terminal
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/0.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
 #: ../terminal/main.c:126 ../terminal/terminal-preferences.c:1262
 #: ../terminal/terminal-shortcut-editor.c:119 ../Terminal.desktop.in.in.h:1
 msgid "Terminal"
 msgstr "Terminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/81.png(85,386,457,16)~~~~~~The Xfce development team. All rights reserved
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/81.png
 #: ../terminal/main.c:147
 msgid "The Xfce development team. All rights reserved."
 msgstr "El equipo de desarrollo de Xfce. Todos los derechos reservados."
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/81.png(5,424,429,16)~~~~~~Written Benedikt Meu re r <benny@xfce.0rg>
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/81.png
 #: ../terminal/main.c:148
 msgid "Written by Benedikt Meurer <benny@xfce.org>"
 msgstr "Escrito por Benedikt Meurer <benny@xfce.org>"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/8.png(28,86,208,12)~~~~~~Nick Schermer <nick@xfce.org
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/81.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
 #: ../terminal/main.c:149
 msgid "and Nick Schermer <nick@xfce.org>."
 msgstr "y Nick Schermer <nick@xfce.org>."
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/82.png(6,480,488,18)~~~分http://bugzilla.xfce.or9/~~~Please report bugs <http://bugzilla.xfce.or9/>
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/81.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
 #: ../terminal/main.c:150
 #, c-format
 msgid "Please report bugs to <%s>."
 msgstr "Por favor informar sobre  fallos a <%s>."
+
 #: ../terminal/main.c:249
 #, c-format
 msgid "Unable to register terminal service: %s\n"
 msgstr "Imposible registrar el servicio del terminal: %s\n"
+
 #: ../terminal/terminal-app.c:516
 #, c-format
 msgid "Invalid geometry string \"%s\"\n"
 msgstr "Cadena de geometría no válida \"%s\"\n"
+
 #: ../terminal/terminal-dbus.c:113
 msgid "User id mismatch"
 msgstr "No coincide el id de usuario"
+
 #: ../terminal/terminal-dbus.c:119
 msgid "Display mismatch"
 msgstr "No coincide el display"
+
 #: ../terminal/terminal-dbus.c:145
 #, c-format
 msgid "D-BUS message bus disconnected, exiting...\n"
 msgstr "Bus de mensajes D-BUS desconectado. Finalizando...\n"
+
 #: ../terminal/terminal-dbus.c:207
 #, c-format
 msgid "Unable to register object %s"
 msgstr "Imposible registrar objeto %s"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/7.png(80,212,156,10)~~~~~~Xfce Terminal Emulator
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/7.png
 #: ../terminal/terminal-dialogs.c:95 ../Terminal-default-apps.xml.in.in.h:1
 msgid "Xfce Terminal Emulator"
 msgstr "Emulador de terminal para Xfce"
+
 #: ../terminal/terminal-dialogs.c:102
 msgid "translator-credits"
 msgstr ""
 "Jaime Buffery <nestu@lunar-linux.org>\n"
 "Abel Martín <abel.martin.ruiz@gmail.com>\n"
 "Elega <elega@elega.com.ar>"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/7.png(84,275,147,10)~~~~~~Visit Terminal website
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/7.png
 #: ../terminal/terminal-dialogs.c:105
 msgid "Visit Terminal website"
 msgstr "Visite el sitio web de Terminal"
+
 #: ../terminal/terminal-dialogs.c:215
 #, c-format
 msgid "The %s user manual is not installed on your computer"
 msgstr "El manual de %s no está instalado en su equipo"
+
 #: ../terminal/terminal-dialogs.c:218
 #, c-format
 msgid "You can read the user manual online. This manual may however not exactly match your %s version."
 msgstr "Puede leer el manual de usuario en línea. En cualquier caso, este manual puede no ajustarse exactamente a la versión de %s."
+
 #: ../terminal/terminal-dialogs.c:220
 msgid "User manual is missing"
 msgstr "Falta el manual de usuario"
+
 #: ../terminal/terminal-dialogs.c:222
 msgid "_Read Online"
 msgstr "_Leer en línea"
+
 #. display an error message to the user
 #: ../terminal/terminal-dialogs.c:302
 msgid "Failed to open the documentation browser"
 msgstr "Fallo al abrir el visor de documentación"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/92.png(6,128,786,31)~~~~~~default -display requires specifying the default X display its as par ameter
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/90.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/91.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/92.png
 #: ../terminal/terminal-options.c:210
 #, c-format
 msgid "Option \"--default-display\" requires specifying the default X display as its parameter"
 msgstr "La opción  \"--default-display\" requiere que se especifique el display X predeterminado como parámetro"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/90.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/91.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/92.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png
+
 #: ../terminal/terminal-options.c:225
 #, c-format
 msgid "Option \"--default-working-directory\" requires specifying the default working directory as its parameter"
 msgstr "La opción \"--default-working-directory\" requiere que se especifique el directorio de trabajo predeterminado como parámetro"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/90.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/91.png
+
 #: ../terminal/terminal-options.c:241
 #, c-format
 msgid "Option \"--execute/-x\" requires specifying the command to run on the rest of the command line"
 msgstr "La opción \"--execute/-x\" requiere que se especifique el comando a ejecutar en el resto de la línea de comandos"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/90.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/91.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/92.png
+
 #: ../terminal/terminal-options.c:258
 #, c-format
 msgid "Option \"--command/-e\" requires specifying the command to run as its parameter"
 msgstr "La opción \"--command/-e\" requiere que se especifique el comando a ejecutar como su parámetro"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/90.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/91.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/92.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png
+
 #: ../terminal/terminal-options.c:275
 #, c-format
 msgid "Option \"--working-directory\" requires specifying the working directory as its parameter"
 msgstr "La opción \"--working-directory\" requiere que se especifique el directorio de trabajo como su parámetro"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/92.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/90.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/91.png
+
 #: ../terminal/terminal-options.c:290
 #, c-format
 msgid "Option \"--title/-T\" requires specifying the title as its parameter"
 msgstr "La opción \"--title/-T\" requiere que se especifique el título como su parámetro"
-#^ /home/geza/workspace/textmatch/xfce-terminal-screenshots/94.png
+
 #: ../terminal/terminal-options.c:309
 #, c-format
 msgid "Option \"--display\" requires specifying the X display as its parameters"
 msgstr "La opción \"--display\" requiere que se especifique el display X como uno de sus parámetros"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/92.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/91.png
+
 #: ../terminal/terminal-options.c:324
 #, c-format
 msgid "Option \"--geometry\" requires specifying the window geometry as its parameter"
 msgstr "La opción \"--geometry\" requiere que se especifique la geometría de la ventana como su parámetro"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/92.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png
+
 #: ../terminal/terminal-options.c:339
 #, c-format
 msgid "Option \"--role\" requires specifying the window role as its parameter"
 msgstr "La opción \"--role\" requiere que se especifique el rol de la ventana como su parámetro"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/93.png(106,356,628,16)~~~~~~sta rtup-id requires specifying the sta rt id its parameter
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/92.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png
 #: ../terminal/terminal-options.c:354
 #, c-format
 msgid "Option \"--startup-id\" requires specifying the startup id as its parameter"
 msgstr "La opción \"--startup-id\" requiere que se especifique el ID de arranque como su parámetro"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png
+
 #: ../terminal/terminal-options.c:369
 #, c-format
 msgid "Option \"--icon/-I\" requires specifying an icon name or filename as its parameter"
 msgstr "La opción\"--icon/-I\" requiere que se especifique un nombre de ícono o un nombre de archivo como parámetro"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/93.png(6,451,136,34)~~~分geza@geza-~~~Unknown option geza@geza-
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/93.png
 #: ../terminal/terminal-options.c:423
 #, c-format
 msgid "Unknown option \"%s\""
 msgstr "Opción desconocida \"%s\""
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/87.png(423,263,52,10)~~~~~~All Files
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/87.png
 #: ../terminal/terminal-preferences-dialog.c:227
 msgid "All Files"
 msgstr "Todos los archivos"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/87.png(423,290,78,13)~~~~~~Image Files
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/87.png
 #: ../terminal/terminal-preferences-dialog.c:233
 msgid "Image Files"
 msgstr "Archivos de imagen"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/74.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
+
 #: ../terminal/terminal-preferences.c:309
 msgid "Open Tab"
 msgstr "Abrir pestaña"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/94.png(270,3,505,15)~~~~~~Q Terminal
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/74.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
 #: ../terminal/terminal-preferences.c:320
 msgid "Open Terminal"
 msgstr "Abrir terminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/46.png(82,253,72,10)~~~~~~Detach Tab
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
 #: ../terminal/terminal-preferences.c:331
 msgid "Detach Tab"
 msgstr "Separar pestaña"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/55.png(41,78,63,10)~~~~~~Close Tab
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/55.png
 #: ../terminal/terminal-preferences.c:342
 msgid "Close Tab"
 msgstr "Cerrar pestaña"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/55.png(122,129,72,10)~~~~~~Close Wind
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/55.png
 #: ../terminal/terminal-preferences.c:353
 msgid "Close Window"
 msgstr "Cerrar ventana"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/83.png(297,238,33,13)~~~~~~Copy
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/2.png
 #: ../terminal/terminal-preferences.c:364
 msgid "Copy"
 msgstr "Copiar"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/83.png(298,355,34,10)~~~~~~Paste
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/2.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/54.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/74.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
 #: ../terminal/terminal-preferences.c:375
 msgid "Paste"
 msgstr "Pegar"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/72.png(92,63,114,10)~~~~~~Paste Selection
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/2.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/54.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/72.png
 #: ../terminal/terminal-preferences.c:386
 msgid "Paste Selection"
 msgstr "Pegar selección"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/83.png(298,435,77,10)~~~~~~Preferences
 #: ../terminal/terminal-preferences.c:397
 msgid "Preferences"
 msgstr "Preferencias"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/46.png(81,460,99,10)~~~~~~Show menubar
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
 #: ../terminal/terminal-preferences.c:408
 msgid "Show menubar"
 msgstr "Mostrar barra del menú"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/94.png(55,337,117,13)~~~~~~how-toolbars
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/3.png
 #: ../terminal/terminal-preferences.c:419
 msgid "Show toolbars"
 msgstr "Mostrar barras de herramientas"
+
 #: ../terminal/terminal-preferences.c:430
 msgid "Show borders"
 msgstr "Mostrar bordes"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/83.png(298,412,65,10)~~~~~~Fullscreen
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/3.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/74.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/81.png
 #: ../terminal/terminal-preferences.c:441
 msgid "Fullscreen"
 msgstr "Pantalla completa"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/4.png(156,56,55,10)~~~~~~Set Title
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/4.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/76.png
 #: ../terminal/terminal-preferences.c:452
 msgid "Set Title"
 msgstr "Establecer título"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/76.png(157,80,35,10)~~~~~~Reset
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/4.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/55.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/65.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/76.png
 #: ../terminal/terminal-preferences.c:463 ../terminal/terminal-window.c:232
 msgid "Reset"
 msgstr "Reiniciar"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/4.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/76.png
+
 #: ../terminal/terminal-preferences.c:474
 msgid "Reset and Clear"
 msgstr "Reiniciar y borrar"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/5.png(229,55,84,13)~~~~~~Previous Ta b
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/5.png
 #: ../terminal/terminal-preferences.c:485
 msgid "Previous Tab"
 msgstr "Pestaña anterior"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/5.png(229,79,56,10)~~~~~~Next Tab
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/5.png
 #: ../terminal/terminal-preferences.c:496
 msgid "Next Tab"
 msgstr "Pestaña siguiente"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(81,253,101,10)~~~~~~Switch to Ta b 2
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
 #: ../terminal/terminal-preferences.c:507
 msgid "Switch to Tab 1"
 msgstr "Cambiar a pestaña 1"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(81,230,101,10)~~~~~~Switch to Tab 1
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
 #: ../terminal/terminal-preferences.c:518
 msgid "Switch to Tab 2"
 msgstr "Cambiar a pestaña 2"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(81,276,102,10)~~~~~~Switch to Tab 3
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
 #: ../terminal/terminal-preferences.c:529
 msgid "Switch to Tab 3"
 msgstr "Cambiar a pestaña 3"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(81,299,102,10)~~~~~~Switch to Tab 4
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
 #: ../terminal/terminal-preferences.c:540
 msgid "Switch to Tab 4"
 msgstr "Cambiar a pestaña 4"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(81,322,102,10)~~~~~~Switch to Tab 5
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
 #: ../terminal/terminal-preferences.c:551
 msgid "Switch to Tab 5"
 msgstr "Cambiar a pestaña 5"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(81,345,102,10)~~~~~~Switch to Tab 6
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
 #: ../terminal/terminal-preferences.c:562
 msgid "Switch to Tab 6"
 msgstr "Cambiar a pestaña 6"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(81,368,102,10)~~~~~~Switch to Tab 7
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
 #: ../terminal/terminal-preferences.c:573
 msgid "Switch to Tab 7"
 msgstr "Cambiar a pestaña 7"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(81,391,102,10)~~~~~~Switch to Tab 8
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
 #: ../terminal/terminal-preferences.c:584
 msgid "Switch to Tab 8"
 msgstr "Cambiar a pestaña 8"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(81,414,102,10)~~~~~~Switch to Tab 9
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
 #: ../terminal/terminal-preferences.c:595
 msgid "Switch to Tab 9"
 msgstr "Cambiar a pestaña 9"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/6.png(260,57,57,10)~~~~~~Contents
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/6.png
 #: ../terminal/terminal-preferences.c:606
 msgid "Contents"
 msgstr "Contenidos"
+
 #: ../terminal/terminal-screen.c:399 ../terminal/terminal-screen.c:631
 #: ../terminal/terminal-screen.c:1681
 msgid "Untitled"
 msgstr "Sin título"
+
 #: ../terminal/terminal-screen.c:531
 #, c-format
 msgid "Unable to determine your login shell."
 msgstr "Imposible determinar la shell de entrada al sistema"
+
 #. tell the user that we were unable to execute the command
 #: ../terminal/terminal-screen.c:1382 ../terminal/terminal-screen.c:1411
 msgid "Failed to execute child"
 msgstr "Falló al ejecutar hijo"
+
 #: ../terminal/terminal-screen.c:2003
 msgid "Close this tab"
 msgstr "Cerrar esta pestaña"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/94.png(13,31,22,10)~~~~~~File
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/0.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/2.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/3.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/4.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/5.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/54.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/56.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/57.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/58.png
 #: ../terminal/terminal-shortcut-editor.c:88
 msgid "File"
 msgstr "Archivo"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/94.png(50,31,25,10)~~~~~~Edit
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/0.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/3.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/4.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/5.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/56.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/57.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/58.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/59.png
 #: ../terminal/terminal-shortcut-editor.c:99
 msgid "Edit"
 msgstr "Editar"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/94.png(88,31,31,10)~~~~~~View
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/2.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/4.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/5.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/54.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/56.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/57.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/58.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/59.png
 #: ../terminal/terminal-shortcut-editor.c:109
 msgid "View"
 msgstr "Ver"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/6.png(207,32,17,10)~~~~~~Go
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/6.png
 #: ../terminal/terminal-shortcut-editor.c:128
 msgid "Go"
 msgstr "Ir"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(63,437,29,13)~~~~~~Help
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/5.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/71.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/0.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/2.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/3.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/4.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/54.png
 #: ../terminal/terminal-shortcut-editor.c:145
 msgid "Help"
 msgstr "Ayuda"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/47.png(195,264,55,10)~~~~~~Disabled
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
 #: ../terminal/terminal-shortcut-editor.c:209
 #: ../terminal/terminal-shortcut-editor.c:505 ../Terminal.glade.h:24
 msgid "Disabled"
 msgstr "Desactivada"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(44,161,40,10)~~~~~~Action
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
 #: ../terminal/terminal-shortcut-editor.c:221
 msgid "Action"
 msgstr "Acción"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(194,160,84,13)~~~~~~Sho rtcut key
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
 #: ../terminal/terminal-shortcut-editor.c:228
 msgid "Shortcut key"
 msgstr "Atajo de teclado"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/72.png(51,6,136,15)~~~~~~Compose shortcut
 #: ../terminal/terminal-shortcut-editor.c:328
 msgid "Compose shortcut"
 msgstr "Crear atajo de teclado"
+
 #: ../terminal/terminal-shortcut-editor.c:333
 msgid "Clea_r"
 msgstr "Limpi_ar"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/72.png(75,46,143,13)~~~~~~Compose sho rtcut fo r
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/72.png
 #: ../terminal/terminal-shortcut-editor.c:352
 msgid "Compose shortcut for:"
 msgstr "Crear atajo de teclado para:"
+
 #: ../terminal/terminal-shortcut-editor.c:374
 msgid "Failed to acquire keyboard"
 msgstr "Fallo al capturar teclado"
+
 #: ../terminal/terminal-shortcut-editor.c:376
 msgid "Another application has already acquired control over your keyboard."
 msgstr "Otra aplicación ya tiene el control sobre su teclado."
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/55.png(159,6,105,11)~~~~~~Toolbar Editor
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/55.png
 #: ../terminal/terminal-toolbars-view.c:112
 msgid "Toolbar Editor"
 msgstr "Editor de barra de herramientas"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/82.png(310,205,115,13)~~~~~~py Email Address
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
 #: ../terminal/terminal-widget.c:320
 msgid "Copy Email Address"
 msgstr "Copiar dirección de correo"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/82.png(310,182,84,13)~~~~~~mpo se Email
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
 #: ../terminal/terminal-widget.c:321
 msgid "Compose Email"
 msgstr "Escribir correo electrónico"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
+
 #: ../terminal/terminal-widget.c:325
 msgid "Copy Link Address"
 msgstr "Copiar dirección del enlace"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/83.png(298,215,64,13)~~~~~~Open Llnk
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
 #: ../terminal/terminal-widget.c:326
 msgid "Open Link"
 msgstr "Abrir enlace"
+
 #: ../terminal/terminal-widget.c:480
 #, c-format
 msgid "Unable to drop selection of type text/plain to terminal: Wrong format (%d) or length (%d)\n"
 msgstr "Imposible soltar la selección de texto plano en el terminal: formato (%d) o longitud (%d) erróneos\n"
+
 #: ../terminal/terminal-widget.c:496
 #, c-format
 msgid "Unable to drop Mozilla URL on terminal: Wrong format (%d) or length (%d)\n"
 msgstr "Imposible soltar URL de Mozilla en el terminal: formato (%d) o longitud (%d) erróneos\n"
+
 #: ../terminal/terminal-widget.c:522
 #, c-format
 msgid "Unable to drop URI list on terminal: Wrong format (%d) or length (%d)\n"
 msgstr "Imposible soltar una lista de URIs en el terminal: formato (%d) o longitud (%d) erróneos\n"
+
 #: ../terminal/terminal-widget.c:567
 #, c-format
 msgid "Received invalid color data: Wrong format (%d) or length (%d)\n"
 msgstr "Se recibieron datos de color no válidos: formato (%d) o longitud (%d) erróneos\n"
+
 #. tell the user that we were unable to open the responsible application
 #: ../terminal/terminal-widget.c:704
 #, c-format
 msgid "Failed to open the URL `%s'"
 msgstr "Fallo al abrir la URL '%s'"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/94.png(13,31,22,10)~~~~~~File
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/0.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/2.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/3.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/4.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/5.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/54.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/56.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/57.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/58.png
 #: ../terminal/terminal-window.c:217
 msgid "_File"
 msgstr "_Archivo"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/74.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
+
 #: ../terminal/terminal-window.c:218
 msgid "Open _Tab"
 msgstr "Abrir _pestaña"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/57.png
+
 #: ../terminal/terminal-window.c:218
 msgid "Open a new terminal tab"
 msgstr "Abrir una nueva pestaña de terminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/94.png(270,3,505,15)~~~~~~Q Terminal
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/74.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
 #: ../terminal/terminal-window.c:219
 msgid "Open T_erminal"
 msgstr "Abrir t_erminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/56.png(47,77,193,13)~~~~~~Open a new terminal window
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/56.png
 #: ../terminal/terminal-window.c:219
 msgid "Open a new terminal window"
 msgstr "Abrir una nueva ventana de terminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/46.png(82,253,72,10)~~~~~~Detach Tab
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
 #: ../terminal/terminal-window.c:220
 msgid "_Detach Tab"
 msgstr "_Separar pestaña"
+
 #: ../terminal/terminal-window.c:220
 msgid "Open a new window for the current terminal tab"
 msgstr "Abrir una nueva ventana para la pestaña actual del terminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/55.png(41,78,63,10)~~~~~~Close Tab
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/55.png
 #: ../terminal/terminal-window.c:221
 msgid "C_lose Tab"
 msgstr "Cerrar _pestaña"
+
 #: ../terminal/terminal-window.c:221
 msgid "Close the current terminal tab"
 msgstr "Cerrar la pestaña actual de terminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/55.png(122,129,72,10)~~~~~~Close Wind
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/55.png
 #: ../terminal/terminal-window.c:222
 msgid "_Close Window"
 msgstr "_Cerrar ventana"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/20.png(167,268,144,10)~~~~~~the terminal windows
 #: ../terminal/terminal-window.c:222
 msgid "Close the terminal window"
 msgstr "Cerrar la ventana de terminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/94.png(50,31,25,10)~~~~~~Edit
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/0.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/3.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/4.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/5.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/56.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/57.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/58.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/59.png
 #: ../terminal/terminal-window.c:223
 msgid "_Edit"
 msgstr "_Editar"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/83.png(297,238,33,13)~~~~~~Copy
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/2.png
 #: ../terminal/terminal-window.c:224
 msgid "_Copy"
 msgstr "_Copiar"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/58.png(104,79,114,13)~~~~~~Co py to clipboa rd
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/58.png
 #: ../terminal/terminal-window.c:224
 msgid "Copy to clipboard"
 msgstr "Copiar al portapapeles"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/83.png(298,355,34,10)~~~~~~Paste
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/2.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/54.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/74.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
 #: ../terminal/terminal-window.c:225
 msgid "_Paste"
 msgstr "_Pegar"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/59.png(150,79,136,13)~~~~~~Paste fro m clipboa rd
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/59.png
 #: ../terminal/terminal-window.c:225
 msgid "Paste from clipboard"
 msgstr "Pegar del portapapeles"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/72.png(92,63,114,10)~~~~~~Paste Selection
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/2.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/54.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/72.png
 #: ../terminal/terminal-window.c:226
 msgid "Paste _Selection"
 msgstr "Pegar _selección"
+
 #: ../terminal/terminal-window.c:226
 msgid "Paste from primary selection"
 msgstr "Pegar de la selección primaria"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/54.png(70,136,70,14)~~~~~~`l'oolbars...
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/54.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/2.png
 #: ../terminal/terminal-window.c:227
 msgid "_Toolbars..."
 msgstr "Barra de herramien_tas..."
+
 #: ../terminal/terminal-window.c:227
 msgid "Customize the toolbars"
 msgstr "Personalizar las barras de herramientas"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(155,48,106,53)~~~~~~Prefe rences .
 #: ../terminal/terminal-window.c:228
 msgid "Pr_eferences..."
 msgstr "_Preferencias..."
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/69.png(535,80,249,13)~~~~~~Open the Terminal preferences dialog
 #: ../terminal/terminal-window.c:228
 msgid "Open the Terminal preferences dialog"
 msgstr "Abrir el diálogo de preferencias del terminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/94.png(88,31,31,10)~~~~~~View
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/2.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/4.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/5.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/54.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/56.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/57.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/58.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/59.png
 #: ../terminal/terminal-window.c:229
 msgid "_View"
 msgstr "_Ver"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(201,160,57,10)~~~~~~Terminal
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/0.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
 #: ../terminal/terminal-window.c:230
 msgid "_Terminal"
 msgstr "_Terminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/76.png(156,55,69,14)~~~~~~Set Title...
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/76.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/4.png
 #: ../terminal/terminal-window.c:231
 msgid "_Set Title..."
 msgstr "E_stablecer título..."
+
 #: ../terminal/terminal-window.c:231
 msgid "Set a custom title for the current tab"
 msgstr "Establecer un título peronalizado para la pestaña actual"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/76.png(157,80,35,10)~~~~~~Reset
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/4.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/55.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/65.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/76.png
 #: ../terminal/terminal-window.c:232
 msgid "_Reset"
 msgstr "_Resetear"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/4.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/76.png
+
 #: ../terminal/terminal-window.c:233
 msgid "Reset and C_lear"
 msgstr "Reiniciar y _limpiar"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/76.png(157,102,104,10)~~~~~~Reset and Clear
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/4.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/76.png
 #: ../terminal/terminal-window.c:233
 msgid "Reset and clear"
 msgstr "Reiniciar y borrar"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/6.png(207,32,17,10)~~~~~~Go
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/6.png
 #: ../terminal/terminal-window.c:234
 msgid "_Go"
 msgstr "_Ir"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/5.png(229,55,84,13)~~~~~~Previous Ta b
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/5.png
 #: ../terminal/terminal-window.c:235
 msgid "_Previous Tab"
 msgstr "_Pestaña anterior"
+
 #: ../terminal/terminal-window.c:235
 msgid "Switch to previous tab"
 msgstr "Saltar a la pestaña anterior"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/5.png(229,79,56,10)~~~~~~Next Tab
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/5.png
 #: ../terminal/terminal-window.c:236
 msgid "_Next Tab"
 msgstr "Pestaña siguie_nte"
+
 #: ../terminal/terminal-window.c:236
 msgid "Switch to next tab"
 msgstr "Saltar a la pestaña siguiente"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(63,437,29,13)~~~~~~Help
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/5.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/71.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/0.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/1.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/2.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/3.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/4.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/54.png
 #: ../terminal/terminal-window.c:237
 msgid "_Help"
 msgstr "A_yuda"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/6.png(260,57,57,10)~~~~~~Contents
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/6.png
 #: ../terminal/terminal-window.c:238
 msgid "_Contents"
 msgstr "_Contenidos"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/71.png(665,85,141,13)~~~~~~Display help contents
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/71.png
 #: ../terminal/terminal-window.c:238
 msgid "Display help contents"
 msgstr "Mostrar los contenidos de ayuda"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/6.png(259,78,85,14)~~~~~~keport bug
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/55.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/6.png
 #: ../terminal/terminal-window.c:239
 msgid "_Report a bug"
 msgstr "Envia_r un informe de error"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/64.png(345,80,163,13)~~~~~~Repo rt a bug ln Terminal
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/64.png
 #: ../terminal/terminal-window.c:239
 msgid "Report a bug in Terminal"
 msgstr "Enviar un informe de error desde Terminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/7.png(99,6,44,11)~~~~~~About
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/55.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/6.png
 #: ../terminal/terminal-window.c:240
 msgid "_About"
 msgstr "_Acerca de"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/63.png(309,80,233,13)~~~~~~Display information about Terminal
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/63.png
 #: ../terminal/terminal-window.c:240
 msgid "Display information about Terminal"
 msgstr "Mostrar información sobre Terminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/83.png(297,470,94,13)~~~~~~lnput Methods
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/74.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
 #: ../terminal/terminal-window.c:241
 msgid "_Input Methods"
 msgstr "Métodos de entra_da"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/83.png(297,388,97,11)~~~~~~Show Menubar
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/3.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/74.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
 #: ../terminal/terminal-window.c:246
 msgid "Show _Menubar"
 msgstr "Mostrar barra de _menú"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/66.png(429,81,159,12)~~~~~~Show/hide the menubar
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/66.png
 #: ../terminal/terminal-window.c:246
 msgid "Show/hide the menubar"
 msgstr "Mostrar/ocultar la barra de menú"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/3.png(107,79,96,10)~~~~~~Show Toolbars
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/3.png
 #: ../terminal/terminal-window.c:247
 msgid "Show _Toolbars"
 msgstr "Mostrar barras de herramien_tas"
+
 #: ../terminal/terminal-window.c:247
 msgid "Show/hide the toolbars"
 msgstr "Mostrar/ocultar las barras de herramientas"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/3.png(107,101,149,11)~~~~~~Show Window Bord ers
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/3.png
 #: ../terminal/terminal-window.c:248
 msgid "Show Window _Borders"
 msgstr "Mostrar _bordes de ventana"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/67.png(461,78,231,12)~~~~~~Show/hide the window decorations
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/67.png
 #: ../terminal/terminal-window.c:248
 msgid "Show/hide the window decorations"
 msgstr "Mostrar/ocultar las decoraciones de ventana"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/83.png(298,412,65,10)~~~~~~Fullscreen
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/3.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/74.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/82.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/83.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/79.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/80.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/81.png
 #: ../terminal/terminal-window.c:249
 msgid "_Fullscreen"
 msgstr "_Pantalla completa"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/68.png(504,79,154,13)~~~~~~Toggle fullscreen mode
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/68.png
 #: ../terminal/terminal-window.c:249
 msgid "Toggle fullscreen mode"
 msgstr "Conmutar modo de pantalla completa"
+
 #: ../terminal/terminal-window.c:535
 msgid "Warning"
 msgstr "Atención"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/75.png(229,158,89,10)~~~~~~Close all tabs
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/75.png
 #: ../terminal/terminal-window.c:546
 msgid "Close all tabs"
 msgstr "Cerrar todas las pestañas"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/75.png(68,75,251,27)~~~分2~~~This window has 2 tabs open. Closing this window will also close all its tabs
 #: ../terminal/terminal-window.c:565
 #, c-format
@@ -990,153 +795,115 @@ msgid ""
 msgstr ""
 "Esta ventana tiene %d pestañas abiertas. Cerrar\n"
 "esta ventana también cerrará todas sus pestañas."
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/75.png(69,39,126,12)~~~~~~Close all tabs?
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/75.png
 #: ../terminal/terminal-window.c:568
 msgid "Close all tabs?"
 msgstr "¿Cerrar todas las pestañas?"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/75.png(91,117,137,13)~~~~~~Do bot ask me again
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/75.png
 #: ../terminal/terminal-window.c:581
 msgid "Do _not ask me again"
 msgstr "_No preguntar de nuevo"
+
 #: ../terminal/terminal-window.c:1541
 msgid "Window Title|Set Title"
 msgstr "Establecer título"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(25,132,32,10)~~~~~~Title
 #: ../terminal/terminal-window.c:1554
 msgid "Title:"
 msgstr "Título"
+
 #: ../terminal/terminal-window.c:1566
 msgid "Enter the title for the current terminal tab"
 msgstr "Introduzca el título para la pestaña actual del terminal"
+
 #: ../Terminal.desktop.in.in.h:2
 msgid "Terminal Emulator"
 msgstr "Emulador de terminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/89.png(40,308,92,13)~~~~~~$TERM settlng
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/49.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/50.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/73.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/89.png
 #: ../Terminal.glade.h:1
 msgid "$TERM s_etting:"
 msgstr "A_justes $TERM:"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/73.png(237,264,69,10)~~~~~~ASCII DEL
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/73.png
 #: ../Terminal.glade.h:2
 msgid "ASCII DEL"
 msgstr "ASCII SUPR"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/47.png(292,102,62,14)~~~~~~Advanced
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/26.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/27.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
 #: ../Terminal.glade.h:3
 msgid "Ad_vanced"
 msgstr "A_vanzado"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/86.png(61,220,100,11)~~~~~~Allow bold text
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/18.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/20.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/21.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/22.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/23.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/24.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/84.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/86.png
 #: ../Terminal.glade.h:4
 msgid "Allow bold te_xt"
 msgstr "Permitir te_xto en negrita"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/89.png(235,273,76,10)~~~~~~Auto-detect
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/49.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/50.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/73.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/89.png
 #: ../Terminal.glade.h:5
 msgid "Auto-detect"
 msgstr "Autodetectar"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/86.png(26,254,86,13)~~~~~~Background
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/18.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/21.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/22.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/23.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/24.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/84.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/86.png
 #: ../Terminal.glade.h:6
 msgid "Background"
 msgstr "Fondo"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/21.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/86.png
+
 #: ../Terminal.glade.h:7
 msgid "Background image"
 msgstr "Imagen de fondo"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/86.png(156,383,58,10)~~~~~~Centered
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/86.png
 #: ../Terminal.glade.h:8
 msgid "Centered"
 msgstr "Centrado"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/25.png(145,6,166,11)~~~~~~Choose Terminal Font
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/25.png
 #: ../Terminal.glade.h:9
 msgid "Choose Terminal Font"
 msgstr "Seleccionar el tipo de letra del terminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/53.png(179,6,188,15)~~~~~~Choose tab activity color
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/53.png
 #: ../Terminal.glade.h:10
 msgid "Choose tab activity color"
 msgstr "Seleccione el color de actividad de pestaña"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/52.png
+
 #: ../Terminal.glade.h:11
 msgid "Choose terminal background color"
 msgstr "Seleccionar un color de fondo para el terminal"
+
 #: ../Terminal.glade.h:12
 msgid "Choose terminal cursor color"
 msgstr "Seleccione el color de cursor del terminal"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/45.png
+
 #: ../Terminal.glade.h:13
 msgid "Choose terminal text color"
 msgstr "Seleccione el color de texto del terminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/78.png(88,6,370,14)~~~~~~Choose terminal text selection background color
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/78.png
 #: ../Terminal.glade.h:14
 msgid "Choose terminal text selection background color"
 msgstr "Elegir un color de fondo para el texto seleccionado del terminal"
+
 #: ../Terminal.glade.h:15
 msgid "Color Selector"
 msgstr "Selector de color"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(26,233,72,10)~~~~~~Command
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/88.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/9.png
 #: ../Terminal.glade.h:16
 msgid "Command"
 msgstr "Comando"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/89.png(26,132,99,13)~~~~~~Compatibility
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/49.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/50.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/73.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/89.png
 #: ../Terminal.glade.h:17
 msgid "Compatibility"
 msgstr "Compatibilidad"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/89.png(40,402,323,30)~~~~~~Co nsider the following cha racters part of a word when double cllcklng
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/49.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/73.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/89.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/50.png
 #: ../Terminal.glade.h:18
 msgid ""
 "Consider the following characters part of a _word\n"
@@ -1144,513 +911,336 @@ msgid ""
 msgstr ""
 "Considerar los siguientes caracteres parte de una _palabra\n"
 "al hacer doble clic:"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/73.png(237,317,62,10)~~~~~~Control-H
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/73.png
 #: ../Terminal.glade.h:20
 msgid "Control-H"
 msgstr "Control-H"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/77.png(258,163,81,10)~~~~~~Cursor color
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/26.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/27.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/28.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/29.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/30.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/31.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/32.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/33.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/34.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/35.png
 #: ../Terminal.glade.h:21
 msgid "Cu_rsor color:"
 msgstr "Color del cursor:"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(63,520,299,13)~~~~~~Disable all mebu a ccess keys (such as Alt+f)
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
 #: ../Terminal.glade.h:22
 msgid "Disable all me_nu access keys (such as Alt+f)"
 msgstr "Deshabilitar todos las teclas de acceso al me_nú (como Alt+f)"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(63,548,296,13)~~~~~~Disable menu sho rtcut keys (F10 by defa ult)
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
 #: ../Terminal.glade.h:23
 msgid "Disable m_enu shortcut keys (F10 by default)"
 msgstr "Deshabilitar el atajo de teclado del m_enú (F10 por defecto)"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/24.png(63,402,248,14)~~~~~~Display borders around windows
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/18.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/19.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/20.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/21.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/84.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/86.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/24.png
 #: ../Terminal.glade.h:25
 msgid "Display _borders around new windows"
 msgstr "Mostrar _bordes alrededor de nuevas ventanas"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/84.png(62,444,223,13)~~~~~~Display me nubar In new windows
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/18.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/19.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/20.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/23.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/24.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/84.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/22.png
 #: ../Terminal.glade.h:26
 msgid "Display _menubar in new windows"
 msgstr "Mostrar barra de _menú en nuevas ventanas"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/86.png(63,472,217,13)~~~~~~Display toolba rs ln new windows
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/18.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/19.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/20.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/21.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/23.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/24.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/84.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/86.png
 #: ../Terminal.glade.h:27
 msgid "Display _toolbars in new windows"
 msgstr "Mostrar barra de herramien_tas en nuevas ventanas"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/89.png(26,379,93,10)~~~~~~Double Click
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/49.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/50.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/73.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/89.png
 #: ../Terminal.glade.h:28
 msgid "Double Click"
 msgstr "Doble clic"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/19.png(63,192,271,13)~~~~~~Enable anti-aliasing for the terminal fo nt
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/19.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/18.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/20.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/21.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/22.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/23.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/24.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/84.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/86.png
 #: ../Terminal.glade.h:29
 msgid "Enab_le anti-aliasing for the terminal font"
 msgstr "Ac_tivar el suavizado para las letras del terminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/19.png(26,218,455,64)~~~~~~Enable thisoption lf you want Te rminal to use anti-aliasi ng when rendering text In te rminal windows. Disabling thisoption ga;} can impressively speed up terminal re ndering perfo rmance and reduce the overa ll syste m load on slow syste ms
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/19.png
 #: ../Terminal.glade.h:30
 msgid "Enable this option if you want Terminal to use anti-aliasing when rendering text in terminal windows. Disabling this option can impressively speed up terminal rendering performance and reduce the overall system load on slow systems."
 msgstr "Active esta opción si desea que Terminal use el efecto de suavizado cuando muestre texto en las ventanas del terminal. Desactive esta opción puede acelerar enormemente el rendimiento de la representación y reducir la carga total en sistemas lentos."
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/20.png
+
 #: ../Terminal.glade.h:31
 msgid "Enable this option to allow applications running inside the terminal windows to use bold text."
 msgstr "Active esta opción para permitir a las aplicaciones que se están ejecutando dentro de ventanas de terminal usen texto en negrita."
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/11.png(64,365,386,30)~~~~~~Enable this option to be able to scro ll by a single line using the up/down arrow keys to gether with the Shift key
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
 #: ../Terminal.glade.h:32
 msgid "Enable this option to be able to scroll by a single line using the up/down arrow keys together with the Shift key."
 msgstr "Active esta opción para poder desplazarse una sola línea usando las teclas de dirección arriba/abajo junto con la tecla de mayúsculas."
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/22.png
+
 #: ../Terminal.glade.h:33
 msgid "Enable this option to show the menubar in newly created terminal windows."
 msgstr "Active esta opción para mostrar la barra del menú en las nuevas ventanas de terminal creadas."
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/23.png
+
 #: ../Terminal.glade.h:34
 msgid "Enable this option to show the toolbars in newly created terminal windows."
 msgstr "Active esta opción para mostrar las barras de herramientas en las nuevas ventanas de terminal creadas."
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/24.png(76,429,285,44)~~~~~~Enable this optlon to show window decorations a ro und newly created te rminal windows
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/24.png
 #: ../Terminal.glade.h:35
 msgid "Enable this option to show window decorations around newly created terminal windows."
 msgstr "Active esta opción para mostrar las decoraciones de ventana alrededor de las nuevas ventanas de terminal creadas."
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/88.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
+
 #: ../Terminal.glade.h:36
 msgid "Enables you to press any key on the keyboard to scroll down the terminal window to the command prompt."
 msgstr "Le permite presionar cualquier tecla para desplazar hacia abajo la ventana del terminal hasta la línea de comando"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/73.png(237,344,65,10)~~~~~~Erase Tw
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/73.png
 #: ../Terminal.glade.h:37
 msgid "Erase TTY"
 msgstr "Borrar TTY"
+
 #: ../Terminal.glade.h:38
 msgid "Escape sequence"
 msgstr "Secuencia de escape"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/55.png(164,228,28,10)~~~~~~onto
 #: ../Terminal.glade.h:39
 msgid "Font"
 msgstr "Tipo de lettra"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(19,103,49,10)~~~~~~General
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/26.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/27.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/28.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/29.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/30.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/31.png
 #: ../Terminal.glade.h:40
 msgid "General"
 msgstr "General"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(204,195,142,10)~~~~~~Goes after Initial title
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/88.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/9.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png
 #: ../Terminal.glade.h:41
 msgid "Goes after initial title"
 msgstr "Después del título inicial"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/14.png(206,168,153,10)~~~~~~Goes before Initial title
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
 #: ../Terminal.glade.h:42
 msgid "Goes before initial title"
 msgstr "Antes del título inicial"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/14.png(206,222,96,13)~~~~~~Isn't displayed
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
 #: ../Terminal.glade.h:43
 msgid "Isn't displayed"
 msgstr "No se muestra"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(26,495,121,10)~~~~~~Menubar Access
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
 #: ../Terminal.glade.h:44
 msgid "Menubar Access"
 msgstr "Acceso de la barra de menú"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/18.png(48,284,144,13)~~~~~~None (use solid color)
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/18.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/21.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/23.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/24.png
 #: ../Terminal.glade.h:45
 msgid "None (use solid color)"
 msgstr "Ninguno (usar color sólido)"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/16.png(144,379,101,10)~~~~~~On the left side
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
 #: ../Terminal.glade.h:46
 msgid "On the left side"
 msgstr "A la izquierda"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(142,406,109,13)~~~~~~On the right side
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/9.png
 #: ../Terminal.glade.h:47
 msgid "On the right side"
 msgstr "A la derecha"
+
 #: ../Terminal.glade.h:48
 msgid "Open a dialog to specify the color"
 msgstr "Abrir un diálogo para especificar el color"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/84.png(26,419,172,13)~~~~~~Opening New Windows
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/18.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/19.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/20.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/22.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/23.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/24.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/84.png
 #: ../Terminal.glade.h:49
 msgid "Opening New Windows"
 msgstr "Abriendo ventanas nuevas"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/77.png(26,339,50,10)~~~~~~Pal ette
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/29.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/30.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/31.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/32.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/33.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/34.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/35.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/36.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/37.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/38.png
 #: ../Terminal.glade.h:50
 msgid "Palette"
 msgstr "Paleta"
+
 #: ../Terminal.glade.h:51
 msgid "Palette entry 1"
 msgstr "Entrada de paleta 1"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/38.png(180,444,105,13)~~~~~~Palette entry 10
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/38.png
 #: ../Terminal.glade.h:52
 msgid "Palette entry 10"
 msgstr "Entrada de paleta 10"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/39.png(256,463,104,13)~~~~~~Palette entry 11
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/39.png
 #: ../Terminal.glade.h:53
 msgid "Palette entry 11"
 msgstr "Entrada de paleta 11"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/77.png(241,448,105,13)~~~~~~Palette entry 12
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/77.png
 #: ../Terminal.glade.h:54
 msgid "Palette entry 12"
 msgstr "Entrada de paleta 12"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/42.png(510,444,105,13)~~~~~~Palette entry 13
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/42.png
 #: ../Terminal.glade.h:55
 msgid "Palette entry 13"
 msgstr "Entrada de paleta 13"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/44.png(543,458,105,13)~~~~~~Palette entry 14
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/44.png
 #: ../Terminal.glade.h:56
 msgid "Palette entry 14"
 msgstr "Entrada de paleta 14"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/43.png(666,453,105,13)~~~~~~Palette entry 15
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/43.png
 #: ../Terminal.glade.h:57
 msgid "Palette entry 15"
 msgstr "Entrada de paleta 15"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/40.png(736,439,104,13)~~~~~~Palette entry 16
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/40.png
 #: ../Terminal.glade.h:58
 msgid "Palette entry 16"
 msgstr "Entrada de paleta 16"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/35.png(160,401,96,13)~~~~~~Palette entry 2
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/35.png
 #: ../Terminal.glade.h:59
 msgid "Palette entry 2"
 msgstr "Entrada de paleta 2"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/29.png(260,410,97,13)~~~~~~Palette entry 3
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/29.png
 #: ../Terminal.glade.h:60
 msgid "Palette entry 3"
 msgstr "Entrada de paleta 3"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/30.png(343,402,96,13)~~~~~~Palette entry 4
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/30.png
 #: ../Terminal.glade.h:61
 msgid "Palette entry 4"
 msgstr "Entrada de paleta 4"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/31.png(427,406,97,13)~~~~~~Palette entry 5
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/31.png
 #: ../Terminal.glade.h:62
 msgid "Palette entry 5"
 msgstr "Entrada de paleta 5"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/32.png(523,406,96,13)~~~~~~Palette entry 6
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/32.png
 #: ../Terminal.glade.h:63
 msgid "Palette entry 6"
 msgstr "Entrada de paleta 6"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/36.png(643,403,97,13)~~~~~~Palette entry 7
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/36.png
 #: ../Terminal.glade.h:64
 msgid "Palette entry 7"
 msgstr "Entrada de paleta 7"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/34.png(737,404,96,13)~~~~~~Palette entry 8
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/34.png
 #: ../Terminal.glade.h:65
 msgid "Palette entry 8"
 msgstr "Entrada de paleta 8"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/37.png(79,439,96,13)~~~~~~Palette entry 9
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/37.png
 #: ../Terminal.glade.h:66
 msgid "Palette entry 9"
 msgstr "Entrada de paleta 9"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/14.png(207,141,129,13)~~~~~~Replaces lnltlal title
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
 #: ../Terminal.glade.h:67
 msgid "Replaces initial title"
 msgstr "Sustituye al título inicial"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/89.png(47,481,247,13)~~~~~~Reset double click options to defaul ts
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/49.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/50.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/73.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/89.png
 #: ../Terminal.glade.h:68
 msgid "Rese_t double click options to defaults"
 msgstr "_Restablecer opciones predeterminadas para doble clic"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/89.png(41,546,215,13)~~~~~~Reset tab actlvlty lndl cato r after
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/49.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/50.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/73.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/89.png
 #: ../Terminal.glade.h:69
 msgid "Reset tab activity _indicator after"
 msgstr "Restablecer el _indicador de actividad de pestaña después de"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/86.png(156,410,42,10)~~~~~~Scaled
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/86.png
 #: ../Terminal.glade.h:70
 msgid "Scaled"
 msgstr "Escalado"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(40,406,75,10)~~~~~~Scrollbar ls
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/88.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/9.png
 #: ../Terminal.glade.h:71
 msgid "Scr_ollbar is:"
 msgstr "La barra de de_splazamiento está:"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(280,373,128,13)~~~~~~Scroll on keystroke
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
 #: ../Terminal.glade.h:72
 msgid "Scroll on _keystroke"
 msgstr "Desplazar al _pulsar una tecla"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(62,373,105,13)~~~~~~Scroll on output
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/88.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/9.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
 #: ../Terminal.glade.h:73
 msgid "Scroll on ou_tput"
 msgstr "Desplazarse a la _salida"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/11.png(62,344,295,13)~~~~~~Scroll single line using Shift-Up/-Down keys
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/88.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/9.png
 #: ../Terminal.glade.h:74
 msgid "Scroll single _line using Shift-Up/-Down keys"
 msgstr "Desplazar una sola _línea usando las teclas Mays-Arriba/-Abajo"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(40,441,68,10)~~~~~~Scrollback
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/88.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/9.png
 #: ../Terminal.glade.h:75
 msgid "Scroll_back:"
 msgstr "_Desplazamiento hacia atrás:"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(25,320,64,13)~~~~~~Sc rolling
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/88.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/9.png
 #: ../Terminal.glade.h:76
 msgid "Scrolling"
 msgstr "Desplazamiento"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/87.png(160,6,226,14)~~~~~~Select Background Image File
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/87.png
 #: ../Terminal.glade.h:77
 msgid "Select Background Image File"
 msgstr "Seleccione el archivo de imagen de fondo de pantalla"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/10.png(25,280,449,78)~~~~~~Select thlsoption to force Terminal to run your shel l as a logln shell when you open new terminals. See the N; documentation of your shell for deta ils about differences SC between running It as Intera ctive shell and running it as Iogln ~ I sneii
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png
 #: ../Terminal.glade.h:78
 msgid "Select this option to force Terminal to run your shell as a login shell when you open new terminals. See the documentation of your shell for details about differences between running it as interactive shell and running it as login shell."
 msgstr "Seleccione esta opción para forzar que Terminal ejecute su shell como una shell de inicio de sesión cuando abra nuevos terminales. Vea la documentación de su shell para detalles sobre las diferencias entre ejecutarlo como una shell interactiva y como una shell de inicio de sesión."
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/48.png(25,132,105,13)~~~~~~Shortcut Keys
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/47.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
 #: ../Terminal.glade.h:79
 msgid "Shortcut Keys"
 msgstr "Atajos de teclado"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/17.png(184,456,283,30)~~~~~~Specifies the number of lines that you can scroll back using the scrollbar
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
 #: ../Terminal.glade.h:80
 msgid "Specifies the number of lines that you can scroll back using the scrollbar."
 msgstr "Especifica el número de líneas que puede desplazarse hacia atrás usando la barra de desplazamiento."
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/86.png(40,356,32,13)~~~~~~Style
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/25.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/84.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/86.png
 #: ../Terminal.glade.h:81
 msgid "St_yle:"
 msgstr "E_stilo:"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/86.png(156,437,62,10)~~~~~~Stretched
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/86.png
 #: ../Terminal.glade.h:82
 msgid "Stretched"
 msgstr "Estirado"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/89.png(25,518,156,13)~~~~~~Ta b Activity Indicato
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/49.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/50.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/73.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/89.png
 #: ../Terminal.glade.h:83
 msgid "Tab Activity Indicator"
 msgstr "Indicador de actividad de pestaña"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/77.png(258,202,114,13)~~~~~~Tab actlvlty color
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/26.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/27.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/28.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/29.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/30.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/31.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/32.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/33.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/34.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/35.png
 #: ../Terminal.glade.h:84
 msgid "Tab activit_y color:"
 msgstr "Color de la pestaña _actividad:"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(143,6,164,11)~~~~~~Terminal Preferences
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/18.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/19.png
 #: ../Terminal.glade.h:85
 msgid "Terminal Preferences"
 msgstr "Preferencias del terminal"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/77.png(40,362,417,13)~~~~~~Terminal appli cations have this color palette available to them
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/26.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/27.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/28.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/29.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/30.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/31.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/32.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/33.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/34.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/35.png
 #: ../Terminal.glade.h:86
 msgid "Terminal applications have this color palette available to them:"
 msgstr "Las aplicaciones de terminal tienen esta paleta de colores disponible:"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/77.png(25,241,106,10)~~~~~~Text Selection
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/26.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/27.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/28.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/29.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/30.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/31.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/32.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/33.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/34.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/35.png
 #: ../Terminal.glade.h:87
 msgid "Text Selection"
 msgstr "Selección de texto"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/89.png(40,155,399,61)~~~~~~These options may cause some applications to behave incorre ctly. They are only here to allow you to work a round certain applications and operating systems that expect different terminal behavior
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/49.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/50.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/73.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/89.png
 #: ../Terminal.glade.h:88
 msgid ""
 "These options may cause some applications to behave\n"
@@ -1662,326 +1252,552 @@ msgstr ""
 "de manera incorrecta. Solamente están aquí para permitirle trabajar\n"
 "con ciertas aplicaciones y sistemas operativos que esperan un\n"
 "comportamiento distinto del terminal."
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/12.png(40,397,389,47)~~~~~~Thisoption controls whether the te rminal will scro ll Sc down automatically whenever new output ls gene rated by the commands running Inside the te rminal
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png
 #: ../Terminal.glade.h:92
 msgid "This option controls whether the terminal will scroll down automatically whenever new output is generated by the commands running inside the terminal."
 msgstr "Esta opción controla si el terminal desplazará el texto hacia abajo automáticamente cuando se genere una nueva salida por los comandos que se estén ejecutando dentro del terminal."
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/50.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/89.png
+
 #: ../Terminal.glade.h:93
 msgid "This specifies the value the $TERM environment variable is set to, when a new terminal tab or terminal window is opened. The default should be ok for most systems. If you have problems with colors in some applications, try xterm-color here."
 msgstr "Esto especifica qué valor tiene la variable de entorno $TERM, cuando una nueva pestaña de terminal o terminal nuevo se abre. El valor predeterminado será válido en la mayoría de los sistemas. Si tiene problemas con los colores en algunas aplicaciones, pruebe a poner xterm-color aquí"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(25,132,32,10)~~~~~~Title
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/84.png
 #: ../Terminal.glade.h:94
 msgid "Tiled"
 msgstr "Mosaico"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(25,132,32,10)~~~~~~Title
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
 #: ../Terminal.glade.h:95
 msgid "Title"
 msgstr "Título"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/84.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/86.png
+
 #: ../Terminal.glade.h:96
 msgid "Transpare_ncy:"
 msgstr "Transpare_ncia:"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/21.png(48,338,160,13)~~~~~~Transpa re nt backgro und
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/21.png
 #: ../Terminal.glade.h:97
 msgid "Transparent background"
 msgstr "Fondo transparente"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/77.png(63,266,112,10)~~~~~~Use default color
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/26.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/28.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/29.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/30.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/31.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/32.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/33.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/34.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/35.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/36.png
 #: ../Terminal.glade.h:98
 msgid "Use _default color"
 msgstr "Usar color _predeterminado"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/28.png(97,311,304,13)~~~~~~Use a custom text sele ction backgro und color
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/28.png
 #: ../Terminal.glade.h:99
 msgid "Use a custom text selection background color"
 msgstr "Usar un color de fondo personalizado para el texto seleccionado"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/27.png(63,301,114,10)~~~~~~Use custom color
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/27.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/26.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/29.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/30.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/31.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/32.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/33.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/34.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/35.png
 #: ../Terminal.glade.h:100
 msgid "Use c_ustom color:"
 msgstr "Usar _color de fondo personalizado:"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/27.png(103,282,315,13)~~~~~~Use the default text selection backg ro und color
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/27.png
 #: ../Terminal.glade.h:101
 msgid "Use the default text selection background color"
 msgstr "Usar el color predeterminado para el fondo del texto seleccionado"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(80,104,77,13)~~~~~~Appearance
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/18.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/19.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/20.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/21.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/22.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/23.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/24.png
 #: ../Terminal.glade.h:102
 msgid "_Appearance"
 msgstr "_Apariencia"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/77.png(41,202,114,13)~~~~~~Ba ckgro und color
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/26.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/27.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/28.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/29.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/30.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/31.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/32.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/33.png
 #: ../Terminal.glade.h:103
 msgid "_Background color:"
 msgstr "Color de _fondo:"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/89.png(41,236,168,13)~~~~~~Backspace key gene rates
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/49.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/50.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/73.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/89.png
 #: ../Terminal.glade.h:104
 msgid "_Backspace key generates:"
 msgstr "La tecla _borrar genera:"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(168,104,41,12)~~~~~~Colors
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/46.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/48.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/50.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/73.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/77.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/89.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/9.png
 #: ../Terminal.glade.h:105
 msgid "_Colors"
 msgstr "_Colores"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/73.png(41,273,141,13)~~~~~~Belete key gene rates
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/49.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/50.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/73.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/89.png
 #: ../Terminal.glade.h:106
 msgid "_Delete key generates:"
 msgstr "La _tecla suprimir genera:"
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/88.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/9.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png
+
 #: ../Terminal.glade.h:107
 msgid "_Dynamically-set title:"
 msgstr "Título establecido _dinámicamente"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/94.png(13,31,22,10)~~~~~~File
 #: ../Terminal.glade.h:108
 msgid "_File:"
 msgstr "_Archivo:"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(19,103,49,10)~~~~~~General
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/26.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/27.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/28.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/29.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/30.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/31.png
 #: ../Terminal.glade.h:109
 msgid "_General"
 msgstr "_General"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/14.png(40,160,68,10)~~~~~~Initial title
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/88.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/9.png
 #: ../Terminal.glade.h:110
 msgid "_Initial title:"
 msgstr "Título _inicial:"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/89.png(47,342,254,13)~~~~~~Beset compatibility options to defaul ts
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/49.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/89.png
 #: ../Terminal.glade.h:111
 msgid "_Reset compatibility options to defaults"
 msgstr "_Restablecer las opciones de compatibilidad a sus valores predeterminados"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(63,258,184,13)~~~~~~Bun command as login shell
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/10.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/88.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/9.png
 #: ../Terminal.glade.h:112
 msgid "_Run command as login shell"
 msgstr "_Ejecutar comando como shell de inicio de sesión"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(220,104,62,12)~~~~~~Sho rtcuts
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/18.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/19.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/20.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/21.png
 #: ../Terminal.glade.h:113
 msgid "_Shortcuts"
 msgstr "_Accesos rápido"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/77.png(55,163,50,10)~~~~~~xt color
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/26.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/27.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/28.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/29.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/30.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/31.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/32.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/33.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/34.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/35.png
 #: ../Terminal.glade.h:114
 msgid "_Text color:"
 msgstr "Color de _texto:"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/9.png(61,286,373,13)~~~~~~Bpdate utmp/wtm p record s when command is launched
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/11.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/12.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/13.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/14.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/15.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/16.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/17.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/88.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/9.png
 #: ../Terminal.glade.h:115
 msgid "_Update utmp/wtmp records when command is launched"
 msgstr "_Actualizar registros de utmp/wtmp cuando se ejecuta un comando"
+
 #& /home/transifex/textmatch/xfce-terminal-screenshots/89.png(325,546,52,10)~~~~~~seconds
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/49.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/50.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/73.png
-#% /home/geza/workspace/textmatch/xfce-terminal-screenshots/89.png
 #: ../Terminal.glade.h:116
 msgid "seconds"
 msgstr "segundos"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#~ msgid ""
+#~ "%s %s (Xfce %s)\n"
+#~ "\n"
+#~ "Copyright (c) %s\n"
+#~ "        os-cillation e.K. All rights reserved.\n"
+#~ "\n"
+#~ "Written by Benedikt Meurer <benny@xfce.org>.\n"
+#~ "\n"
+#~ "Built with Gtk+-%d.%d.%d, running with Gtk+-%d.%d.%d.\n"
+#~ "\n"
+#~ "Please report bugs to <%s>.\n"
+#~ msgstr ""
+#~ "%s %s (Xfce %s)\n"
+#~ "\n"
+#~ "Copyright (c) %s\n"
+#~ "        os-cillation e.K. Todos los derechos reservados.\n"
+#~ "\n"
+#~ "Escrito por Benedikt Meurer <benny@xfce.org>.\n"
+#~ "\n"
+#~ "Compilado con Gtk+-%d.%d.%d, ejecutándose con Gtk+-%d.%d.%d.\n"
+#~ "\n"
+#~ "Por favor, envíe los informes de error a <%s>.\n"
+
+#~ msgid "  -h, --help                          Print this help message and exit"
+#~ msgstr "  -h, --help                          Mostrar esta ayuda y salir"
+
+#~ msgid "  -V, --version                       Print version information and exit"
+#~ msgstr "  -v, --version                       Mostrar la versión y salir"
+
+#~ msgid ""
+#~ "  --disable-server                    Do not register with the D-BUS\n"
+#~ "                                      session message bus"
+#~ msgstr ""
+#~ "  --disable-server                    No registrarse en el bus de\n"
+#~ "                                      mensajes de sesión D-BUS"
+
+#~ msgid "  --default-display=DISPLAY           default X display to use"
+#~ msgstr "  --default-display=DISPLAY           display X predeterminado"
+
+#~ msgid ""
+#~ "  --default-working-directory=DIRNAME Set the default terminal's working\n"
+#~ "                                      directory"
+#~ msgstr ""
+#~ "  --default-working-directory=DIR     Establece el directorio de trabajo por\n"
+#~ "                                      defecto del terminal"
+
+#~ msgid ""
+#~ "  --tab                               Open a new tab in the last-specified\n"
+#~ "                                      window; more than one of these\n"
+#~ "                                      options can be provided"
+#~ msgstr ""
+#~ "  --tab                               Abre una nueva pestaña en la última\n"
+#~ "                                      ventana especificada; se pueden usar\n"
+#~ "                                      más de una de estas opciones"
+
+#~ msgid ""
+#~ "  --window                            Open a new window containing one tab;\n"
+#~ "                                      more than one of these options can be\n"
+#~ "                                      provided"
+#~ msgstr ""
+#~ "  --window                            Abre una ventana conteniendo una pestaña;\n"
+#~ "                                      Se puede proporcionar más de una de estas\n"
+#~ "                                      opciones"
+
+#~ msgid ""
+#~ "  -x, --execute                       Execute the remainder of the command\n"
+#~ "                                      line inside the terminal"
+#~ msgstr ""
+#~ "  -x, --execute                       Ejecutar lo que queda de la línea de comandos\n"
+#~ "                                      en el terminal"
+
+#~ msgid ""
+#~ "  -e, --command=STRING                Execute the argument to this option\n"
+#~ "                                      inside the terminal"
+#~ msgstr ""
+#~ "  -e, --command=CADENA                Ejecutar el argumento de esta opción\n"
+#~ "                                      dentro del terminal"
+
+#~ msgid "  --working-directory=DIRNAME         Set the terminal's working directory"
+#~ msgstr "  --working-directory=DIR             Establecer el directorio de trabajo del terminal"
+
+#~ msgid "  -T, --title=TITLE                   Set the terminal's title"
+#~ msgstr "  -T, --title=TITLE                   Establecer el título del terminal"
+
+#~ msgid ""
+#~ "  -H, --hold                          Do not immediately destroy the tab\n"
+#~ "                                      when the child command exits"
+#~ msgstr ""
+#~ "  -H, --hold                          No destruir inmediatamente la pestaña\n"
+#~ "                                      cuando el comando hijo termina"
+
+#~ msgid ""
+#~ "  --display=DISPLAY                   X display to use for the last-\n"
+#~ "                                      specified window"
+#~ msgstr ""
+#~ "  --display=DISPLAY                   Display X a usar para la última\n"
+#~ "                                      ventana especificada"
+
+#~ msgid ""
+#~ "  --geometry=GEOMETRY                 X geometry specification (see \"X\"\n"
+#~ "                                      man page), can be specified once per\n"
+#~ "                                      window to be opened"
+#~ msgstr ""
+#~ "  --geometry=GEOMETRY                 especificación de la geometría X (ver la\n"
+#~ "                                      página de manual de \"X\"), que puede ser\n"
+#~ "                                      especificada una vez por cada ventana a\n"
+#~ "                                      abrirse"
+
+#~ msgid ""
+#~ "  --role=ROLE                         Set the role for the last-specified\n"
+#~ "                                      window; applies to only one window;\n"
+#~ "                                      can be specified once for each window\n"
+#~ "                                      you create from the command line"
+#~ msgstr ""
+#~ "  --role=ROL                          Establecer el rol para la última ventana\n"
+#~ "                                      especificada; se aplica solamente a una\n"
+#~ "                                      ventana; puede ser especificada una vez\n"
+#~ "                                      por cada ventana que crea en la línea de\n"
+#~ "                                      comandos"
+
+#~ msgid ""
+#~ "  --startup-id=STRING                 ID for the startup notification\n"
+#~ "                                      protocol"
+#~ msgstr ""
+#~ "  --startup-id=CADENA                 ID para el protocolo de\n"
+#~ "                                      notificación de arranque"
+
+#~ msgid ""
+#~ "  -I, --icon=ICON                     Set the terminal's icon as an icon\n"
+#~ "                                      name or filename"
+#~ msgstr ""
+#~ "  -I, --icon=ICON                     Establece el ícono de la terminal como un\n"
+#~ "                                      nombre de ícono o un nombre de archivo"
+
+#~ msgid ""
+#~ "  --fullscreen                        Set the last-specified window into\n"
+#~ "                                      fullscreen mode; applies to only one\n"
+#~ "                                      window; can be specified once for\n"
+#~ "                                      each window you create from the\n"
+#~ "                                      command line"
+#~ msgstr ""
+#~ "  --fullscreen                        Coloca la última ventana especificada\n"
+#~ "                                      a pantalla completa; se aplica sólo a una\n"
+#~ "                                      ventana; puede especificarse una vez por\n"
+#~ "                                      cada ventana que cree desde la línea de\n"
+#~ "                                      comandos."
+
+#~ msgid ""
+#~ "  --maximize                          Maximize the last-specified window;\n"
+#~ "                                      applies to only one window; can be\n"
+#~ "                                      specified once for each window you\n"
+#~ "                                      create from the command line"
+#~ msgstr ""
+#~ "  --maximize                          Maximiza la última ventana especificada,\n"
+#~ "                                      se aplica a una sóla ventana, se puede\n"
+#~ "                                      especificar una vez por cada ventana, se\n"
+#~ "                                      crea desde la línea de comando"
+
+#~ msgid ""
+#~ "  --show-menubar                      Turn on the menubar for the last-\n"
+#~ "                                      specified window; applies to only one\n"
+#~ "                                      window; can be specified once for\n"
+#~ "                                      each window you create from the\n"
+#~ "                                      command line"
+#~ msgstr ""
+#~ "  --show-menubar                      Muestra la barra de menú para la última\n"
+#~ "                                      ventana especificada; se aplica a sólo una\n"
+#~ "                                      ventana; puede ser especificada una vez por cada\n"
+#~ "                                      ventana creada desde la línea de comandos"
+
+#~ msgid ""
+#~ "  --hide-menubar                      Turn off the menubar for the last-\n"
+#~ "                                      specified window; applies to only one\n"
+#~ "                                      window; can be specified once for\n"
+#~ "                                      each window you create from the\n"
+#~ "                                      command line"
+#~ msgstr ""
+#~ "  --hide-menubar                      Oculta la barra de menú para la última\n"
+#~ "                                      ventana especificada; sólo aplicable a una\n"
+#~ "                                      ventana; puede ser especificada para cada\n"
+#~ "                                      ventana que cree desde la línea de comandos"
+
+#~ msgid ""
+#~ "  --show-borders                      Turn on the window decorations for\n"
+#~ "                                      the last-specified window; applies\n"
+#~ "                                      to only one window; can be specified\n"
+#~ "                                      once for each window you create from\n"
+#~ "                                      the command line"
+#~ msgstr ""
+#~ "  --show-borders                      Muestra las decoraciones de ventana para\n"
+#~ "                                      la última ventana especificada; aplicable sólo\n"
+#~ "                                      a una ventana; puede ser especificada una vez\n"
+#~ "                                      para cada ventana que crea desde la línea\n"
+#~ "                                      de comandos"
+
+#~ msgid ""
+#~ "  --hide-borders                      Turn off the window decorations for\n"
+#~ "                                      the last-specified window; applies\n"
+#~ "                                      to only one window; can be specified\n"
+#~ "                                      once for each window you create from\n"
+#~ "                                      the command line"
+#~ msgstr ""
+#~ "  --hide-borders                      Oculta las decoraciones de la ventana para\n"
+#~ "                                      las última ventana especificada; aplicable\n"
+#~ "                                      a solamente una ventana; puede especificarse una\n"
+#~ "                                      vez por cada ventana que cree desde la línea de\n"
+#~ "                                      comandos"
+
+#~ msgid ""
+#~ "  --show-toolbars                     Turn on the toolbars for the last-\n"
+#~ "                                      specified window; applies to only one\n"
+#~ "                                      window; can be specified once for\n"
+#~ "                                      each window you create from the\n"
+#~ "                                      command line"
+#~ msgstr ""
+#~ "  --show-toolbars                     Muestra las barras de tareas para la última ventana\n"
+#~ "                                      especificada; aplicable a solamente una ventana;\n"
+#~ "                                      puede especificarse una vez por cada ventana que\n"
+#~ "                                      cree desde la línea de comandos"
+
+#~ msgid ""
+#~ "  --hide-toolbars                     Turn off the toolbars for the last-\n"
+#~ "                                      specified window; applies to only one\n"
+#~ "                                      window; can be specified once for\n"
+#~ "                                      each window you create from the\n"
+#~ "                                      command line"
+#~ msgstr ""
+#~ "  --hide-toolbars                     Oculta las barras de herramientas para\n"
+#~ "                                      la última ventana especificada; aplicable a solamente\n"
+#~ "                                      una ventana; puede especificarse una vez por cada\n"
+#~ "                                      ventana que cree desde la línea de comandos"
+
+#~ msgid "Unable to launch terminal: %s\n"
+#~ msgstr "Imposible iniciar terminal: %s\n"
+
+#~ msgid "Option \"--sm-client-id\" requires specifying the session id as its parameter"
+#~ msgstr "La opción \"--sm-client-id\" requiere que se especifique el identificador de sesión como su parámetro"
+
+#~ msgid "<b>Title:</b>"
+#~ msgstr "<b>Título:</b>"
+
+#~ msgid "Usage: Terminal [OPTION...]"
+#~ msgstr "Uso: Terminal [OPCIÓN...]"
+
+#~ msgid "<b>Title</b>"
+#~ msgstr "<b>Título</b>"
+
+#~ msgid "The command running inside the terminal may dynamically set a new title."
+#~ msgstr "El comando que se está ejecutando dentro del terminal puede establecer dinámicamente un nuevo título."
+
+#~ msgid "<b>Font</b>"
+#~ msgstr "<b>Tipo de letra</b>"
+
+#~ msgid "<b>Background</b>"
+#~ msgstr "<b>Fondo</b>"
+
+#~ msgid "Shade transparent or image background:"
+#~ msgstr "Transparencia o imagen de fondo:"
+
+#~ msgid "<small><i>None</i></small>"
+#~ msgstr "<small><i>Ninguno</i></small>"
+
+#~ msgid "<small><i>Maximum</i></small>"
+#~ msgstr "<small><i>Máximo</i></small>"
+
+#~ msgid "<b>Foreground and Background</b>"
+#~ msgstr "<b>Primer plano y fondo</b>"
+
+#~ msgid "<b>Tab activity</b>"
+#~ msgstr "<b>Actividad de pestaña</b>"
+
+#~ msgid "<b>Shortcut keys</b>"
+#~ msgstr "<b>Atajos de teclado</b>"
+
+#~ msgid "Web Browser"
+#~ msgstr "Navegador web"
+
+#~ msgid "Mail Reader"
+#~ msgstr "Cliente de correo"
+
+#~ msgid ""
+#~ "Choose your preferred Web Browser. The preferred\n"
+#~ "Web Browser opens when you right-click on a URL\n"
+#~ "and select Open Link from the context menu."
+#~ msgstr ""
+#~ "Seleccione su navegador web preferido. Dicho navegador\n"
+#~ "se abre cuando hace click con el botón derecho sobre\n"
+#~ "una URL y selecciona Abrir URL desde el menú contextual."
+
+#~ msgid ""
+#~ "Choose your preferred Mail Reader. The preferred\n"
+#~ "Mail Reader opens when you right-click on an email\n"
+#~ "address and select Compose Email from the context\n"
+#~ "menu."
+#~ msgstr ""
+#~ "Seleccione su cliente de correo preferido. Dicho cliente\n"
+#~ "de correo se abrirá cuando haga click con el botón derecho\n"
+#~ "sobre una dirección de correo y cuando elija Componer E-Mail\n"
+#~ "desde el menú contextual."
+
+#~ msgid "Click here to change the selected application or to disable this feature."
+#~ msgstr ""
+#~ "Cliquee aquí para cambiar la aplicación seleccionada o\n"
+#~ "para deshabilitar esta característica."
+
+#~ msgid "Select application"
+#~ msgstr "Seleccione aplicación"
+
+#~ msgid "Choose a custom Web Browser"
+#~ msgstr "Elija un navegador web personalizado"
+
+#~ msgid "Choose a custom Mail Reader"
+#~ msgstr "Elija un cliente de correo personalizado"
+
+#~ msgid ""
+#~ "Specify the application you want to use as\n"
+#~ "Web Browser in Terminal:"
+#~ msgstr ""
+#~ "Especifique la aplicación que desea usar como\n"
+#~ "navegador web en Terminal:"
+
+#~ msgid ""
+#~ "Specify the application you want to use as\n"
+#~ "Mail Reader in Terminal:"
+#~ msgstr ""
+#~ "Especifique la aplicación que desee usar como\n"
+#~ "cliente de correo en Terminal:"
+
+#~ msgid "_Browse..."
+#~ msgstr "_Navegar..."
+
+#~ msgid "Disable this feature"
+#~ msgstr "Deshablitar esta característica"
+
+#~ msgid "Other..."
+#~ msgstr "Otro..."
+
+#~ msgid "No application selected"
+#~ msgstr "Ninguna aplicación seleccionada"
+
+#~ msgid "Preferred Applications"
+#~ msgstr "Aplicaciones de preferencia"
+
+#~ msgid "Applications"
+#~ msgstr "_Aplicaciones..."
+
+#~ msgid "_Applications..."
+#~ msgstr "_Aplicaciones..."
+
+#~ msgid "Customize your preferred applications"
+#~ msgstr "Personalizar sus aplicaciones preferidas"
+
+#~ msgid ""
+#~ "You did not choose your preferred Web\n"
+#~ "Browser yet. Do you want to setup your\n"
+#~ "preferred applications now?"
+#~ msgstr ""
+#~ "No eligió aún una aplicación para la navegación\n"
+#~ "web. ¿Desea configurar sus aplicaciones preferidas\n"
+#~ "ahora?"
+
+#~ msgid ""
+#~ "You did not choose your preferred Mail\n"
+#~ "Reader yet. Do you want to setup your\n"
+#~ "preferred applications now?"
+#~ msgstr ""
+#~ "No eligió una aplicación para el correo electrónico\n"
+#~ "todavía. ¿Desea configurar sus aplicaciones preferidas\n"
+#~ "ahora?"
+
+#~ msgid "Balsa"
+#~ msgstr "Balsa"
+
+#~ msgid "Epiphany Web Browser"
+#~ msgstr "Navegador web Epiphany"
+
+#~ msgid "Novell Evolution"
+#~ msgstr "Novell Evolution"
+
+#~ msgid "Default Web Browser (Xfce)"
+#~ msgstr "Navegador web Galeon"
+
+#~ msgid "Default Mail Reader (Xfce)"
+#~ msgstr "Elija un cliente de correo personalizado"
+
+#~ msgid "Mozilla Firefox"
+#~ msgstr "Mozilla Firefox"
+
+#~ msgid "Galeon Web Browser"
+#~ msgstr "Navegador web Galeon"
+
+#~ msgid "KMail"
+#~ msgstr "KMail"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Lynx"
+#~ msgstr "Lynx"
+
+#~ msgid "Mozilla Browser"
+#~ msgstr "Mozilla Browser"
+
+#~ msgid "Mozilla Mail"
+#~ msgstr "Mozilla Mail"
+
+#~ msgid "Mutt"
+#~ msgstr "Mutt"
+
+#~ msgid "Opera Browser"
+#~ msgstr "Navegador Opera"
+
+#~ msgid "Opera Mail"
+#~ msgstr "Opera Mail"
+
+#~ msgid "Debian Sensible Browser"
+#~ msgstr "Navegador de preferencia de Debian"
+
+#~ msgid "Mozilla Thunderbird"
+#~ msgstr "Mozilla Thunderbird"
+
+#~ msgid "Custom title"
+#~ msgstr "Título personalizado"
+
+#~ msgid "Tab title"
+#~ msgstr "Título de la pestaña"

@@ -18,13 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/8.png(83,192,149,10)~~~~~~Copyright (C) 2009 2010
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/8.png
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
 msgstr "Copyright (C) 2009 - 2010"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/8.png(40,132,235,47)~~~~~~Ughtwelght flle manager Developed by Hon Jen Yee (PCMan)
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/8.png
 #: ../data/ui/about.glade.in.h:2
 msgid ""
 "Lightweight file manager\n"
@@ -34,231 +34,186 @@ msgstr ""
 "Gestor de archivos ligero\n"
 "\n"
 "Desarrollado por Hon Jen Yee (PCMan)"
-#% nomatches
+
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
 msgstr ""
 "Hugo Florentino <sysadmin@cips.cu>, 2010\n"
 "LinoSP <ljsp1@hotmail.com>, 2010"
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/22.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/23.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/24.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/26.png
+
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
 msgstr "<b>Fondo</b>"
-#% nomatches
+
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
 msgstr "<b>Mostrar iconos del escritorio</b>"
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/24.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/22.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/26.png
+
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "<b>Text</b>"
 msgstr "<b>Texto</b>"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/26.png(104,42,63,12)~~~~~~Advanced
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/17.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/18.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/19.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/20.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/21.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/23.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/24.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/26.png
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "Advanced"
 msgstr "Avanzado"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/26.png(15,42,77,12)~~~~~~Appea ra nce
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/23.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/24.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/22.png
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Appearance"
 msgstr "Apariencia"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/26.png(36,144,114,13)~~~~~~Ba ckgro und color
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/24.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/22.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/23.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/26.png
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
 msgstr "Color de fondo:"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/24.png(170,235,138,10)~~~~~~Center on the screen
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/24.png
 #: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Centrar en la pantalla"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/26.png(35,290,120,10)~~~~~~Color of label text
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/22.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/23.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/24.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/26.png
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "Color of label text:"
 msgstr "Color de la etiqueta:"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/26.png(283,290,106,10)~~~~~~Color of shadow
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/22.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/23.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/24.png
 #: ../data/ui/desktop-pref.glade.h:9
 msgid "Color of shadow:"
 msgstr "Color de la sombra:"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/9.png(46,86,91,13)~~~~~~Deskto p Icons
-#% nomatches
 #: ../data/ui/desktop-pref.glade.h:10
 msgid "Desktop Icons"
 msgstr "Iconos del escritorio"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/26.png(167,5,155,14)~~~~~~Desktop Preferences
-#% nomatches
 #: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Preferencias del escritorio"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/24.png(194,154,181,13)~~~~~~with background color only
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/24.png
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "Fill with background color only"
 msgstr "Llenar sólo con el color de fondo"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/26.png(36,253,113,10)~~~~~~Font of label text
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/22.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/23.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/24.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/26.png
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
 msgstr "Fuente de la etiqueta:"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/27.png(150,5,203,14)~~~~~~Please sel ect an image file
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/27.png
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Please select an image file"
 msgstr "Por favor, seleccione un archivo de imagen"
-#% nomatches
+
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
 msgstr "Mostrar el icono \"Mi PC\" en el escritorio"
-#% nomatches
+
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"My Documents\" icon on desktop"
 msgstr "Mostrar el icono \"Mis documentos\" en el escritorio"
-#% nomatches
+
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "Show \"Trash Bin\" icon on desktop"
 msgstr "Mostrar el icono \"Papelera\" en el escritorio"
-#% nomatches
+
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "Show icons of volumes on desktop"
 msgstr "Mostrar los iconos de volúmenes en el escritorio"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/25.png(46,81,457,13)~~~~~~Show menus provided by window manage rs when desktop Is clicked
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/25.png
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Mostrar menús del gestor de ventanas al hacer clic en el escritorio"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/24.png(170,181,205,10)~~~~~~Stretch to fill the entire screen
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/22.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/23.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/24.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/26.png
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Estirar para llenar toda la pantalla"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/24.png(170,208,158,10)~~~~~~Stretch to fit the screen
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/24.png
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Estirar para ajustarse a la pantalla"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/24.png(169,262,255,13)~~~~~~Tile the Image to fill the entire screen
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/24.png
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Usar la imagen en mosaico para llenar la pantalla"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/26.png(35,182,107,13)~~~~~~Wallpaper mode
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/22.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/23.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/24.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/26.png
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Wallpaper mode:"
 msgstr "Modo tapizado:"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/26.png(35,107,66,13)~~~~~~Wallpaper
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/22.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/23.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/24.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/26.png
 #: ../data/ui/desktop-pref.glade.h:24
 msgid "Wallpaper:"
 msgstr "Tapiz:"
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/28.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/20.png
+
 #: ../data/ui/pref.glade.h:1
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Montar automáticamente</b>"
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/17.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/18.png
+
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
 msgstr "<b>Comportamiento</b>"
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/17.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/18.png
+
 #: ../data/ui/pref.glade.h:3
 msgid "<b>Default View</b>"
 msgstr "<b>Vista predeterminada</b>"
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/19.png
+
 #: ../data/ui/pref.glade.h:4
 msgid "<b>Icons</b>"
 msgstr "<b>Iconos</b>"
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/21.png
+
 #: ../data/ui/pref.glade.h:5
 msgid "<b>Programs</b>"
 msgstr "<b>Programas</b>"
-#% nomatches
+
 #: ../data/ui/pref.glade.h:6
 msgid "<b>User Interface</b>"
 msgstr "<b>Interfaz del usuario</b>"
-#% nomatches
+
 #: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
 msgstr "Siempre mostrar la barra de pestañas"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/21.png(37,211,132,13)~~~~~~Archiver Integrati on
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/21.png
 #: ../data/ui/pref.glade.h:8
 msgid "Archiver integration:"
 msgstr "Integración del archivador:"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/4.png(120,28,76,16)~~~~~~Bookmarks
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/17.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/18.png
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
 msgstr "Marcadores:"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/6.png(228,138,93,12)~~~~~~gompact View
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/5.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png
 #: ../data/ui/pref.glade.h:11
 msgid "Compact View"
 msgstr "Vista compacta"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/18.png(59,128,191,13)~~~~~~Confirm before deleting files
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/17.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/18.png
 #: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
 msgstr "Confirmar antes de eliminar archivos"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/6.png(229,160,117,10)~~~~~~Detailed Llst View
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/5.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
 #: ../data/ui/pref.glade.h:13
 msgid "Detailed List View"
 msgstr "Vista detallada"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/19.png(38,307,372,13)~~~~~~Do not generate thumbnails for files exceeding this size
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/19.png
 #: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "No generar miniaturas para los archivos que excedan este tamaño:"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/21.png(38,164,473,30)~~~分%s分%s分%s~~~Examples: "xterm -e %s" for te rminal or "gksu %s" for switching user %s the command line = you want to execute with te rminal or su
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/21.png
 #: ../data/ui/pref.glade.h:16
 #, no-c-format
 msgid ""
@@ -268,597 +223,440 @@ msgstr ""
 "Ejemplos: \"xterm -e %s\" para la terminal o \"gksu %s\" para cambiar de "
 "usuario.\n"
 "%s = la línea de comando que desea ejecutar con terminal o su."
-#% nomatches
+
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
 msgstr "Ocultar los botones 'Cerrar pestaña'"
-#% nomatches
+
 #: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
 msgstr "Ocultar el borde del contenido de la carpeta"
-#% nomatches
+
 #: ../data/ui/pref.glade.h:20
 msgid "Hide side pane buttons"
 msgstr "Ocultar los botones de los paneles laterales"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/11.png(228,91,64,11)~~~~~~Icon Vlew
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/17.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/5.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
 #: ../data/ui/pref.glade.h:21
 msgid "Icon View"
 msgstr "Vista de Iconos"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/28.png(60,105,404,13)~~~~~~Mount mountable volumes automatically on program sta rtup
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/28.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/20.png
 #: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
 msgstr "Montar volúmenes automáticamente al inicio del programa"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/28.png(60,133,414,13)~~~~~~Mount removable media automatically when they are Inse rted
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/28.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/20.png
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
 msgstr "Montar medios extraíbles automáticamente cuando se inserten"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/18.png(59,156,409,13)~~~~~~Move deleted files to "trash bin" Instead of erasing fro m disk
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/17.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/18.png
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr ""
 "Mover los archivos eliminados a \"Papelera\" en lugar de eliminarlos del "
 "disco"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/19.png(59,276,239,13)~~~~~~Only show thumbnails for local files
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/19.png
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
 msgstr "Solo mostrar miniaturas para archivos locales"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/18.png(60,100,177,13)~~~~~~Open files with single cllck
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/17.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/18.png
 #: ../data/ui/pref.glade.h:26
 msgid "Open files with single click"
 msgstr "Abrir los archivos con un solo clic"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/18.png(140,189,148,13)~~~~~~Opened in Current Tab
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/17.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/18.png
 #: ../data/ui/pref.glade.h:27
 msgid "Opened in Current Tab"
 msgstr "Abrir en la pestaña actual"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/18.png(140,216,127,13)~~~~~~Opened in New Tab
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/18.png
 #: ../data/ui/pref.glade.h:28
 msgid "Opened in New Tab"
 msgstr "Abrir en un nueva pestaña"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/18.png(140,243,156,13)~~~~~~Opened In New Window
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/18.png
 #: ../data/ui/pref.glade.h:29
 msgid "Opened in New Window"
 msgstr "Abrir en una nueva ventana"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/31.png(67,282,77,10)~~~~~~Preferences
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/2.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/30.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/20.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/28.png
 #: ../data/ui/pref.glade.h:30
 msgid "Preferences"
 msgstr "Preferencias"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/28.png(59,161,458,13)~~~~~~Show available options for removable media when they are Inse rted
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/28.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/20.png
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
 msgstr ""
 "Mostrar opciones disponibles para los medios extraíbles cuando se inserten"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/19.png(59,248,164,11)~~~~~~Show thumbnails of files
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/19.png
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
 msgstr "Mostrar miniaturas de los archivos"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/19.png(37,105,109,13)~~~~~~Size of big Icons
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/19.png
 #: ../data/ui/pref.glade.h:33
 msgid "Size of big icons:"
 msgstr "Tamaño de los iconos grandes:"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/19.png(37,216,153,13)~~~~~~Size of side pane Icons
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/19.png
 #: ../data/ui/pref.glade.h:34
 msgid "Size of side pane icons:"
 msgstr "Tamaño de los iconos del panel lateral:"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/19.png(37,142,125,10)~~~~~~Size of small Icons
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/19.png
 #: ../data/ui/pref.glade.h:35
 msgid "Size of small icons:"
 msgstr "Tamaño de los iconos pequeños:"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/19.png(37,179,123,10)~~~~~~Size of thumbnails
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/19.png
 #: ../data/ui/pref.glade.h:36
 msgid "Size of thumbnails:"
 msgstr "Tamaño de las miniaturas:"
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/21.png
+
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
 msgstr "Comando para cambiar de usuario:"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/21.png(37,103,122,10)~~~~~~Te rminal emulator
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/21.png
 #: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
 msgstr "Emulador de terminal:"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/6.png(228,114,104,10)~~~~~~Thumbnail View
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/5.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png
 #: ../data/ui/pref.glade.h:41
 msgid "Thumbnail View"
 msgstr "Vista de miniaturas"
-#% nomatches
+
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr "Usar prefijos decimales SI en lugar de los prefijos binarios IEC"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/18.png(37,261,71,10)~~~~~~View Mode
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/17.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/18.png
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
 msgstr "Modo de visualización:"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/26.png(104,42,63,12)~~~~~~Advanced
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/17.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/18.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/19.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/20.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/21.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/23.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/24.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/26.png
 #: ../data/ui/pref.glade.h:45
 msgid "_Advanced"
 msgstr "_Avanzado"
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/17.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/18.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/19.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/21.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/20.png
+
 #: ../data/ui/pref.glade.h:46
 msgid "_Display"
 msgstr "_Mostrar"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/28.png(15,43,50,10)~~~~~~General
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/17.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/18.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/20.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/21.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/28.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/19.png
 #: ../data/ui/pref.glade.h:47
 msgid "_General"
 msgstr "_General"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/21.png(138,40,140,15)~~~~~~yolume Management
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/19.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/20.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/21.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/17.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/18.png
 #: ../data/ui/pref.glade.h:48
 msgid "_Volume Management"
 msgstr "_Gestión de volúmenes"
-#% nomatches
+
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
 msgstr "<b>Se ha insertado un medio extraíble</b>"
-#% nomatches
+
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
 msgstr "Detectando..."
-#% nomatches
+
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
 msgstr "Por favor, seleccione la acción que desea realizar:"
-#% nomatches
+
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
 msgstr "Se ha insertado un medio extraíble"
-#% nomatches
+
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
 msgstr "Tipo de medio:"
-#% nomatches
+
 #: ../src/volume-manager.c:150
 msgid "Removable Disk"
 msgstr "Disco extraíble"
-#% nomatches
+
 #: ../src/volume-manager.c:209
 msgid "Open in File Manager"
 msgstr "Abrir en el gestor de archivos"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/31.png(66,252,105,10)~~~~~~Invert Sele ct ion
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/2.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/30.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/31.png
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
 msgstr "_Invertir selección"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/11.png(227,194,64,13)~~~~~~gort Files
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/12.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/5.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png
 #: ../src/desktop-ui.c:54 ../src/main-win-ui.c:151
 msgid "_Sort Files"
 msgstr "_Ordenar archivos"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/33.png(301,148,27,10)~~~~~~New
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/29.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/30.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/31.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/33.png
 #: ../src/desktop-ui.c:55
 msgid "_New"
 msgstr "_Nuevo"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/16.png(278,247,41,10)~~~~~~Folder
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/12.png
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:177
 msgid "Folder"
 msgstr "Carpeta"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/12.png(396,170,64,10)~~~~~~Blank File
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/12.png
 #: ../src/desktop-ui.c:57 ../src/main-win-ui.c:178
 msgid "Blank File"
 msgstr "Archivo en blanco"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/6.png(460,254,59,12)~~~~~~By game
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png
 #: ../src/desktop-ui.c:69 ../src/main-win-ui.c:203
 msgid "By _Name"
 msgstr "Por _nombre"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/6.png(460,276,137,13)~~~~~~By godifi catlon Time
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
 #: ../src/desktop-ui.c:70 ../src/main-win-ui.c:204
 msgid "By _Modification Time"
 msgstr "Por fecha de _modificación"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/11.png(460,300,48,12)~~~~~~By Size
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:205
 msgid "By _Size"
 msgstr "Por _tamaño"
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
+
 #: ../src/desktop-ui.c:72 ../src/main-win-ui.c:206
 msgid "By File _Type"
 msgstr "Por tipo de a_rchivo"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/16.png(240,166,111,13)~~~~~~Open In New Ta b
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/16.png
 #: ../src/desktop-ui.c:88 ../src/main-win-ui.c:223
 msgid "Open in New Tab"
 msgstr "Abrir en una nueva pestaña"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/16.png(240,189,140,13)~~~~~~Open In New Window
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/16.png
 #: ../src/desktop-ui.c:89 ../src/main-win-ui.c:224
 msgid "Open in New Window"
 msgstr "Abrir en una nueva ventana"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/16.png(238,211,113,14)~~~~~~Open in Terminal
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/16.png
 #: ../src/desktop-ui.c:91 ../src/main-win-ui.c:226
 msgid "Open in _Terminal"
 msgstr "Abrir en la _terminal"
-#% nomatches
+
 #: ../src/desktop-ui.c:107
 msgid "Stick to Current Position"
 msgstr "Adherirse a la posición actual"
-#% nomatches
+
 #: ../src/desktop-ui.c:112
 msgid "Snap to Grid"
 msgstr "Ajustar a la cuadrícula"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/12.png(13,31,21,12)~~~~~~File
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/12.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/16.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/7.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/4.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/5.png
 #: ../src/main-win-ui.c:133
 msgid "_File"
 msgstr "_Archivo"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/1.png(34,56,83,10)~~~~~~New Window
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/1.png
 #: ../src/main-win-ui.c:134
 msgid "_New Window"
 msgstr "_Nueva ventana"
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/1.png
+
 #: ../src/main-win-ui.c:135
 msgid "New _Tab"
 msgstr "Nueva _pestaña"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/1.png(33,149,63,10)~~~~~~Close Ta b
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/1.png
 #: ../src/main-win-ui.c:136
 msgid "_Close Tab"
 msgstr "_Cerrar pestaña"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/1.png(33,172,91,10)~~~~~~Close Window
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/1.png
 #: ../src/main-win-ui.c:137
 msgid "Close Window"
 msgstr "Cerrar ventana"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/7.png(50,31,25,10)~~~~~~Edit
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/33.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/4.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/7.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/12.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/16.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/29.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/3.png
 #: ../src/main-win-ui.c:138
 msgid "_Edit"
 msgstr "_Edición"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/31.png(67,154,52,10)~~~~~~Rename
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/16.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/2.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/30.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/31.png
 #: ../src/main-win-ui.c:143
 msgid "Rename"
 msgstr "Renombrar"
-#% nomatches
+
 #: ../src/main-win-ui.c:144
 msgid "Create Symlink"
 msgstr "Crear enlace simbólico"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/30.png(66,176,68,10)~~~~~~Move To...
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/30.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/2.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/31.png
 #: ../src/main-win-ui.c:145
 msgid "Move To..."
 msgstr "Mover a..."
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/31.png(66,199,66,13)~~~~~~Copy To...
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/31.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/2.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/30.png
 #: ../src/main-win-ui.c:146
 msgid "Copy To..."
 msgstr "Copiar a..."
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/31.png(66,252,105,10)~~~~~~Invert Sele ct ion
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/2.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/30.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/31.png
 #: ../src/main-win-ui.c:148
 msgid "Invert Selection"
 msgstr "Invertir selección"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/7.png(209,31,31,10)~~~~~~View
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/12.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/29.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/3.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/30.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/31.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/33.png
 #: ../src/main-win-ui.c:150
 msgid "_View"
 msgstr "_Ver"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/34.png(6,120,30,13)~~~~~~Help
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/12.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/1.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/3.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/30.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/31.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/33.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/4.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/0.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/16.png
 #: ../src/main-win-ui.c:152
 msgid "_Help"
 msgstr "_Ayuda"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/4.png(88,31,18,10)~~~~~~Go
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/4.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/5.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/7.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/0.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/1.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/12.png
 #: ../src/main-win-ui.c:154
 msgid "_Go"
 msgstr "_Ir"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/3.png(111,56,102,10)~~~~~~Previous Folder
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/3.png
 #: ../src/main-win-ui.c:155
 msgid "Previous Folder"
 msgstr "Carpeta anterior"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/3.png(111,79,76,10)~~~~~~Next Folder
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/3.png
 #: ../src/main-win-ui.c:156
 msgid "Next Folder"
 msgstr "Carpeta siguiente"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/3.png(111,102,88,10)~~~~~~Parent Folder
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/3.png
 #: ../src/main-win-ui.c:157
 msgid "Parent Folder"
 msgstr "Carpeta superior"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/29.png(153,86,129,13)~~~~~~Go to parent Folder
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/29.png
 #: ../src/main-win-ui.c:157
 msgid "Go to parent Folder"
 msgstr "Ir a la carpeta superior"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/3.png(111,137,84,10)~~~~~~Home Folder
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/3.png
 #: ../src/main-win-ui.c:158
 msgid "Home Folder"
 msgstr "Carpeta de inicio"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/3.png(35,119,43,10)~~~~~~Deskto
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/0.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/12.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/16.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/27.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/29.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/3.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/33.png
 #: ../src/main-win-ui.c:159
 msgid "Desktop"
 msgstr "Escritorio"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/27.png(37,224,52,33)~~~~~~Deskto p File
-#% nomatches
 #: ../src/main-win-ui.c:159
 msgid "Desktop Folder"
 msgstr "Carpeta del escritorio"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/3.png(109,183,89,13)~~~~~~My Compute r
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/3.png
 #: ../src/main-win-ui.c:160
 msgid "My Computer"
 msgstr "Mi PC"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/3.png(110,206,64,10)~~~~~~Trash Can
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/3.png
 #: ../src/main-win-ui.c:161
 msgid "Trash Can"
 msgstr "Papelera"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/3.png(110,228,102,12)~~~~~~Network Drlves
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/3.png
 #: ../src/main-win-ui.c:162
 msgid "Network Drives"
 msgstr "Unidades de red"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/33.png(31,172,78,13)~~~~~~Applications
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/33.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/29.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/4.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/0.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/12.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/16.png
 #: ../src/main-win-ui.c:163
 msgid "Applications"
 msgstr "Aplicaciones"
-#% nomatches
+
 #: ../src/main-win-ui.c:163
 msgid "Installed Applications"
 msgstr "Aplicaciones instaladas"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/4.png(120,28,76,16)~~~~~~Bookmarks
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/1.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/12.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/16.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/2.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/29.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/3.png
 #: ../src/main-win-ui.c:165
 msgid "_Bookmarks"
 msgstr "_Marcadores"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/7.png(89,31,105,10)~~~~~~Go Bookmarks
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/32.png
 #: ../src/main-win-ui.c:166
 msgid "Add To Bookmarks"
 msgstr "Añadir a marcadores"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/4.png(254,30,35,14)~~~~~~Tools
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/3.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/30.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/31.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/4.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/29.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/33.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/12.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/16.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/2.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/1.png
 #: ../src/main-win-ui.c:167
 msgid "_Tools"
 msgstr "_Herramientas"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/7.png(276,55,215,14)~~~~~~Ope n Current Folder ln Terminal
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/7.png
 #: ../src/main-win-ui.c:168
 msgid "Open Current Folder in _Terminal"
 msgstr "Abrir la carpeta actual en la _terminal"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/7.png(278,79,189,13)~~~~~~Open Current Folder as Boot
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/7.png
 #: ../src/main-win-ui.c:169
 msgid "Open Current Folder as _Root"
 msgstr "Abrir la carpeta actual como _root"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/12.png(203,147,91,13)~~~~~~Create gew...
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/13.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/15.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/12.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/1.png
 #. for popup menu
 #: ../src/main-win-ui.c:176
 #, fuzzy
 msgid "Create _New..."
 msgstr "Crear nuevo..."
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/6.png(228,56,85,10)~~~~~~Show Hidden
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/12.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/5.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png
 #: ../src/main-win-ui.c:184
 msgid "Show _Hidden"
 msgstr "Mostrar _ocultos"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/11.png(228,91,64,11)~~~~~~Icon Vlew
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/17.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/5.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
 #: ../src/main-win-ui.c:189
 msgid "_Icon View"
 msgstr "Vista de _iconos"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/6.png(228,138,93,12)~~~~~~gompact View
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/5.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png
 #: ../src/main-win-ui.c:190
 msgid "_Compact View"
 msgstr "Vista _compacta"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/6.png(228,114,104,10)~~~~~~Thumbnail View
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/5.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png
 #: ../src/main-win-ui.c:191
 msgid "_Thumbnail View"
 msgstr "Vista de _miniaturas"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/6.png(229,160,117,10)~~~~~~Detailed Llst View
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/5.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/6.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
 #: ../src/main-win-ui.c:192
 msgid "Detailed _List View"
 msgstr "Vista _detallada"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/33.png(228,81,175,13)~~~~~~Yo u are in superusermode
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/33.png
 #: ../src/main-win.c:565
 msgid "You are in super user mode"
 msgstr "Está en modo de super usuario"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/36.png(76,39,214,10)~~~~~~Switch user command Is not set
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/36.png
 #: ../src/main-win.c:664
 msgid "Switch user command is not set."
 msgstr "No se ha establecido el comando para cambiar de usuario."
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/33.png(383,487,239,13)~~~分28.8GB分145.8 GB~~~Free space: 28.8GB (Total 145.8 GB)
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/33.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/29.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/30.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/31.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/0.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/1.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/10.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/11.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/12.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/2.png
 #: ../src/main-win.c:984
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espacio libre: %s (Total: %s)"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/32.png(8,40,277,44)~~~分/home/geza/te~~~Ad d following folder to bookmarks /home/geza/te Enter a name for the new bookmark ltem
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/32.png
 #: ../src/main-win.c:1201
 #, c-format
 msgid ""
@@ -869,66 +667,66 @@ msgstr ""
 "Añadir la siguiente carpeta a los marcadores:\n"
 "'%s'\n"
 "Introduzca in nombre para el nuevo marcador:"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/32.png(152,5,136,11)~~~~~~Add to Bookmarks
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/32.png
 #: ../src/main-win.c:1205
 msgid "Add to Bookmarks"
 msgstr "Añadir a los marcadores"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/34.png(317,222,231,13)~~~~~~Name of configuration profile
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/34.png
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:72
 msgid "Name of configuration profile"
 msgstr "Nombre del perfil de configuración"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/34.png(317,239,182,10)~~~~~~Run PCManFM as a daemon
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/34.png
 #: ../src/pcmanfm.c:73
 msgid "Run PCManFM as a daemon"
 msgstr "Ejecutar PCManFM como servicio"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/34.png(6,256,637,27)~~~~~~No function. Just to be compatible with n autilus
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/34.png
 #: ../src/pcmanfm.c:74
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Sin funcionalidad. Sólo para compatibilidad con nautilus"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/34.png(318,290,174,13)~~~~~~Launch desktop manager
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/34.png
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
 #: ../src/pcmanfm.c:77
 msgid "Launch desktop manager"
 msgstr "Iniciar el gestor de escritorios"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/34.png(334,307,301,13)~~~~~~rn off desktop manage r if it 's running
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/34.png
 #: ../src/pcmanfm.c:78
 msgid "Turn off desktop manager if it's running"
 msgstr "Apagar el gestor de escritorios, si está funcionando"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/34.png(317,324,238,13)~~~~~~Open desktop preference dialog
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/34.png
 #: ../src/pcmanfm.c:79
 msgid "Open desktop preference dialog"
 msgstr "Abrir la pantalla de preferencias del escritorio"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/34.png(318,341,166,13)~~~~~~Set desktop wallpape r
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/34.png
 #: ../src/pcmanfm.c:80
 msgid "Set desktop wallpaper"
 msgstr "Establecer el tapiz del escritorio"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/34.png(166,341,110,12)~~~~~~r=<image file>
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/34.png
 #: ../src/pcmanfm.c:80
 msgid "<image file>"
 msgstr "<archivo de imagen>"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/34.png(6,358,637,31)~~~~~~Set mode of desktop wallpaper. <mode>= (co lor|stretch|fit|center|tile)
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/34.png
 #: ../src/pcmanfm.c:81
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
 "Establecer el modo del tapiz de escritorio. <modo>=(color|estirar|ajustar|"
 "centrar|mosaico)"
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/34.png
+
 #: ../src/pcmanfm.c:81
 msgid "<mode>"
 msgstr "<modo>"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/34.png(6,392,629,30)~~~~~~Open prefe rence dialog n ' is number of the page you want to show (1, 2, 3
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/34.png
 #: ../src/pcmanfm.c:82
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
@@ -936,47 +734,41 @@ msgid ""
 msgstr ""
 "Abrir la pantalla de preferencias. 'n' es el número de la página que desea "
 "mostrar (1, 2, 3...)."
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/34.png
+
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:85
 msgid "[FILE1, FILE2,...]"
 msgstr "[ARCHIVO1, ARCHIVO2, ...]"
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/35.png
+
 #: ../src/pcmanfm.c:455
 msgid "Terminal emulator is not set."
 msgstr "No se ha establecido el emulador de terminal."
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/15.png
+
 #: ../src/pcmanfm.c:500
 #, fuzzy
 msgid "Enter a name for the newly created folder:"
 msgstr "Introduzca un nombre para el archivo recién creado:"
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/13.png
+
 #: ../src/pcmanfm.c:502
 msgid "Enter a name for the newly created file:"
 msgstr "Introduzca un nombre para el archivo recién creado:"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/12.png(203,147,91,13)~~~~~~Create gew...
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/13.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/15.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/12.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/1.png
 #: ../src/pcmanfm.c:503
 msgid "Create New..."
 msgstr "Crear nuevo..."
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/33.png(301,148,27,10)~~~~~~New
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/29.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/30.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/31.png
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/33.png
 #: ../src/pcmanfm.c:503
 msgid "New"
 msgstr "Nuevo"
-#% nomatches
+
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
 msgstr "Explorar el sistema de archivos y gestionar los archivos"
+
 #& /home/transifex/textmatch/pcmanfm-screenshots/16.png(240,270,84,13)~~~~~~File Manager
-#% /home/geza/workspace/textmatch/pcmanfm-screenshots/16.png
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "Gestor de archivos"

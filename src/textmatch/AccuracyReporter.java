@@ -30,7 +30,14 @@ public class AccuracyReporter {
                 noannotations++;
                 continue;
             }
-            if (computerAnnotation != null && manualFiles.contains(computerAnnotation.filename)) {
+            String computerAnnotationFile = null;
+            if (computerAnnotation != null) {
+                computerAnnotationFile = computerAnnotation.filename;
+                if (computerAnnotationFile.indexOf('/') != -1) {
+                    computerAnnotationFile = computerAnnotationFile.substring(computerAnnotationFile.lastIndexOf('/')+1);
+                }
+            }
+            if (computerAnnotationFile != null && manualFiles.contains(computerAnnotationFile)) {
                 matches++;
             } else {
                 misses++;
